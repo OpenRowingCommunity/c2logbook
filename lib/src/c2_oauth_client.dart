@@ -11,5 +11,6 @@ class Concept2OAuth2Client extends OAuth2Client {
             authorizeUrl: '$baseUrl/oauth/authorize',
             tokenUrl: '$baseUrl/oauth/access_token',
             redirectUri: redirectUri,
-            customUriScheme: customUriScheme);
+            customUriScheme: customUriScheme,
+            scopeSeparator: ',');
 }

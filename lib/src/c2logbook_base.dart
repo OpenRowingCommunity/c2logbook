@@ -24,6 +24,8 @@ class C2Logbook {
     oauthHelper = OAuth2Helper(oauthClient,
         grantType: OAuth2Helper.authorizationCode,
         clientId: clientId,
+        enableState: false,
+        enablePKCE: false,
         scopes: ['user:read', 'results:read']); //'user:write', 'results:write'
   }
 
