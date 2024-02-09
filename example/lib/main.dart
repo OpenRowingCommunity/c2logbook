@@ -9,6 +9,7 @@ void main() {
         Provider(
             create: (context) => C2Logbook(
                 development: true,
+                redirectUri: 'http://localhost:8000/callback.html',
                 clientId:
                     const String.fromEnvironment("C2_LOGBOOK_CLIENT_ID"))),
       ],
