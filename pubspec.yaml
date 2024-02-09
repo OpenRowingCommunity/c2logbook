@@ -9,6 +9,7 @@ environment:
 # Add regular dependencies here.
 dependencies:
   http: ^1.2.0
+  oauth2_client: ^3.2.2
   # path: ^1.8.0
 
 dev_dependencies:
