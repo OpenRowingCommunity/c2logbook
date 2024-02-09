@@ -11,10 +11,13 @@ class C2Logbook {
 
   late OAuth2Helper oauthHelper;
 
-  C2Logbook({required String clientId, this.development = false}) {
+  C2Logbook(
+      {required String clientId,
+      required String redirectUri,
+      this.development = false}) {
     final oauthClient = Concept2OAuth2Client(
         baseUrl: _serverUri.toString(),
-        redirectUri: '', //TODO
+        redirectUri: redirectUri,
         customUriScheme: 'https');
 
     oauthHelper = OAuth2Helper(oauthClient,
