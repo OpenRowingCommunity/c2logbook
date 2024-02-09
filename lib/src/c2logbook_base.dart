@@ -1,4 +1,5 @@
 import 'package:c2logbook/src/c2_oauth_client.dart';
+import 'package:oauth2_client/oauth2_helper.dart';
 class C2Logbook {
   bool development;
   String clientId;
@@ -10,13 +11,18 @@ class C2Logbook {
   Map<String, String>? get _headers =>
       <String, String>{'Accept': 'application/vnd.c2logbook.v1+json'};
 
-  Concept2OAuth2Client? oauthClient;
+  late OAuth2Helper oauthHelper;
 
-  C2Logbook({required this.clientId, this.development = false}) {
-    oauthClient = Concept2OAuth2Client(
+  C2Logbook({required String clientId, this.development = false}) {
+    final oauthClient = Concept2OAuth2Client(
         baseUrl: _serverUri.toString(),
         redirectUri: '', //TODO
         customUriScheme: 'https');
+
+    oauthHelper = OAuth2Helper(oauthClient,
+        grantType: OAuth2Helper.authorizationCode,
+        clientId: clientId,
+        scopes: ['user:read', 'results:read']); //'user:write', 'results:write'
   }
 
       
