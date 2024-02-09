@@ -8,6 +8,7 @@ void main() {
       providers: [
         Provider(
             create: (context) => C2Logbook(
+                development: true,
                 clientId:
                     const String.fromEnvironment("C2_LOGBOOK_CLIENT_ID"))),
       ],
