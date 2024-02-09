@@ -18,7 +18,7 @@ class C2Logbook {
     final oauthClient = Concept2OAuth2Client(
         baseUrl: _serverUri.toString(),
         redirectUri: redirectUri,
-        customUriScheme: 'https');
+        customUriScheme: Uri.parse(redirectUri).scheme);
 
     oauthHelper = OAuth2Helper(oauthClient,
         grantType: OAuth2Helper.authorizationCode,
