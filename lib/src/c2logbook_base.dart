@@ -1,5 +1,6 @@
 class C2Logbook {
   bool development;
+  String clientId;
 
   Uri get _serverUri => Uri.https(development
       ? 'https://log-dev.concept2.com'
@@ -8,7 +9,7 @@ class C2Logbook {
   Map<String, String>? get _headers =>
       <String, String>{'Accept': 'application/vnd.c2logbook.v1+json'};
 
-  C2Logbook({this.development = false});
+  C2Logbook({required this.clientId, this.development = false});
 
 
       
