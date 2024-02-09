@@ -2,7 +2,6 @@ import 'package:c2logbook/src/c2_oauth_client.dart';
 import 'package:oauth2_client/oauth2_helper.dart';
 class C2Logbook {
   bool development;
-  String clientId;
 
   Uri get _serverUri => Uri.https(development
       ? 'https://log-dev.concept2.com'
