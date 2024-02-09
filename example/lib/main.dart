@@ -1,3 +1,4 @@
+import 'package:c2logbook/c2logbook.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -5,7 +6,10 @@ void main() {
   runApp(
     MultiProvider(
       providers: [
-        Provider(create: (context) => SomeOtherClass()),
+        Provider(
+            create: (context) => C2Logbook(
+                clientId:
+                    const String.fromEnvironment("C2_LOGBOOK_CLIENT_ID"))),
       ],
       child: const MyApp(),
     ),
