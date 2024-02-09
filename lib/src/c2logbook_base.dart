@@ -1,6 +1,8 @@
-// TODO: Put public facing types in this file.
+class C2Logbook {
+  bool development = false;
 
-/// Checks if you are awesome. Spoiler: you are.
-class Awesome {
-  bool get isAwesome => true;
+  String get _server_url =>
+      development ? 'https://log-dev.concept2.com' : 'https://log.concept2.com';
+
+      
 }
