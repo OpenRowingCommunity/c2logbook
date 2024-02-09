@@ -24,5 +24,29 @@ class C2Logbook {
         scopes: ['user:read', 'results:read']); //'user:write', 'results:write'
   }
 
-      
+  Future<http.Response> _get(String url,
+      {Map<String, String>? headers, http.Client? httpClient}) async {
+    return oauthHelper.get(url, headers: headers, httpClient: httpClient);
+  }
+
+  Future<http.Response> _post(String url,
+      {Map<String, String>? headers,
+      dynamic body,
+      http.Client? httpClient}) async {
+    return oauthHelper.post(url,
+        headers: headers, body: body, httpClient: httpClient);
+  }
+
+  Future<http.Response> _patch(String url,
+      {Map<String, String>? headers,
+      dynamic body,
+      http.Client? httpClient}) async {
+    return oauthHelper.patch(url,
+        headers: headers, body: body, httpClient: httpClient);
+  }
+
+  Future<http.Response> _delete(String url,
+      {Map<String, String>? headers, http.Client? httpClient}) async {
+    return oauthHelper.delete(url, headers: headers, httpClient: httpClient);
+  }
 }
