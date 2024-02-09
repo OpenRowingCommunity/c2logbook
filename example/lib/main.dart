@@ -74,9 +74,9 @@ class _MyHomePageState extends State<MyHomePage> {
           appBar: AppBar(
             bottom: const TabBar(
               tabs: [
-                Tab(icon: Icon(Icons.directions_car)),
-                Tab(icon: Icon(Icons.directions_transit)),
-                Tab(icon: Icon(Icons.directions_bike)),
+                Tab(icon: Icon(Icons.list)),
+                Tab(icon: Icon(Icons.calculate)),
+                Tab(icon: Icon(Icons.currency_exchange)),
               ],
             ),
             title: const Text('Tabs Demo'),
@@ -84,8 +84,8 @@ class _MyHomePageState extends State<MyHomePage> {
           body: const TabBarView(
             children: [
               Icon(Icons.directions_car),
-              Icon(Icons.directions_transit),
-              Icon(Icons.directions_bike),
+              Icon(Icons.calculate),
+              Icon(Icons.currency_exchange),
             ],
           ),
         ),
