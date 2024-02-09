@@ -83,7 +83,7 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           body: const TabBarView(
             children: [
-              Icon(Icons.directions_car),
+              LogbookView(),
               Icon(Icons.calculate),
               Icon(Icons.currency_exchange),
             ],
