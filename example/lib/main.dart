@@ -13,7 +13,10 @@ void main() {
                 development: true,
                 redirectUri: 'http://localhost:8000/callback.html',
                 clientId:
-                    const String.fromEnvironment("C2_LOGBOOK_CLIENT_ID"))),
+                    const String.fromEnvironment("C2_LOGBOOK_CLIENT_ID"),
+                clientSecret:
+                    const String.fromEnvironment("C2_LOGBOOK_CLIENT_SECRET")))
+                    ,
       ],
       child: const MyApp(),
     ),
