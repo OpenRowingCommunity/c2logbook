@@ -20,9 +20,9 @@ Once logged in, the app will display some basic user information fetched from yo
 This assumes you have your environment correctly configured for [Web development with flutter](https://docs.flutter.dev/platform-integration/web/building).
 
 1. Go to the Concept2 developer site and [create an application using the developer site](https://log-dev.concept2.com/developers/keys) to get client ID and secret credentials. ([Documentation](https://log.concept2.com/developers/documentation/) is also available)
-2. run the flutter frontend code using the command: `flutter run -d chrome --dart-define C2_LOGBOOK_CLIENT_ID=[CLIENT ID HERE] --dart-define C2_LOGBOOK_CLIENT_SECRET=[CLIENT SECRET HERE]`
+2. run the flutter frontend code using the command: `flutter run -d chrome --dart-define C2_LOGBOOK_CLIENT_ID=[CLIENT ID HERE] --dart-define C2_LOGBOOK_CLIENT_SECRET=[CLIENT SECRET HERE]`. This will open your web browser to the local host version of the Flutter website.
+	- This will require that you have a copy of the `c2logbook` folder present in the same directory as this project, as it is a flutter library that I built to handle the more complex aspects of the Concept2 API, such as dealing with Oauth.
 3. ensure that the python bridge is also running and able to serve HTTP requests. this is available in a separate repository and should be run on port 8080
-
 
 
 
