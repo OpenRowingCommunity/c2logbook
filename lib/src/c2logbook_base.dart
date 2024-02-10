@@ -15,6 +15,10 @@ class C2Logbook {
 
   late OAuth2Helper oauthHelper;
 
+  Future<bool> get isLoggedIn => oauthHelper.getTokenFromStorage().then(
+        (value) => value != null,
+      );
+
   C2Logbook(
       {required String clientId,
       required String clientSecret,
