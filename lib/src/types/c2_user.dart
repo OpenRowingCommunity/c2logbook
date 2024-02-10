@@ -45,9 +45,9 @@ class C2User {
         profileImage: json['profile_image'],
         ageRestricted: json['age_restricted'],
         emailPermission: json['email_permission'],
-        maxHeartRate: json['max_heart_rate'],
-        weight: json['weight'],
-        roles: json['roles'],
+        // maxHeartRate: json['max_heart_rate'],
+        // weight: json['weight'],
+        // roles: json['roles'],
         logbookPrivacy: json['logbook_privacy']);
   }
 }
