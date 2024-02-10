@@ -2,6 +2,8 @@ import 'package:c2logbook/c2logbook.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import 'src/logbookview.dart';
+
 void main() {
   runApp(
     MultiProvider(
