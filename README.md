@@ -7,6 +7,34 @@ A Dart wrapper to provide a more Object-Oriented method of accessing the [Concep
 - Ability to use either the development or production domains
 - Fetching basic user profile data for the authorized user (name, gender, etc)
 
+### Pending Features
+Based on the list of available endpoints from Concept2's documentation
+**Results**
+- [ ] Fetching workout information from an authorized user's profile
+- [ ] Uploading one (or more) new workout results to an authorized user's profile
+- [ ] Editing existing results
+- [ ] Getting workout exports as a `csv`, `fit`, or `tcx` file
+  
+**Profile**
+- [ ] Editing user profile data
+- [ ] Updating user profile image
+
+**Stroke Data**
+- [ ] Getting stroke data
+- [ ] Deleting strokes
+
+**Challenges**
+- [ ] Retrieve information about challenges from the logbook
+
+**Webhooks**
+TBD
+
+**Infrastructure**
+- [ ] Handling of paginated data for large requests
+- [ ] Rate limiting of requests to be respectful of Concept2
+- [ ] Graceful handling and communicating of errors from the API to `c2logbook` consumers
+
+
 
 ## Getting started
 This package relies on user-supplied Client ID and Client Secret values provided by Concept2.
