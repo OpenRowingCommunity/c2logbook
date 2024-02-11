@@ -62,29 +62,6 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: DefaultTabController(
-        length: 3,
-        child: Scaffold(
-          appBar: AppBar(
-            bottom: const TabBar(
-              tabs: [
-                Tab(icon: Icon(Icons.list)),
-                Tab(icon: Icon(Icons.calculate)),
-                Tab(icon: Icon(Icons.currency_exchange)),
-              ],
-            ),
-            title: const Text('Tabs Demo'),
-          ),
-          body: const TabBarView(
-            children: [
-              LogbookView(),
-              Icon(Icons.calculate),
-              Icon(Icons.currency_exchange),
-            ],
-          ),
-        ),
-      ),
-    );
+    return MaterialApp(home: LogbookView());
   }
 }
