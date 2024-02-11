@@ -31,7 +31,7 @@ dependencies:
   flutter:
     sdk: flutter
   c2logbook:
-    path: ../c2logbook
+    path: ../
 
 
   # The following adds the Cupertino Icons font to your application.

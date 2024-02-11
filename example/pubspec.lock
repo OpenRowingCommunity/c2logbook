@@ -20,7 +20,7 @@ packages:
   c2logbook:
     dependency: "direct main"
     description:
-      path: "../c2logbook"
+      path: ".."
       relative: true
     source: path
     version: "1.0.0"
