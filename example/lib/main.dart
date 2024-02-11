@@ -4,19 +4,20 @@ import 'package:provider/provider.dart';
 
 import 'src/logbookview.dart';
 
+import 'package:flutter_web_plugins/url_strategy.dart';
+
 void main() {
+  usePathUrlStrategy();
   runApp(
     MultiProvider(
       providers: [
         Provider(
             create: (context) => C2Logbook(
                 development: true,
-                redirectUri: 'http://localhost:8000/callback.html',
-                clientId:
-                    const String.fromEnvironment("C2_LOGBOOK_CLIENT_ID"),
+                redirectUri: 'http://localhost:8000/static/callback.html',
+                clientId: const String.fromEnvironment("C2_LOGBOOK_CLIENT_ID"),
                 clientSecret:
-                    const String.fromEnvironment("C2_LOGBOOK_CLIENT_SECRET")))
-                    ,
+                    const String.fromEnvironment("C2_LOGBOOK_CLIENT_SECRET"))),
       ],
       child: const MyApp(),
     ),
