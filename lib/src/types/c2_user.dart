@@ -1,3 +1,4 @@
+import 'package:c2logbook/src/types/c2_types.dart';
 import 'package:equatable/equatable.dart';
 
 class C2User extends Equatable {
@@ -15,7 +16,7 @@ class C2User extends Equatable {
   int? maxHeartRate;
   int? weight;
   List<String> roles;
-  String logbookPrivacy;
+  C2PrivacyLevel logbookPrivacy;
 
   C2User(
       {this.id = 0,
@@ -32,7 +33,7 @@ class C2User extends Equatable {
       this.maxHeartRate,
       this.weight,
       this.roles = const [],
-      this.logbookPrivacy = ''});
+      this.logbookPrivacy = C2PrivacyLevel.private});
 
   @override
   List<Object> get props => [
@@ -69,6 +70,7 @@ class C2User extends Equatable {
         // maxHeartRate: json['max_heart_rate'],
         // weight: json['weight'],
         // roles: json['roles'],
-        logbookPrivacy: json['logbook_privacy']);
+        logbookPrivacy: C2PrivacyLevel.values.firstWhere((e) =>
+            e.toString() == 'C2PrivacyLevel.' + json['logbook_privacy']));
   }
 }
