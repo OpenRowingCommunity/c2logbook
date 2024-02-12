@@ -61,21 +61,21 @@ class C2Results {
     // },
 
     return C2Results(
-      id: json['id'],
-      userId: json['user_id'],
-      // date: json['date'],
-      timezone: json['timezone'],
-      distance: json['distance'],
-      type: json['type'],
-      time: json['time'],
-      workoutType: json['workout_type'],
-      source: json['source'],
-      weightClass: json['weight_class'],
-      verified: json['verified'],
-      ranked: json['ranked'],
-      comments: json['comments'],
-      privacy: json['privacy'],
-    );
+        id: json['id'],
+        userId: json['user_id'],
+        // date: json['date'],
+        timezone: json['timezone'],
+        distance: json['distance'],
+        type: json['type'],
+        time: json['time'],
+        workoutType: json['workout_type'],
+        source: json['source'],
+        weightClass: json['weight_class'],
+        verified: json['verified'],
+        ranked: json['ranked'],
+        comments: json['comments'],
+        privacy: C2PrivacyLevel.values.firstWhere(
+            (e) => e.toString() == 'C2PrivacyLevel.' + json['privacy']));
   }
 }
 
