@@ -8,6 +8,7 @@ environment:
 
 # Add regular dependencies here.
 dependencies:
+  equatable: ^2.0.5
   http: ^1.2.0
   oauth2_client: ^3.2.2
   # path: ^1.8.0

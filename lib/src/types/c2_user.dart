@@ -1,4 +1,6 @@
-class C2User {
+import 'package:equatable/equatable.dart';
+
+class C2User extends Equatable {
   int id;
   String username;
   String firstName;
@@ -31,6 +33,25 @@ class C2User {
       this.weight,
       this.roles = const [],
       this.logbookPrivacy = ''});
+
+  @override
+  List<Object> get props => [
+        id,
+        username,
+        firstName,
+        lastName,
+        gender,
+        birthday,
+        email,
+        country,
+        // profileImage,
+        ageRestricted,
+        emailPermission,
+        // maxHeartRate,
+        // weight,
+        roles,
+        logbookPrivacy
+      ];
 
   factory C2User.fromJson(Map<String, dynamic> json) {
     return C2User(
