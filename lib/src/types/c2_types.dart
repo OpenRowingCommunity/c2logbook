@@ -7,3 +7,37 @@ extension C2PrivacyExtension on C2PrivacyLevel {
         .firstWhere((e) => e.toString() == 'C2PrivacyLevel.$value');
   }
 }
+
+enum C2ResultType {
+  rower,
+  skierg,
+  bike,
+  dynamic,
+  slides,
+  paddle,
+  water,
+  snow,
+  rollerski,
+  multierg
+}
+
+// TODO: deduplicate this with C2Bluetooth
+enum C2WorkoutType {
+  unknown,
+  JustRow,
+  FixedDistanceSplits,
+  FixedTimeSplits,
+  FixedCalorie,
+  FixedTimeInterval,
+  FixedDistanceInterval,
+  FixedCalorieInterval,
+  VariableInterval,
+  VariableIntervalUndefinedRest,
+}
+
+// TODO: add conversion to and from "L" and "H" values
+enum C2WeightClass {
+  lightweight,
+  heavyweight
+  // C2WeightClass fromString()
+}
