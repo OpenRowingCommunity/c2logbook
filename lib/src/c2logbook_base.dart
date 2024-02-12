@@ -4,6 +4,9 @@ import 'package:c2logbook/src/c2_oauth_client.dart';
 import 'package:c2logbook/src/types/c2_user.dart';
 import 'package:oauth2_client/oauth2_helper.dart';
 import 'package:http/http.dart' as http;
+
+import 'types/c2_results.dart';
+
 class C2Logbook {
   bool development;
 
@@ -75,5 +78,36 @@ class C2Logbook {
         .then(
           (json) => C2User.fromJson(json['data']),
         );
+  }
+
+  // Get workout results from a user by id.
+  ///
+  /// Docs: https://log.concept2.com/developers/documentation/#logbook-users-results
+  ///
+  /// [userId] The integer id of the user to fetch. If none is specified, it defaults to the ID of the currently authenticated user.
+  /// [from] Fetches only results where the workout date is on or after this date.
+  /// [to] Fetches only results where the workout date is on or before this date.
+  /// [type] Fetch only the workouts of this type
+  /// [updatedAfter] Fetch only results updated after this date.
+  Future<C2Results> getUserResults(
+      {int? userId,
+      DateTime? to,
+      DateTime? from,
+      C2ResultType? type,
+      DateTime? updatedAfter}) async {
+    // TODO: convert [from] to YYYY-MM-DD or YYYY-MM-DD H:M:S format
+    // TODO: convert [to] to YYYY-MM-DD or YYYY-MM-DD H:M:S format
+
+    // TODO: convert [updatedAfter] to YYYY-MM-DD or YYYY-MM-DD H:M:S format
+
+    // TODO: pass in above values as url parameters
+    Uri uri = _serverUri.resolve("/api/users/${userId ?? "me"}/results");
+
+    return _get(uri.toString())
+        .then((response) => json.decode(response.body))
+        .then((json) {
+      // TODO: Handle pagination
+      return C2Results.fromJson(json['data']);
+    });
   }
 }
