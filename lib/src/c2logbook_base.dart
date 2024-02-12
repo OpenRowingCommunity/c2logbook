@@ -1,12 +1,10 @@
 import 'dart:convert';
 
 import 'package:c2logbook/src/c2_oauth_client.dart';
-import 'package:c2logbook/src/types/c2_user.dart';
 import 'package:oauth2_client/oauth2_helper.dart';
 import 'package:http/http.dart' as http;
 
-import 'types/c2_results.dart';
-
+import '../c2logbook.dart';
 class C2Logbook {
   bool development;
 
