@@ -74,8 +74,7 @@ class C2Results {
         verified: json['verified'],
         ranked: json['ranked'],
         comments: json['comments'],
-        privacy: C2PrivacyLevel.values.firstWhere(
-            (e) => e.toString() == 'C2PrivacyLevel.' + json['privacy']));
+        privacy: C2PrivacyExtension.fromString(json['privacy']));
   }
 }
 
