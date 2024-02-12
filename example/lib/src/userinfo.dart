@@ -15,7 +15,7 @@ class UserInfo extends StatelessWidget {
           Text("Hello ${me.firstName} ${me.lastName}"),
           Text("Your Country: ${me.country}"),
           Text("Your Gender: ${me.gender}"),
-          Text("Your Birthday: ${me.dob}"),
+          Text("Your Birthday: ${me.birthday}"),
         ],
       ),
     );

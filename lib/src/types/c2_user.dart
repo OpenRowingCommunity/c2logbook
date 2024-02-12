@@ -4,7 +4,7 @@ class C2User {
   String firstName;
   String lastName;
   String gender;
-  String dob;
+  String birthday;
   String email;
   String country;
   String? profileImage;
@@ -21,7 +21,7 @@ class C2User {
       this.firstName = '',
       this.lastName = '',
       this.gender = 'F',
-      this.dob = '1970-01-01',
+      this.birthday = '1970-01-01',
       this.email = '',
       this.country = '',
       this.profileImage,
@@ -39,7 +39,7 @@ class C2User {
         firstName: json['first_name'],
         lastName: json['last_name'],
         gender: json['gender'],
-        dob: json['dob'],
+        birthday: json['dob'],
         email: json['email'],
         country: json['country'],
         profileImage: json['profile_image'],
