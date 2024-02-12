@@ -1,3 +1,5 @@
+import 'c2_types.dart';
+
 class C2Results {
   int id;
   int userId;
@@ -111,5 +113,3 @@ enum C2WeightClass {
   // C2WeightClass fromString()
 }
 
-// TODO: add conversion to string to allow logged_in to be represented in dart as loggedIn
-enum C2PrivacyLevel { private, partners, logged_in, everyone }
