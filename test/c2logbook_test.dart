@@ -19,15 +19,62 @@ void main() {
       emailPermission: true,
       // maxHeartRate: null,
       logbookPrivacy: C2PrivacyLevel.partners);
-  group('A group of tests', () {
-    final awesome = Awesome();
 
-    setUp(() {
-      // Additional setup goes here.
+  final testResults = C2Results(
+      id: 3,
+      userId: 1,
+      // date:
+      distance: 23000,
+      type: C2ResultType.rower,
+      time: 152350,
+      workoutType: C2WorkoutType.unknown,
+      source: "Web",
+      weightClass: C2WeightClass.heavyweight,
+      verified: false,
+      ranked: false,
+      privacy: C2PrivacyLevel.partners);
+
+  group('Parsing Tests', () {
+    test('Test Parsing Result JSON', () {
+      final jsonData = json.decode("""{
+      "id": 3,
+      "user_id": 1,
+      "date": "2013-06-21 00:00:00",
+      "timezone": null,
+      "date_utc": null,
+      "distance": 23000,
+      "type": "rower",
+      "time": 152350,
+      "time_formatted": "4:13:55.0",
+      "workout_type": "unknown",
+      "source": "Web",
+      "weight_class": "H",
+      "verified": false,
+      "ranked": false,
+      "comments": null,
+      "privacy": "partners"
+}""");
+      expect(C2Results.fromJson(jsonData), testResults);
     });
 
-    test('First Test', () {
-      expect(awesome.isAwesome, isTrue);
+    test('Test Parsing User JSON', () {
+      final jsonData = json.decode("""{
+    "id": 1,
+    "username": "David Hart",
+    "first_name": "David",
+    "last_name": "Hart",
+    "gender": "M",
+    "dob": "1977-08-19",
+    "email": "davidh@concept2.com",
+    "country": "GBR",
+    "profile_image": "http://media.concept2.com/assets/uploads/profiles/1/small/mypicture.jpg",
+    "age_restricted": false,
+    "email_permission": true,
+    "max_heart_rate": null,
+    "logbook_privacy": "partners"
+}""");
+
+      expect(C2User.fromJson(jsonData), testUser);
     });
   });
 
