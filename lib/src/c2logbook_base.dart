@@ -64,8 +64,13 @@ class C2Logbook {
     return oauthHelper.delete(url, headers: headers, httpClient: httpClient);
   }
 
-  Future<C2User> me() async {
-    return _get(_serverUri.resolve("/api/users/me").toString())
+  /// Get user metadata (name, email, etc) by id.
+  ///
+  /// Docs: https://log.concept2.com/developers/documentation/#logbook-users-user
+  ///
+  /// [userId] The integer id of the user to fetch. If none is specified, it defaults to the ID of the currently authenticated user.
+  Future<C2User> getUserMetadata({int? userId}) async {
+    return _get(_serverUri.resolve("/api/users/${userId ?? "me"}").toString())
         .then((response) => json.decode(response.body))
         .then(
           (json) => C2User.fromJson(json['data']),

@@ -10,7 +10,7 @@ class LogbookView extends StatelessWidget {
   Widget build(BuildContext context) {
     return FutureBuilder<C2User>(
         future: Provider.of<C2Logbook>(context, listen: false)
-            .me(), // a previously-obtained Future<String> or null
+            .getUserMetadata(), // a previously-obtained Future<String> or null
         builder: (BuildContext context, AsyncSnapshot<C2User> snapshot) {
           List<Widget> children;
           if (snapshot.hasData) {
