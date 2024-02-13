@@ -1,6 +1,7 @@
 import 'c2_types.dart';
+import 'package:equatable/equatable.dart';
 
-class C2Results {
+class C2Results extends Equatable {
   int id;
   int userId;
 
@@ -39,6 +40,24 @@ class C2Results {
     this.comments,
     this.privacy = C2PrivacyLevel.private,
   });
+
+  @override
+  List<Object> get props => [
+        id,
+        userId,
+        // date,
+        // timezone,
+        distance,
+        type,
+        time,
+        workoutType,
+        source,
+        weightClass,
+        verified,
+        ranked,
+        // comments,
+        privacy
+      ];
 
   factory C2Results.fromJson(Map<String, dynamic> json) {
     // {
