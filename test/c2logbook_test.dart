@@ -98,5 +98,23 @@ void main() {
               // maxHeartRate: null,
               logbookPrivacy: C2PrivacyLevel.partners));
     });
+
+    test("equality of Results", () {
+      expect(
+          testResults,
+          C2Results(
+              id: 3,
+              userId: 1,
+              // date:
+              distance: 23000,
+              type: C2ResultType.rower,
+              time: 152350,
+              workoutType: C2APIWorkoutType.unknown,
+              source: "Web",
+              weightClass: C2WeightClass.heavyweight,
+              verified: false,
+              ranked: false,
+              privacy: C2PrivacyLevel.partners));
+    });
   });
 }
