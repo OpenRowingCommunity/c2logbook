@@ -9,12 +9,15 @@ import 'types/c2_types.dart';
 
 class C2Logbook {
   final bool development;
+  final String _userAgent;
 
   Uri get _serverUri =>
       Uri.https(development ? 'log-dev.concept2.com' : 'log.concept2.com');
 
-  Map<String, String> get _headers =>
-      <String, String>{'Accept': 'application/vnd.c2logbook.v1+json'};
+  Map<String, String> get _headers => <String, String>{
+        'Accept': 'application/vnd.c2logbook.v1+json',
+        'User-Agent': _userAgent
+      };
 
   late OAuth2Helper oauthHelper;
 
@@ -26,7 +29,9 @@ class C2Logbook {
       {required String clientId,
       required String clientSecret,
       required String redirectUri,
-      this.development = false}) {
+      this.development = false,
+      String? userAgent})
+      : _userAgent = userAgent ?? "c2logbook Dart Wrapper Library" {
     final oauthClient = Concept2OAuth2Client(
         baseUrl: _serverUri.toString(),
         redirectUri: redirectUri,
