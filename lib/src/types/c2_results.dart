@@ -93,6 +93,7 @@ class C2Results extends Equatable {
         verified: json['verified'],
         ranked: json['ranked'],
         comments: json['comments'],
-        privacy: C2PrivacyExtension.fromString(json['privacy']));
+        privacy: C2PrivacyExtension.fromString(json['privacy']) ??
+            C2PrivacyLevel.private);
   }
 }

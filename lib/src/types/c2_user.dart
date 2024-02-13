@@ -70,6 +70,8 @@ class C2User extends Equatable {
         // maxHeartRate: json['max_heart_rate'],
         // weight: json['weight'],
         // roles: json['roles'],
-        logbookPrivacy: C2PrivacyExtension.fromString(json['logbook_privacy']));
+        logbookPrivacy:
+            C2PrivacyExtension.fromString(json['logbook_privacy']) ??
+                C2PrivacyLevel.private);
   }
 }
