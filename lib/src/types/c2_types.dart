@@ -41,6 +41,36 @@ enum C2APIWorkoutType {
   VariableIntervalUndefinedRest,
 }
 
+extension C2APIWorkoutTypeExtension on C2APIWorkoutType {
+  static Map<C2APIWorkoutType, String> _workoutTypes = {
+    C2APIWorkoutType.unknown: 'unknown',
+    C2APIWorkoutType.JustRow: 'JustRow',
+    C2APIWorkoutType.FixedDistanceSplits: 'FixedDistanceSplits',
+    C2APIWorkoutType.FixedTimeSplits: 'FixedTimeSplits',
+    C2APIWorkoutType.FixedCalorie: 'FixedCalorie',
+    C2APIWorkoutType.FixedTimeInterval: 'FixedTimeInterval',
+    C2APIWorkoutType.FixedDistanceInterval: 'FixedDistanceInterval',
+    C2APIWorkoutType.FixedCalorieInterval: 'FixedCalorieInterval',
+    C2APIWorkoutType.VariableInterval: 'VariableInterval',
+    C2APIWorkoutType.VariableIntervalUndefinedRest:
+        'VariableIntervalUndefinedRest',
+  };
+
+  String? toC2ApiString() {
+    return _workoutTypes[this];
+  }
+
+  static C2APIWorkoutType fromString(String value) {
+    C2APIWorkoutType? type = _workoutTypes.map((key, value) =>
+        MapEntry(value.toUpperCase(), key))[value.toUpperCase()];
+    if (type == null) {
+      throw ArgumentError("value \"$value\" has no matching C2APIWorkoutType");
+    } else {
+      return type;
+    }
+  }
+}
+
 enum C2WeightClass {
   lightweight,
   heavyweight
