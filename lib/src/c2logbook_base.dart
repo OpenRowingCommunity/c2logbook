@@ -13,7 +13,7 @@ class C2Logbook {
   Uri get _serverUri =>
       Uri.https(development ? 'log-dev.concept2.com' : 'log.concept2.com');
 
-  Map<String, String>? get _headers =>
+  Map<String, String> get _headers =>
       <String, String>{'Accept': 'application/vnd.c2logbook.v1+json'};
 
   late OAuth2Helper oauthHelper;
@@ -43,28 +43,40 @@ class C2Logbook {
 
   Future<http.Response> _get(String url,
       {Map<String, String>? headers, http.Client? httpClient}) async {
-    return oauthHelper.get(url, headers: headers, httpClient: httpClient);
+    final allHeaders = <String, String>{}
+      ..addAll(headers ?? {})
+      ..addAll(_headers);
+    return oauthHelper.get(url, headers: allHeaders, httpClient: httpClient);
   }
 
   Future<http.Response> _post(String url,
       {Map<String, String>? headers,
       dynamic body,
       http.Client? httpClient}) async {
+    final allHeaders = <String, String>{}
+      ..addAll(headers ?? {})
+      ..addAll(_headers);
     return oauthHelper.post(url,
-        headers: headers, body: body, httpClient: httpClient);
+        headers: allHeaders, body: body, httpClient: httpClient);
   }
 
   Future<http.Response> _patch(String url,
       {Map<String, String>? headers,
       dynamic body,
       http.Client? httpClient}) async {
+    final allHeaders = <String, String>{}
+      ..addAll(headers ?? {})
+      ..addAll(_headers);
     return oauthHelper.patch(url,
-        headers: headers, body: body, httpClient: httpClient);
+        headers: allHeaders, body: body, httpClient: httpClient);
   }
 
   Future<http.Response> _delete(String url,
       {Map<String, String>? headers, http.Client? httpClient}) async {
-    return oauthHelper.delete(url, headers: headers, httpClient: httpClient);
+    final allHeaders = <String, String>{}
+      ..addAll(headers ?? {})
+      ..addAll(_headers);
+    return oauthHelper.delete(url, headers: allHeaders, httpClient: httpClient);
   }
 
   /// Get user metadata (name, email, etc) by id.
