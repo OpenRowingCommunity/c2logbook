@@ -7,7 +7,7 @@ import 'package:http/http.dart' as http;
 import '../c2logbook.dart';
 import 'types/c2_types.dart';
 class C2Logbook {
-  bool development;
+  final bool development;
 
   Uri get _serverUri =>
       Uri.https(development ? 'log-dev.concept2.com' : 'log.concept2.com');
