@@ -27,7 +27,7 @@ void main() {
       distance: 23000,
       type: C2ResultType.rower,
       time: 152350,
-      workoutType: C2WorkoutType.unknown,
+      workoutType: C2APIWorkoutType.unknown,
       source: "Web",
       weightClass: C2WeightClass.heavyweight,
       verified: false,

@@ -14,7 +14,7 @@ class C2Results {
   int time;
   String get timeFormatted => "";
 
-  C2WorkoutType workoutType;
+  C2APIWorkoutType workoutType;
 
   String source;
   C2WeightClass weightClass;
@@ -31,7 +31,7 @@ class C2Results {
     this.distance = 0,
     this.type = C2ResultType.rower,
     this.time = 0,
-    this.workoutType = C2WorkoutType.JustRow,
+    this.workoutType = C2APIWorkoutType.JustRow,
     this.source = "c2logbook dart",
     this.weightClass = C2WeightClass.heavyweight,
     this.verified = false,

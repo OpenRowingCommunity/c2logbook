@@ -22,7 +22,7 @@ enum C2ResultType {
 }
 
 // TODO: deduplicate this with C2Bluetooth
-enum C2WorkoutType {
+enum C2APIWorkoutType {
   unknown,
   JustRow,
   FixedDistanceSplits,
