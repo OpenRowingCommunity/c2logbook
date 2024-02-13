@@ -78,23 +78,25 @@ void main() {
     });
   });
 
-  test("equality of users", () {
-    expect(
-        testUser,
-        C2User(
-            id: 1,
-            username: "David Hart",
-            firstName: "David",
-            lastName: "Hart",
-            gender: "M",
-            birthday: "1977-08-19", //DateTime.parse(
-            email: "davidh@concept2.com",
-            country: "GBR",
-            profileImage:
-                "http://media.concept2.com/assets/uploads/profiles/1/small/mypicture.jpg",
-            ageRestricted: false,
-            emailPermission: true,
-            // maxHeartRate: null,
-            logbookPrivacy: C2PrivacyLevel.partners));
+  group('Equality Tests', () {
+    test("equality of users", () {
+      expect(
+          testUser,
+          C2User(
+              id: 1,
+              username: "David Hart",
+              firstName: "David",
+              lastName: "Hart",
+              gender: "M",
+              birthday: "1977-08-19", //DateTime.parse(
+              email: "davidh@concept2.com",
+              country: "GBR",
+              profileImage:
+                  "http://media.concept2.com/assets/uploads/profiles/1/small/mypicture.jpg",
+              ageRestricted: false,
+              emailPermission: true,
+              // maxHeartRate: null,
+              logbookPrivacy: C2PrivacyLevel.partners));
+    });
   });
 }
