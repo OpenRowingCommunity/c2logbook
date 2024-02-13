@@ -5,6 +5,7 @@ import 'package:oauth2_client/oauth2_helper.dart';
 import 'package:http/http.dart' as http;
 
 import '../c2logbook.dart';
+import 'types/c2_types.dart';
 class C2Logbook {
   bool development;
 
