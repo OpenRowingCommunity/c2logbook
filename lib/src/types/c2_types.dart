@@ -35,9 +35,31 @@ enum C2APIWorkoutType {
   VariableIntervalUndefinedRest,
 }
 
-// TODO: add conversion to and from "L" and "H" values
 enum C2WeightClass {
   lightweight,
   heavyweight
   // C2WeightClass fromString()
+}
+
+extension C2WeightClassExtension on C2WeightClass {
+  static C2WeightClass fromString(String value) {
+    switch (value.toUpperCase()) {
+      case "H":
+        return C2WeightClass.heavyweight;
+      case "L":
+        return C2WeightClass.lightweight;
+      default:
+        throw FormatException(
+            "Value \"$value\" is not a valid input for a Weight Class value");
+    }
+  }
+
+  String toC2ApiString() {
+    switch (this) {
+      case C2WeightClass.heavyweight:
+        return "H";
+      case C2WeightClass.lightweight:
+        return "L";
+    }
+  }
 }
