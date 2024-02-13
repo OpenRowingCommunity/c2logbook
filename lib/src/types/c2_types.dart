@@ -21,6 +21,12 @@ enum C2ResultType {
   multierg
 }
 
+extension C2ResultTypeExtension on C2PrivacyLevel {
+  static C2ResultType fromString(String value) {
+    return C2ResultType.values.firstWhere((e) => e.name == value);
+  }
+}
+
 // TODO: deduplicate this with C2Bluetooth
 enum C2APIWorkoutType {
   unknown,
