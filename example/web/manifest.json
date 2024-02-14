@@ -1,6 +1,6 @@
 {
-    "name": "pa1_source",
-    "short_name": "pa1_source",
+    "name": "c2logbook_example",
+    "short_name": "c2logbook_example",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

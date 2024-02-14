@@ -1,6 +1,6 @@
 import 'package:c2logbook/c2logbook.dart';
 import 'package:flutter/material.dart';
-import 'package:pa1_source/src/userinfo.dart';
+import 'package:c2logbook_example/src/userinfo.dart';
 import 'package:provider/provider.dart';
 
 class LogbookView extends StatelessWidget {
