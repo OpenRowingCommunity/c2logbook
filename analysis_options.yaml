@@ -1,30 +1,40 @@
-# This file configures the static analysis results for your project (errors,
-# warnings, and lints).
-#
-# This enables the 'recommended' set of lints from `package:lints`.
-# This set helps identify many issues that may lead to problems when running
-# or consuming Dart code, and enforces writing Dart using a single, idiomatic
-# style and format.
-#
-# If you want a smaller set of lints you can change this to specify
-# 'package:lints/core.yaml'. These are just the most critical lints
-# (the recommended set includes the core lints).
-# The core lints are also what is used by pub.dev for scoring packages.
+include: package:very_good_analysis/analysis_options.yaml
 
-include: package:lints/recommended.yaml
+analyzer:
+  errors:
+    invalid_annotation_target: ignore
+    todo: ignore
+    avoid_print: ignore
+  exclude:
+    - "lib/generated/**"
+    - "**/*.g.dart"
+    - "**/*.gr.dart"
+    - "**/*.freezed.dart"
+    - "**/*.config.dart"
+    - "**/generated_plugin_registrant.dart"
+    - "**/generated/**/*"
+    - "**/generated/*"
 
-# Uncomment the following section to specify additional rules.
-
-# linter:
-#   rules:
-#     - camel_case_types
-
-# analyzer:
-#   exclude:
-#     - path/to/excluded/files/**
-
-# For more information about the core and recommended set of lints, see
-# https://dart.dev/go/core-lints
-
-# For additional information about configuring this file, see
-# https://dart.dev/guides/language/analysis-options
+linter:
+  rules:
+    always_put_control_body_on_new_line: true
+    always_specify_types: true
+    avoid_implementing_value_types: true
+    depend_on_referenced_packages: true
+    lines_longer_than_80_chars: false
+    omit_local_variable_types: false
+    prefer_foreach: true
+    public_member_api_docs: false
+    unnecessary_constructor_name: true
+    unsafe_html: true
+    use_test_throws_matchers: true
+    unnecessary_lambdas: false
+    no_default_cases: false
+    avoid_multiple_declarations_per_line: false
+    flutter_style_todos: false
+    avoid_dynamic_calls: false
+    use_string_in_part_of_directives: true
+    # we want our models to keep the order of the fields even if not required
+    always_put_required_named_parameters_first: false
+    # we have valid reasons to use this
+    avoid_bool_literals_in_conditional_expressions: false
