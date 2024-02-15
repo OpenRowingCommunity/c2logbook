@@ -24,5 +24,6 @@ class C2User with _$C2User {
           @Default(C2PrivacyLevel.private) C2PrivacyLevel logbookPrivacy}) =
       _C2User;
 
-  factory C2User.fromJson(Map<String, Object?> json) => _$C2UserFromJson(json);
+  factory C2User.fromJson(Map<dynamic, dynamic> json) =>
+      _$C2UserFromJson(Map<String, dynamic>.from(json));
 }
