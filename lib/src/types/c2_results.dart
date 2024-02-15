@@ -1,99 +1,40 @@
 import 'c2_types.dart';
-import 'package:equatable/equatable.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-class C2Results extends Equatable {
-  int id;
-  int userId;
+part 'c2_results.freezed.dart';
+part 'c2_results.g.dart';
 
-  // DateTime date;
-  String? timezone;
-  DateTime? get dateUtc => null;
+@freezed
+class C2Results with _$C2Results {
+  //TODO: figure out how to get this into JSON as date_utc
+  // DateTime? get dateUtc => null;
+  //TODO: figure out how to get this into JSON as time_formatted
+  // String get timeFormatted => "";
 
-  int distance;
-  C2ResultType type;
+  factory C2Results({
+    @JsonKey(name: "id") @Default(0) int id,
+    @JsonKey(name: "user_id") @Default(0) int userId,
+    @JsonKey(name: "date") // @Default(DateTime(1970, 1, 1)) DateTime date,
+    @JsonKey(name: "timezone")
+    String? timezone,
+    @JsonKey(name: "distance") @Default(0) int distance,
+    @JsonKey(name: "type") @Default(C2ResultType.rower) C2ResultType type,
+    @JsonKey(name: "time") @Default(0) int time,
+    @JsonKey(name: "workout_type")
+    @Default(C2APIWorkoutType.JustRow)
+    C2APIWorkoutType workoutType,
+    @JsonKey(name: "source") @Default("c2logbook dart") String source,
+    @JsonKey(name: "weight_class")
+    @Default(C2WeightClass.heavyweight)
+    C2WeightClass weightClass,
+    @JsonKey(name: "verified") @Default(false) bool verified,
+    @JsonKey(name: "ranked") @Default(false) bool ranked,
+    @JsonKey(name: "comments") String? comments,
+    @JsonKey(name: "privacy")
+    @Default(C2PrivacyLevel.private)
+    C2PrivacyLevel privacy,
+  }) = _C2Results;
 
-  int time;
-  String get timeFormatted => "";
-
-  C2APIWorkoutType workoutType;
-
-  String source;
-  C2WeightClass weightClass;
-  bool verified;
-  bool ranked;
-  String? comments;
-  C2PrivacyLevel privacy;
-
-  C2Results({
-    this.id = 0,
-    this.userId = 0,
-    // this.date = DateTime(1970,1,1),
-    this.timezone,
-    this.distance = 0,
-    this.type = C2ResultType.rower,
-    this.time = 0,
-    this.workoutType = C2APIWorkoutType.JustRow,
-    this.source = "c2logbook dart",
-    this.weightClass = C2WeightClass.heavyweight,
-    this.verified = false,
-    this.ranked = false,
-    this.comments,
-    this.privacy = C2PrivacyLevel.private,
-  });
-
-  @override
-  List<Object> get props => [
-        id,
-        userId,
-        // date,
-        // timezone,
-        distance,
-        type,
-        time,
-        workoutType,
-        source,
-        weightClass,
-        verified,
-        ranked,
-        // comments,
-        privacy
-      ];
-
-  factory C2Results.fromJson(Map<String, dynamic> json) {
-    // {
-    //   "id": 3,
-    //   "user_id": 1,
-    //   "date": "2013-06-21 00:00:00",
-    //   "timezone": null,
-    //   "date_utc": null,
-    //   "distance": 23000,
-    //   "type": "rower",
-    //   "time": 152350,
-    //   "time_formatted": "4:13:55.0",
-    //   "workout_type": "unknown",
-    //   "source": "Web",
-    //   "weight_class": "H",
-    //   "verified": false,
-    //   "ranked": false,
-    //   "comments": null,
-    //   "privacy": "partners"
-    // },
-
-    return C2Results(
-        id: json['id'],
-        userId: json['user_id'],
-        // date: json['date'],
-        timezone: json['timezone'],
-        distance: json['distance'],
-        type: C2ResultTypeExtension.fromString(json['type']),
-        time: json['time'],
-        workoutType: C2APIWorkoutTypeExtension.fromString(json['workout_type']),
-        source: json['source'],
-        weightClass: C2WeightClassExtension.fromString(json['weight_class']),
-        verified: json['verified'],
-        ranked: json['ranked'],
-        comments: json['comments'],
-        privacy: C2PrivacyExtension.fromString(json['privacy']) ??
-            C2PrivacyLevel.private);
-  }
+  factory C2Results.fromJson(Map<dynamic, dynamic> json) =>
+      _$C2ResultsFromJson(Map<String, dynamic>.from(json));
 }
