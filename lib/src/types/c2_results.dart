@@ -14,9 +14,8 @@ class C2Results with _$C2Results {
   factory C2Results({
     @JsonKey(name: "id") @Default(0) int id,
     @JsonKey(name: "user_id") @Default(0) int userId,
-    @JsonKey(name: "date") // @Default(DateTime(1970, 1, 1)) DateTime date,
-    @JsonKey(name: "timezone")
-    String? timezone,
+    // @JsonKey(name: "date") @Default(DateTime(1970, 1, 1)) DateTime date,
+    @JsonKey(name: "timezone") String? timezone,
     @JsonKey(name: "distance") @Default(0) int distance,
     @JsonKey(name: "type") @Default(C2ResultType.rower) C2ResultType type,
     @JsonKey(name: "time") @Default(0) int time,
