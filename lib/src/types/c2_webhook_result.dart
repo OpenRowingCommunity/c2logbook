@@ -30,7 +30,7 @@ class C2Webhook {
     //     }
     // }
     final jsonBodyData = jsonBody["data"];
-    if (jsonBodyData["type"] == "result-added") {
+    if (jsonBodyData["type"] != "result-added") {
       //Webhooks containing data for deleted workouts are not yet supported
 
       return null;
