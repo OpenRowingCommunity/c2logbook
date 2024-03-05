@@ -1,5 +1,6 @@
 import 'package:c2logbook/c2logbook.dart';
 import 'package:c2logbook/src/types/c2_types.dart';
+import 'package:c2logbook/src/types/c2_webhook_result.dart';
 import 'package:test/test.dart';
 import 'dart:convert';
 
@@ -76,6 +77,43 @@ void main() {
 
       expect(C2User.fromJson(jsonData), testUser);
     });
+  });
+
+  test("Test parsing webhook JSON", () {
+    final webhookJson = json.decode("""{
+        "data": {
+          "type": "result-added",
+          "result":
+            {
+              "id": 3,
+              "user_id": 1,
+              "date": "2013-06-21 00:00:00",
+              "distance": 23000,
+              "type": "rower",
+              "time": 152350,
+              "time_formatted": "4:13:55.0",
+              "workout_type": "unknown",
+              "source": "Web",
+              "weight_class": "H",
+              "verified": false,
+              "ranked": false,
+              "comments": null
+            }
+        }
+    }""");
+    expect(
+        C2Webhook.parse(webhookJson),
+        C2Results(
+            id: 3,
+            userId: 1,
+            /*date: "2013-06-21 00:00:00",*/ distance: 23000,
+            type: C2ResultType.rower,
+            time: 152350,
+            workoutType: C2APIWorkoutType.unknown,
+            source: "Web",
+            weightClass: C2WeightClass.heavyweight,
+            verified: false,
+            ranked: false));
   });
 
   group('Equality Tests', () {
