@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:c2logbook/src/c2_oauth_client.dart';
-import 'package:oauth2_client/oauth2_helper.dart';
+import 'package:oauth2/oauth2.dart' as oauth2;
 import 'package:http/http.dart' as http;
 
 import '../c2logbook.dart';
@@ -11,6 +11,8 @@ class C2Logbook {
   final bool development;
   final String _userAgent;
 
+  outh2.Client oauthClient;
+
   Uri get _serverUri =>
       Uri.https(development ? 'log-dev.concept2.com' : 'log.concept2.com');
 
@@ -19,31 +21,19 @@ class C2Logbook {
         'User-Agent': _userAgent
       };
 
-  late OAuth2Helper oauthHelper;
-
-  Future<bool> get isLoggedIn => oauthHelper.getTokenFromStorage().then(
-        (value) => value != null,
-      );
+  bool get isLoggedIn => oauthClient != null;
 
   C2Logbook(
       {required String clientId,
       required String clientSecret,
-      required String redirectUri,
+      required oauth2.Credentials credentials,
       this.development = false,
       String? userAgent})
       : _userAgent = userAgent ?? "c2logbook Dart Wrapper Library" {
-    final oauthClient = Concept2OAuth2Client(
-        baseUrl: _serverUri.toString(),
-        redirectUri: redirectUri,
-        customUriScheme: Uri.parse(redirectUri).scheme);
-
-    oauthHelper = OAuth2Helper(oauthClient,
-        grantType: OAuth2Helper.authorizationCode,
-        clientId: clientId,
-        clientSecret: clientSecret,
-        enableState: false,
-        enablePKCE: false,
-        scopes: ['user:read', 'results:read']); //'user:write', 'results:write'
+    // If the OAuth2 credentials have already been saved from a previous run, we
+    // just want to reload them.
+    oauthClient =
+        oauth2.Client(credentials, identifier: clientId, secret: clientSecret);
   }
 
   Future<http.Response> _get(String url,
@@ -51,7 +41,7 @@ class C2Logbook {
     final allHeaders = <String, String>{}
       ..addAll(headers ?? {})
       ..addAll(_headers);
-    return oauthHelper.get(url, headers: allHeaders, httpClient: httpClient);
+    return oauthClient.get(url, headers: allHeaders, httpClient: httpClient);
   }
 
   Future<http.Response> _post(String url,
@@ -61,7 +51,7 @@ class C2Logbook {
     final allHeaders = <String, String>{}
       ..addAll(headers ?? {})
       ..addAll(_headers);
-    return oauthHelper.post(url,
+    return oauthClient.post(url,
         headers: allHeaders, body: body, httpClient: httpClient);
   }
 
@@ -72,7 +62,7 @@ class C2Logbook {
     final allHeaders = <String, String>{}
       ..addAll(headers ?? {})
       ..addAll(_headers);
-    return oauthHelper.patch(url,
+    return oauthClient.patch(url,
         headers: allHeaders, body: body, httpClient: httpClient);
   }
 
@@ -81,7 +71,7 @@ class C2Logbook {
     final allHeaders = <String, String>{}
       ..addAll(headers ?? {})
       ..addAll(_headers);
-    return oauthHelper.delete(url, headers: allHeaders, httpClient: httpClient);
+    return oauthClient.delete(url, headers: allHeaders, httpClient: httpClient);
   }
 
   /// Get user metadata (name, email, etc) by id.

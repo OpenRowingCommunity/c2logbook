@@ -1,6 +1,6 @@
-import 'package:oauth2_client/oauth2_client.dart';
+import 'package:oauth2/oauth2.dart' as oauth2;
 
-class Concept2OAuth2Client extends OAuth2Client {
+class Concept2OAuth2Client {
   String baseUrl;
 
   Concept2OAuth2Client(

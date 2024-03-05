@@ -11,7 +11,7 @@ dependencies:
   freezed_annotation: ^2.4.1
   http: ^1.2.0
   json_annotation: ^4.8.1
-  oauth2_client: ^3.2.2
+  oauth2: ^2.0.2
   # path: ^1.8.0
 
 dev_dependencies:
