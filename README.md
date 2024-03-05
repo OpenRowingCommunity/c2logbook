@@ -89,6 +89,16 @@ children = [
 ```
 
 
+## Development and Running locally
+
+`dart run build_runner build` is needed to generate code before things will likely work (if running locally)
+
+## Testing
+```
+dart run build_runner build
+flutter test
+```
+
 ## Additional information
 
 This package is still in a relatively early stage of development. Things might break. I'll do my best to fix these issues and add new features in a timely manner. Please file a Github Issue if you find any bugs, or start a discussion if you have feature requests or want to ask questions.

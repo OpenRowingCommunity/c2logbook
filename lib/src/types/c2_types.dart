@@ -1,4 +1,6 @@
 // TODO: add conversion to string to allow logged_in to be represented in dart as loggedIn
+import 'package:freezed_annotation/freezed_annotation.dart';
+
 enum C2PrivacyLevel { private, partners, logged_in, everyone }
 
 //https://stackoverflow.com/a/44060511/
@@ -72,7 +74,9 @@ extension C2APIWorkoutTypeExtension on C2APIWorkoutType {
 }
 
 enum C2WeightClass {
+  @JsonValue("L")
   lightweight,
+  @JsonValue("H")
   heavyweight
   // C2WeightClass fromString()
 }

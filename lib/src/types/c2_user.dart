@@ -1,77 +1,32 @@
+// ignore_for_file: invalid_annotation_target
+
 import 'package:c2logbook/src/types/c2_types.dart';
-import 'package:equatable/equatable.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-class C2User extends Equatable {
-  int id;
-  String username;
-  String firstName;
-  String lastName;
-  String gender;
-  String birthday;
-  String email;
-  String country;
-  String? profileImage;
-  bool ageRestricted;
-  bool emailPermission;
-  int? maxHeartRate;
-  int? weight;
-  List<String> roles;
-  C2PrivacyLevel logbookPrivacy;
+part 'c2_user.freezed.dart';
+part 'c2_user.g.dart';
 
-  C2User(
-      {this.id = 0,
-      this.username = '',
-      this.firstName = '',
-      this.lastName = '',
-      this.gender = 'F',
-      this.birthday = '1970-01-01',
-      this.email = '',
-      this.country = '',
-      this.profileImage,
-      this.ageRestricted = false,
-      this.emailPermission = false,
-      this.maxHeartRate,
-      this.weight,
-      this.roles = const [],
-      this.logbookPrivacy = C2PrivacyLevel.private});
+@freezed
+class C2User with _$C2User {
+  const factory C2User(
+      {@Default(0) int id,
+      @Default('') String username,
+      @JsonKey(name: 'first_name') @Default('') String firstName,
+      @JsonKey(name: 'last_name') @Default('') String lastName,
+      @Default('F') String gender,
+      @JsonKey(name: 'dob') @Default('1970-01-01') String birthday,
+      @Default('') String email,
+      @Default('') String country,
+      @JsonKey(name: 'profile_image') String? profileImage,
+      @JsonKey(name: 'age_restricted') @Default(false) bool ageRestricted,
+      @JsonKey(name: 'email_permission') @Default(false) bool emailPermission,
+      @JsonKey(name: 'max_heart_rate') int? maxHeartRate,
+      int? weight,
+      @Default(<String>[]) List<String> roles,
+      @JsonKey(name: 'logbook_privacy')
+      @Default(C2PrivacyLevel.private)
+      C2PrivacyLevel logbookPrivacy}) = _C2User;
 
-  @override
-  List<Object> get props => [
-        id,
-        username,
-        firstName,
-        lastName,
-        gender,
-        birthday,
-        email,
-        country,
-        // profileImage,
-        ageRestricted,
-        emailPermission,
-        // maxHeartRate,
-        // weight,
-        roles,
-        logbookPrivacy
-      ];
-
-  factory C2User.fromJson(Map<String, dynamic> json) {
-    return C2User(
-        id: json['id'],
-        username: json['username'],
-        firstName: json['first_name'],
-        lastName: json['last_name'],
-        gender: json['gender'],
-        birthday: json['dob'],
-        email: json['email'],
-        country: json['country'],
-        profileImage: json['profile_image'],
-        ageRestricted: json['age_restricted'],
-        emailPermission: json['email_permission'],
-        // maxHeartRate: json['max_heart_rate'],
-        // weight: json['weight'],
-        // roles: json['roles'],
-        logbookPrivacy:
-            C2PrivacyExtension.fromString(json['logbook_privacy']) ??
-                C2PrivacyLevel.private);
-  }
+  factory C2User.fromJson(Map<dynamic, dynamic> json) =>
+      _$C2UserFromJson(Map<String, dynamic>.from(json));
 }
