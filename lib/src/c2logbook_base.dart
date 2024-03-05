@@ -21,7 +21,6 @@ class C2Logbook {
         'User-Agent': _userAgent
       };
 
-
   bool get isLoggedIn => oauthClient != null;
 
   C2Logbook(
