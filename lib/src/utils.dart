@@ -46,8 +46,8 @@ class DecimalIntConverter implements JsonConverter<double, int> {
   @override
   double fromJson(int number) {
     //500 tenths of a second (50 sec), factor = -1
-    final factor = number.abs() * base;
-    if (number.isNegative) {
+    final factor = this.places.abs() * base;
+    if (this.places.isNegative) {
       return number / factor;
     } else {
       return number * factor.toDouble();
@@ -56,9 +56,9 @@ class DecimalIntConverter implements JsonConverter<double, int> {
 
   @override
   int toJson(double number) {
-    final factor = number.abs() * base;
-    if (number.isNegative) {
-      return number.toInt() * factor.toInt();
+    final factor = this.places.abs() * base;
+    if (this.places.isNegative) {
+      return number.toInt() * factor;
     } else {
       return number ~/ factor;
     }
