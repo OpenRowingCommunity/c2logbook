@@ -3,6 +3,8 @@
 import 'c2_types.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
+import '../utils.dart';
+
 part 'c2_results.freezed.dart';
 part 'c2_results.g.dart';
 
@@ -16,7 +18,7 @@ class C2Results with _$C2Results {
   factory C2Results({
     @Default(0) int id,
     @JsonKey(name: "user_id") @Default(0) int userId,
-    // @JsonKey(name: "date") @Default(DateTime(1970, 1, 1)) DateTime date,
+    @JsonKey(name: "date") @TimestampConverter() DateTime date,
     String? timezone,
     @Default(0) int distance,
     @Default(C2ResultType.rower) C2ResultType type,
