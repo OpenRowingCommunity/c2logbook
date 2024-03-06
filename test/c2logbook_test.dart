@@ -117,7 +117,7 @@ void main() {
     });
   });
 
-  test("Test parsing webhook JSON", () {
+  test("Test parsing webhook JSON (minimal)", () {
     final webhookJson = json.decode("""{
         "data": {
           "type": "result-added",
@@ -139,20 +139,7 @@ void main() {
             }
         }
     }""");
-    expect(
-        C2Webhook.parse(webhookJson),
-        C2Results(
-            id: 3,
-            userId: 1,
-            date: DateTime.parse("2013-06-21 00:00:00"),
-            distance: 23000,
-            type: C2ResultType.rower,
-            time: 152350,
-            workoutType: C2APIWorkoutType.unknown,
-            source: "Web",
-            weightClass: C2WeightClass.heavyweight,
-            verified: false,
-            ranked: false));
+    expect(C2Webhook.parse(webhookJson), testResultsMin);
   });
 
   group('Equality Tests', () {
