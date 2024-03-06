@@ -11,7 +11,11 @@ part 'c2_results.g.dart';
 @freezed
 class C2Results with _$C2Results {
   //TODO: figure out how to get this into JSON as time_formatted
-  String get timeFormatted => Duration(seconds: this.time).toString();
+  String get timeFormatted => Duration(
+          seconds: this.time.toInt(),
+          milliseconds:
+              (this.time.remainder(1) * Duration.millisecondsPerSecond).toInt())
+      .toString();
 
   C2Results._();
 
