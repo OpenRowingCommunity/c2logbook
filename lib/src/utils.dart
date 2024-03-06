@@ -32,8 +32,8 @@ class TimestampOrNullConverter implements JsonConverter<DateTime?, String?> {
 
 
 /// Responsible for decimal place adjustments
-/// for example, if  a number is stored in JSON as a whole number representing time in tenths of a second, this helps convert it to seconds
-class DecimalIntConverter implements JsonConverter<double, double> {
+/// for example, if  a number is stored in JSON as a whole number representing time in tenths of a second, this helps convert it to a number of seconds
+class DecimalIntConverter implements JsonConverter<double, int> {
   final int places;
   final int base;
 
@@ -44,23 +44,23 @@ class DecimalIntConverter implements JsonConverter<double, double> {
   const DecimalIntConverter({this.places = 0, this.base = 10});
 
   @override
-  double fromJson(double number) {
+  double fromJson(int number) {
     //500 tenths of a second (50 sec), factor = -1
     final factor = number.abs() * base;
     if (number.isNegative) {
       return number / factor;
     } else {
-      return number * factor;
+      return number * factor.toDouble();
     }
   }
 
   @override
-  double toJson(double number) {
+  int toJson(double number) {
     final factor = number.abs() * base;
     if (number.isNegative) {
-      return number * factor;
+      return number.toInt() * factor.toInt();
     } else {
-      return number / factor;
+      return number ~/ factor;
     }
   }
 }
