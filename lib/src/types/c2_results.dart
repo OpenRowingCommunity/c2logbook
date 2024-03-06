@@ -23,7 +23,7 @@ class C2Results with _$C2Results {
     String? timezone,
     @Default(0) int distance,
     @Default(C2ResultType.rower) C2ResultType type,
-    @DecimalIntConverter(places: -1) required double time,
+    @DecimalIntConverter.tenths() required double time,
     @JsonKey(name: "workout_type")
     @Default(C2APIWorkoutType.JustRow)
     C2APIWorkoutType workoutType,
@@ -47,6 +47,9 @@ class C2Results with _$C2Results {
 class DecimalIntConverter implements JsonConverter<double, double> {
   final int places;
   final int base;
+
+  ///Create a DecimalIntConverter that can represent a "tenths" value
+  const DecimalIntConverter.tenths() : this(places: -1);
 
   ///[places] how many places to shift the number. Positive is multiplication, negative is division
   const DecimalIntConverter({this.places = 0, this.base = 10});
