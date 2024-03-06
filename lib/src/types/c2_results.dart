@@ -31,6 +31,7 @@ class C2Results with _$C2Results {
     @JsonKey(name: "weight_class")
     @Default(C2WeightClass.heavyweight)
     C2WeightClass weightClass,
+    @JsonKey(name: "stroke_rate") int? strokeRate,
     @Default(false) bool verified,
     @Default(false) bool ranked,
     String? comments,
