@@ -19,6 +19,7 @@ class C2Results with _$C2Results {
     @Default(0) int id,
     @JsonKey(name: "user_id") @Default(0) int userId,
     @JsonKey(name: "date") @TimestampConverter() DateTime date,
+    @JsonKey(name: "date_utc") @TimestampOrNullConverter() DateTime? dateUtc,
     String? timezone,
     @Default(0) int distance,
     @Default(C2ResultType.rower) C2ResultType type,
