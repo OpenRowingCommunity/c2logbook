@@ -21,7 +21,7 @@ void main() {
       // maxHeartRate: null,
       logbookPrivacy: C2PrivacyLevel.partners);
 
-  final testResults = C2Results(
+  final testResultsMin = C2Results(
       id: 3,
       userId: 1,
       date: DateTime.parse("2013-06-21 00:00:00"),
@@ -35,8 +35,24 @@ void main() {
       ranked: false,
       privacy: C2PrivacyLevel.partners);
 
+  final testResultsMax = C2Results(
+      id: 3,
+      userId: 1,
+      date: DateTime.parse("2013-06-21 00:00:00"),
+      dateUtc: DateTime.parse("2013-06-21 05:00:00Z"),
+      timezone: "US/Eastern",
+      distance: 23000,
+      type: C2ResultType.rower,
+      time: 152350,
+      workoutType: C2APIWorkoutType.unknown,
+      source: "Web",
+      weightClass: C2WeightClass.heavyweight,
+      verified: false,
+      ranked: false,
+      privacy: C2PrivacyLevel.partners);
+
   group('Parsing Tests', () {
-    test('Test Parsing Result JSON', () {
+    test('Test Parsing minimal Result JSON', () {
       final jsonData = json.decode("""{
       "id": 3,
       "user_id": 1,
@@ -55,7 +71,29 @@ void main() {
       "comments": null,
       "privacy": "partners"
 }""");
-      expect(C2Results.fromJson(jsonData), testResults);
+      expect(C2Results.fromJson(jsonData), testResultsMin);
+    });
+
+    test('Test Parsing maximal Result JSON', () {
+      final jsonData = json.decode("""{
+      "id": 3,
+      "user_id": 1,
+      "date": "2013-06-21 00:00:00",
+      "date_utc": "2013-06-21 05:00:00Z",
+      "timezone": "US/Eastern",
+      "distance": 23000,
+      "type": "rower",
+      "time": 152350,
+      "time_formatted": "4:13:55.0",
+      "workout_type": "unknown",
+      "source": "Web",
+      "weight_class": "H",
+      "verified": false,
+      "ranked": false,
+      "comments": null,
+      "privacy": "partners"
+}""");
+      expect(C2Results.fromJson(jsonData), testResultsMax);
     });
 
     test('Test Parsing User JSON', () {
@@ -140,7 +178,7 @@ void main() {
 
     test("equality of Results", () {
       expect(
-          testResults,
+          testResultsMax,
           C2Results(
               id: 3,
               userId: 1,
