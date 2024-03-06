@@ -11,7 +11,7 @@ part 'c2_results.g.dart';
 @freezed
 class C2Results with _$C2Results {
   //TODO: figure out how to get this into JSON as time_formatted
-  // String get timeFormatted => "";
+  String get timeFormatted => Duration(seconds: this.time).toString();
 
   factory C2Results({
     @Default(0) int id,
