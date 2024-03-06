@@ -13,6 +13,8 @@ class C2Results with _$C2Results {
   //TODO: figure out how to get this into JSON as time_formatted
   String get timeFormatted => Duration(seconds: this.time).toString();
 
+  C2Results._();
+
   factory C2Results({
     @Default(0) int id,
     @JsonKey(name: "user_id") @Default(0) int userId,
