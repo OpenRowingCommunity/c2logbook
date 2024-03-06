@@ -24,7 +24,7 @@ void main() {
   final testResults = C2Results(
       id: 3,
       userId: 1,
-      // date:
+      date: DateTime.parse("2013-06-21 00:00:00"),
       distance: 23000,
       type: C2ResultType.rower,
       time: 152350,
@@ -106,7 +106,8 @@ void main() {
         C2Results(
             id: 3,
             userId: 1,
-            /*date: "2013-06-21 00:00:00",*/ distance: 23000,
+            date: DateTime.parse("2013-06-21 00:00:00"),
+            distance: 23000,
             type: C2ResultType.rower,
             time: 152350,
             workoutType: C2APIWorkoutType.unknown,
@@ -143,7 +144,7 @@ void main() {
           C2Results(
               id: 3,
               userId: 1,
-              // date:
+              date: DateTime.parse("2013-06-21 00:00:00"),
               distance: 23000,
               type: C2ResultType.rower,
               time: 152350,
