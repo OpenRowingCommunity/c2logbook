@@ -23,7 +23,7 @@ class C2Results with _$C2Results {
     String? timezone,
     @Default(0) int distance,
     @Default(C2ResultType.rower) C2ResultType type,
-    @Default(0) int time,
+    @DecimalIntConverter(places: -1) required double time,
     @JsonKey(name: "workout_type")
     @Default(C2APIWorkoutType.JustRow)
     C2APIWorkoutType workoutType,
