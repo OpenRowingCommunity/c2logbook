@@ -24,7 +24,7 @@ build_runner/lib/src/server/graph_viz_main.dart.js.tar.gz
 build_runner/lib/src/server/build_updates_client/hot_reload_client.dart.js.deps
 build_runner/lib/src/server/build_updates_client/hot_reload_client.dart.js.tar.gz
 
-
-*.g.dart
-
-*.freezed.dart
+# temporarily dont ignore the freezed generated files while the package is being used as a local dependency
+# see: https://github.com/rrousselGit/freezed/issues/631
+# *.g.dart
+# *.freezed.dart
