@@ -10,11 +10,14 @@ _$C2ResultsImpl _$$C2ResultsImplFromJson(Map<String, dynamic> json) =>
     _$C2ResultsImpl(
       id: json['id'] as int? ?? 0,
       userId: json['user_id'] as int? ?? 0,
+      endDate: const TimestampConverter().fromJson(json['date'] as String),
+      dateUtc: const TimestampOrNullConverter()
+          .fromJson(json['date_utc'] as String?),
       timezone: json['timezone'] as String?,
       distance: json['distance'] as int? ?? 0,
       type: $enumDecodeNullable(_$C2ResultTypeEnumMap, json['type']) ??
           C2ResultType.rower,
-      time: json['time'] as int? ?? 0,
+      time: const DecimalIntConverter.tenths().fromJson(json['time'] as int),
       workoutType: $enumDecodeNullable(
               _$C2APIWorkoutTypeEnumMap, json['workout_type']) ??
           C2APIWorkoutType.JustRow,
@@ -22,6 +25,7 @@ _$C2ResultsImpl _$$C2ResultsImplFromJson(Map<String, dynamic> json) =>
       weightClass:
           $enumDecodeNullable(_$C2WeightClassEnumMap, json['weight_class']) ??
               C2WeightClass.heavyweight,
+      strokeRate: json['stroke_rate'] as int?,
       verified: json['verified'] as bool? ?? false,
       ranked: json['ranked'] as bool? ?? false,
       comments: json['comments'] as String?,
@@ -33,13 +37,16 @@ Map<String, dynamic> _$$C2ResultsImplToJson(_$C2ResultsImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'user_id': instance.userId,
+      'date': const TimestampConverter().toJson(instance.endDate),
+      'date_utc': const TimestampOrNullConverter().toJson(instance.dateUtc),
       'timezone': instance.timezone,
       'distance': instance.distance,
       'type': _$C2ResultTypeEnumMap[instance.type]!,
-      'time': instance.time,
+      'time': const DecimalIntConverter.tenths().toJson(instance.time),
       'workout_type': _$C2APIWorkoutTypeEnumMap[instance.workoutType]!,
       'source': instance.source,
       'weight_class': _$C2WeightClassEnumMap[instance.weightClass]!,
+      'stroke_rate': instance.strokeRate,
       'verified': instance.verified,
       'ranked': instance.ranked,
       'comments': instance.comments,
