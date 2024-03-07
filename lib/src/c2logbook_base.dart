@@ -1,6 +1,5 @@
 import 'dart:convert';
 
-import 'package:c2logbook/src/c2_oauth_client.dart';
 import 'package:oauth2/oauth2.dart' as oauth2;
 import 'package:http/http.dart' as http;
 
