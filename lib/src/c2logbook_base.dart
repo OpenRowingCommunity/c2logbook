@@ -19,7 +19,7 @@ class C2Logbook {
         'User-Agent': _userAgent
       };
 
-  bool get isLoggedIn => oauthClient != null;
+  // bool get isLoggedIn => oauthClient != null;
 
   C2Logbook(
       {required String clientId,
