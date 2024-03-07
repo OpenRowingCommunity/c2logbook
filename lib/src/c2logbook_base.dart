@@ -10,7 +10,7 @@ class C2Logbook {
   final bool development;
   final String _userAgent;
 
-  outh2.Client oauthClient;
+  late oauth2.Client oauthClient;
 
   Uri get _serverUri =>
       Uri.https(development ? 'log-dev.concept2.com' : 'log.concept2.com');
