@@ -35,23 +35,19 @@ class C2Logbook {
         oauth2.Client(credentials, identifier: clientId, secret: clientSecret);
   }
 
-  Future<http.Response> _get(String url,
-      {Map<String, String>? headers, http.Client? httpClient}) async {
+  Future<http.Response> _get(String url, {Map<String, String>? headers}) async {
     final allHeaders = <String, String>{}
       ..addAll(headers ?? {})
       ..addAll(_headers);
-    return oauthClient.get(url, headers: allHeaders, httpClient: httpClient);
+    return oauthClient.get(Uri.parse(url), headers: allHeaders);
   }
 
   Future<http.Response> _post(String url,
-      {Map<String, String>? headers,
-      dynamic body,
-      http.Client? httpClient}) async {
+      {Map<String, String>? headers, dynamic body}) async {
     final allHeaders = <String, String>{}
       ..addAll(headers ?? {})
       ..addAll(_headers);
-    return oauthClient.post(url,
-        headers: allHeaders, body: body, httpClient: httpClient);
+    return oauthClient.post(Uri.parse(url), headers: allHeaders, body: body);
   }
 
   Future<http.Response> _patch(String url,
@@ -61,8 +57,7 @@ class C2Logbook {
     final allHeaders = <String, String>{}
       ..addAll(headers ?? {})
       ..addAll(_headers);
-    return oauthClient.patch(url,
-        headers: allHeaders, body: body, httpClient: httpClient);
+    return oauthClient.patch(Uri.parse(url), headers: allHeaders, body: body);
   }
 
   Future<http.Response> _delete(String url,
@@ -70,7 +65,7 @@ class C2Logbook {
     final allHeaders = <String, String>{}
       ..addAll(headers ?? {})
       ..addAll(_headers);
-    return oauthClient.delete(url, headers: allHeaders, httpClient: httpClient);
+    return oauthClient.delete(Uri.parse(url), headers: allHeaders);
   }
 
   /// Get user metadata (name, email, etc) by id.
