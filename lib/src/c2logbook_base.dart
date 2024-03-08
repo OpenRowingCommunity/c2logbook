@@ -50,8 +50,7 @@ class C2Logbook {
   }
 
   Future<http.Response> _patch(String url,
-      {Map<String, String>? headers,
-      dynamic body}) async {
+      {Map<String, String>? headers, dynamic body}) async {
     final Map<String, String> allHeaders = <String, String>{}
       ..addAll(headers ?? <String, String>{})
       ..addAll(_headers);

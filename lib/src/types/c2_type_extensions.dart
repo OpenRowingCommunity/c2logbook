@@ -5,7 +5,8 @@ import 'c2_types.dart';
 //https://stackoverflow.com/a/44060511/
 extension C2PrivacyExtension on C2PrivacyLevel {
   static C2PrivacyLevel? fromString(String value) {
-    return C2PrivacyLevel.values.firstWhere((C2PrivacyLevel e) => e.name == value);
+    return C2PrivacyLevel.values
+        .firstWhere((C2PrivacyLevel e) => e.name == value);
   }
 }
 
@@ -16,7 +17,8 @@ extension C2ResultTypeExtension on C2PrivacyLevel {
 }
 
 extension C2APIWorkoutTypeExtension on C2APIWorkoutType {
-  static Map<C2APIWorkoutType, String> _workoutTypes = <C2APIWorkoutType, String>{
+  static Map<C2APIWorkoutType, String> _workoutTypes =
+      <C2APIWorkoutType, String>{
     C2APIWorkoutType.unknown: 'unknown',
     C2APIWorkoutType.JustRow: 'JustRow',
     C2APIWorkoutType.FixedDistanceSplits: 'FixedDistanceSplits',
@@ -35,8 +37,9 @@ extension C2APIWorkoutTypeExtension on C2APIWorkoutType {
   }
 
   static C2APIWorkoutType fromString(String value) {
-    C2APIWorkoutType? type = _workoutTypes.map((C2APIWorkoutType key, String value) =>
-        MapEntry(value.toUpperCase(), key))[value.toUpperCase()];
+    C2APIWorkoutType? type = _workoutTypes.map(
+        (C2APIWorkoutType key, String value) =>
+            MapEntry(value.toUpperCase(), key))[value.toUpperCase()];
     if (type == null) {
       throw ArgumentError("value \"$value\" has no matching C2APIWorkoutType");
     } else {
