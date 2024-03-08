@@ -32,8 +32,7 @@ void main() {
       source: "Web",
       weightClass: C2WeightClass.heavyweight,
       verified: false,
-      ranked: false,
-      privacy: C2PrivacyLevel.partners);
+      ranked: false);
 
   final testResultsMax = C2Results(
       id: 3,
@@ -58,8 +57,6 @@ void main() {
       "id": 3,
       "user_id": 1,
       "date": "2013-06-21 00:00:00",
-      "timezone": null,
-      "date_utc": null,
       "distance": 23000,
       "type": "rower",
       "time": 152350,
@@ -69,8 +66,7 @@ void main() {
       "weight_class": "H",
       "verified": false,
       "ranked": false,
-      "comments": null,
-      "privacy": "partners"
+      "comments": null
 }""");
       expect(C2Results.fromJson(jsonData), testResultsMin);
     });
@@ -172,9 +168,12 @@ void main() {
               id: 3,
               userId: 1,
               endDate: DateTime.parse("2013-06-21 00:00:00"),
+              dateUtc: DateTime.parse("2013-06-21 05:00:00Z"),
+              timezone: "US/Eastern",
               distance: 23000,
               type: C2ResultType.rower,
               time: 15235.0,
+              strokeRate: 32,
               workoutType: C2APIWorkoutType.unknown,
               source: "Web",
               weightClass: C2WeightClass.heavyweight,
