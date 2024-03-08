@@ -35,34 +35,33 @@ class C2Logbook {
   }
 
   Future<http.Response> _get(String url, {Map<String, String>? headers}) async {
-    final allHeaders = <String, String>{}
-      ..addAll(headers ?? {})
+    final Map<String, String> allHeaders = <String, String>{}
+      ..addAll(headers ?? <String, String>{})
       ..addAll(_headers);
     return oauthClient.get(Uri.parse(url), headers: allHeaders);
   }
 
   Future<http.Response> _post(String url,
       {Map<String, String>? headers, dynamic body}) async {
-    final allHeaders = <String, String>{}
-      ..addAll(headers ?? {})
+    final Map<String, String> allHeaders = <String, String>{}
+      ..addAll(headers ?? <String, String>{})
       ..addAll(_headers);
     return oauthClient.post(Uri.parse(url), headers: allHeaders, body: body);
   }
 
   Future<http.Response> _patch(String url,
       {Map<String, String>? headers,
-      dynamic body,
-      http.Client? httpClient}) async {
-    final allHeaders = <String, String>{}
-      ..addAll(headers ?? {})
+      dynamic body}) async {
+    final Map<String, String> allHeaders = <String, String>{}
+      ..addAll(headers ?? <String, String>{})
       ..addAll(_headers);
     return oauthClient.patch(Uri.parse(url), headers: allHeaders, body: body);
   }
 
   Future<http.Response> _delete(String url,
-      {Map<String, String>? headers, http.Client? httpClient}) async {
-    final allHeaders = <String, String>{}
-      ..addAll(headers ?? {})
+      {Map<String, String>? headers}) async {
+    final Map<String, String> allHeaders = <String, String>{}
+      ..addAll(headers ?? <String, String>{})
       ..addAll(_headers);
     return oauthClient.delete(Uri.parse(url), headers: allHeaders);
   }
@@ -74,7 +73,7 @@ class C2Logbook {
   /// [userId] The integer id of the user to fetch. If none is specified, it defaults to the ID of the currently authenticated user.
   Future<C2User> getUserMetadata({int? userId}) async {
     return _get(_serverUri.resolve("/api/users/${userId ?? "me"}").toString())
-        .then((response) => json.decode(response.body))
+        .then((http.Response response) => json.decode(response.body))
         .then(
           (json) => C2User.fromJson(json['data']),
         );
@@ -104,7 +103,7 @@ class C2Logbook {
     Uri uri = _serverUri.resolve("/api/users/${userId ?? "me"}/results");
 
     return _get(uri.toString())
-        .then((response) => json.decode(response.body))
+        .then((http.Response response) => json.decode(response.body))
         .then((json) {
       // TODO: Handle pagination
       return C2Results.fromJson(json['data']);

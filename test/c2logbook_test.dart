@@ -1,11 +1,9 @@
 import 'package:c2logbook/c2logbook.dart';
-import 'package:c2logbook/src/types/c2_types.dart';
-import 'package:c2logbook/src/types/c2_webhook_result.dart';
 import 'package:test/test.dart';
 import 'dart:convert';
 
 void main() {
-  final testUser = C2User(
+  final C2User testUser = C2User(
       id: 1,
       username: "David Hart",
       firstName: "David",
@@ -21,7 +19,7 @@ void main() {
       // maxHeartRate: null,
       logbookPrivacy: C2PrivacyLevel.partners);
 
-  final testResultsMin = C2Results(
+  final C2Results testResultsMin = C2Results(
       id: 3,
       userId: 1,
       endDate: DateTime.parse("2013-06-21 00:00:00"),
@@ -34,7 +32,7 @@ void main() {
       verified: false,
       ranked: false);
 
-  final testResultsMax = C2Results(
+  final C2Results testResultsMax = C2Results(
       id: 3,
       userId: 1,
       endDate: DateTime.parse("2013-06-21 00:00:00"),
