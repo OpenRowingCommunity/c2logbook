@@ -1,6 +1,6 @@
 // TODO: add conversion to string to allow logged_in to be represented in dart as loggedIn
 
-import 'c2_types.dart';
+part of 'index.dart';
 
 //https://stackoverflow.com/a/44060511/
 extension C2PrivacyExtension on C2PrivacyLevel {

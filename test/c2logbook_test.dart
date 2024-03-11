@@ -1,6 +1,7 @@
 import 'package:c2logbook/c2logbook.dart';
 import 'package:test/test.dart';
 import 'dart:convert';
+import '../lib/src/types/index.dart';
 
 void main() {
   final C2User testUser = C2User(
