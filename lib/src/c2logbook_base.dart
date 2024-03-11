@@ -1,17 +1,15 @@
 import 'dart:convert';
 
-import 'package:c2logbook/src/c2_oauth_client.dart';
 import 'package:oauth2/oauth2.dart' as oauth2;
 import 'package:http/http.dart' as http;
 
 import '../c2logbook.dart';
-import 'types/c2_types.dart';
 
 class C2Logbook {
   final bool development;
   final String _userAgent;
 
-  outh2.Client oauthClient;
+  late oauth2.Client oauthClient;
 
   Uri get _serverUri =>
       Uri.https(development ? 'log-dev.concept2.com' : 'log.concept2.com');
@@ -21,7 +19,7 @@ class C2Logbook {
         'User-Agent': _userAgent
       };
 
-  bool get isLoggedIn => oauthClient != null;
+  // bool get isLoggedIn => oauthClient != null;
 
   C2Logbook(
       {required String clientId,
@@ -36,42 +34,35 @@ class C2Logbook {
         oauth2.Client(credentials, identifier: clientId, secret: clientSecret);
   }
 
-  Future<http.Response> _get(String url,
-      {Map<String, String>? headers, http.Client? httpClient}) async {
-    final allHeaders = <String, String>{}
-      ..addAll(headers ?? {})
+  Future<http.Response> _get(String url, {Map<String, String>? headers}) async {
+    final Map<String, String> allHeaders = <String, String>{}
+      ..addAll(headers ?? <String, String>{})
       ..addAll(_headers);
-    return oauthClient.get(url, headers: allHeaders, httpClient: httpClient);
+    return oauthClient.get(Uri.parse(url), headers: allHeaders);
   }
 
   Future<http.Response> _post(String url,
-      {Map<String, String>? headers,
-      dynamic body,
-      http.Client? httpClient}) async {
-    final allHeaders = <String, String>{}
-      ..addAll(headers ?? {})
+      {Map<String, String>? headers, dynamic body}) async {
+    final Map<String, String> allHeaders = <String, String>{}
+      ..addAll(headers ?? <String, String>{})
       ..addAll(_headers);
-    return oauthClient.post(url,
-        headers: allHeaders, body: body, httpClient: httpClient);
+    return oauthClient.post(Uri.parse(url), headers: allHeaders, body: body);
   }
 
   Future<http.Response> _patch(String url,
-      {Map<String, String>? headers,
-      dynamic body,
-      http.Client? httpClient}) async {
-    final allHeaders = <String, String>{}
-      ..addAll(headers ?? {})
+      {Map<String, String>? headers, dynamic body}) async {
+    final Map<String, String> allHeaders = <String, String>{}
+      ..addAll(headers ?? <String, String>{})
       ..addAll(_headers);
-    return oauthClient.patch(url,
-        headers: allHeaders, body: body, httpClient: httpClient);
+    return oauthClient.patch(Uri.parse(url), headers: allHeaders, body: body);
   }
 
   Future<http.Response> _delete(String url,
-      {Map<String, String>? headers, http.Client? httpClient}) async {
-    final allHeaders = <String, String>{}
-      ..addAll(headers ?? {})
+      {Map<String, String>? headers}) async {
+    final Map<String, String> allHeaders = <String, String>{}
+      ..addAll(headers ?? <String, String>{})
       ..addAll(_headers);
-    return oauthClient.delete(url, headers: allHeaders, httpClient: httpClient);
+    return oauthClient.delete(Uri.parse(url), headers: allHeaders);
   }
 
   /// Get user metadata (name, email, etc) by id.
@@ -81,7 +72,7 @@ class C2Logbook {
   /// [userId] The integer id of the user to fetch. If none is specified, it defaults to the ID of the currently authenticated user.
   Future<C2User> getUserMetadata({int? userId}) async {
     return _get(_serverUri.resolve("/api/users/${userId ?? "me"}").toString())
-        .then((response) => json.decode(response.body))
+        .then((http.Response response) => json.decode(response.body))
         .then(
           (json) => C2User.fromJson(json['data']),
         );
@@ -111,7 +102,7 @@ class C2Logbook {
     Uri uri = _serverUri.resolve("/api/users/${userId ?? "me"}/results");
 
     return _get(uri.toString())
-        .then((response) => json.decode(response.body))
+        .then((http.Response response) => json.decode(response.body))
         .then((json) {
       // TODO: Handle pagination
       return C2Results.fromJson(json['data']);
