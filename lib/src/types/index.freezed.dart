@@ -2318,7 +2318,7 @@ C2Workout _$C2WorkoutFromJson(Map<String, dynamic> json) {
 mixin _$C2Workout {
   List<C2Intervals>? get intervals => throw _privateConstructorUsedError;
   List<C2Splits>? get splits => throw _privateConstructorUsedError;
-  int get realTime => throw _privateConstructorUsedError;
+  int? get realTime => throw _privateConstructorUsedError;
   double get realDistance => throw _privateConstructorUsedError;
   @DecimalIntConverter.tenths()
   double get restTime => throw _privateConstructorUsedError;
@@ -2337,7 +2337,7 @@ abstract class $C2WorkoutCopyWith<$Res> {
   $Res call(
       {List<C2Intervals>? intervals,
       List<C2Splits>? splits,
-      int realTime,
+      int? realTime,
       double realDistance,
       @DecimalIntConverter.tenths() double restTime});
 }
@@ -2357,7 +2357,7 @@ class _$C2WorkoutCopyWithImpl<$Res, $Val extends C2Workout>
   $Res call({
     Object? intervals = freezed,
     Object? splits = freezed,
-    Object? realTime = null,
+    Object? realTime = freezed,
     Object? realDistance = null,
     Object? restTime = null,
   }) {
@@ -2370,10 +2370,10 @@ class _$C2WorkoutCopyWithImpl<$Res, $Val extends C2Workout>
           ? _value.splits
           : splits // ignore: cast_nullable_to_non_nullable
               as List<C2Splits>?,
-      realTime: null == realTime
+      realTime: freezed == realTime
           ? _value.realTime
           : realTime // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       realDistance: null == realDistance
           ? _value.realDistance
           : realDistance // ignore: cast_nullable_to_non_nullable
@@ -2397,7 +2397,7 @@ abstract class _$$C2WorkoutImplCopyWith<$Res>
   $Res call(
       {List<C2Intervals>? intervals,
       List<C2Splits>? splits,
-      int realTime,
+      int? realTime,
       double realDistance,
       @DecimalIntConverter.tenths() double restTime});
 }
@@ -2415,7 +2415,7 @@ class __$$C2WorkoutImplCopyWithImpl<$Res>
   $Res call({
     Object? intervals = freezed,
     Object? splits = freezed,
-    Object? realTime = null,
+    Object? realTime = freezed,
     Object? realDistance = null,
     Object? restTime = null,
   }) {
@@ -2428,10 +2428,10 @@ class __$$C2WorkoutImplCopyWithImpl<$Res>
           ? _value._splits
           : splits // ignore: cast_nullable_to_non_nullable
               as List<C2Splits>?,
-      realTime: null == realTime
+      realTime: freezed == realTime
           ? _value.realTime
           : realTime // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       realDistance: null == realDistance
           ? _value.realDistance
           : realDistance // ignore: cast_nullable_to_non_nullable
@@ -2484,7 +2484,7 @@ class _$C2WorkoutImpl extends _C2Workout {
 
   @override
   @JsonKey()
-  final int realTime;
+  final int? realTime;
   @override
   @JsonKey()
   final double realDistance;
@@ -2541,7 +2541,7 @@ abstract class _C2Workout extends C2Workout {
   factory _C2Workout(
           {final List<C2Intervals>? intervals,
           final List<C2Splits>? splits,
-          final int realTime,
+          final int? realTime,
           final double realDistance,
           @DecimalIntConverter.tenths() required final double restTime}) =
       _$C2WorkoutImpl;
@@ -2555,7 +2555,7 @@ abstract class _C2Workout extends C2Workout {
   @override
   List<C2Splits>? get splits;
   @override
-  int get realTime;
+  int? get realTime;
   @override
   double get realDistance;
   @override
