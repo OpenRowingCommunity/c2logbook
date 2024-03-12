@@ -9,12 +9,70 @@ part of 'index.dart';
 _$C2FullResultsImpl _$$C2FullResultsImplFromJson(Map<String, dynamic> json) =>
     _$C2FullResultsImpl(
       id: json['id'] as int? ?? 0,
+      userId: json['user_id'] as int? ?? 0,
+      date: const TimestampConverter().fromJson(json['date'] as String),
+      timezone: json['timezone'] as String?,
+      dateUtc: const TimestampOrNullConverter()
+          .fromJson(json['date_utc'] as String?),
+      distance: json['distance'] as int? ?? 0,
+      type: $enumDecodeNullable(_$C2ResultTypeEnumMap, json['type']) ??
+          C2ResultType.rower,
+      time: const DecimalIntConverter.tenths().fromJson(json['time'] as int),
+      workoutType: $enumDecodeNullable(
+              _$C2APIWorkoutTypeEnumMap, json['workout_type']) ??
+          C2APIWorkoutType.JustRow,
+      source: json['source'] as String? ?? "c2logbook dart",
+      weightClass:
+          $enumDecodeNullable(_$C2WeightClassEnumMap, json['weight_class']) ??
+              C2WeightClass.heavyweight,
     );
 
 Map<String, dynamic> _$$C2FullResultsImplToJson(_$C2FullResultsImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
+      'user_id': instance.userId,
+      'date': const TimestampConverter().toJson(instance.date),
+      'timezone': instance.timezone,
+      'date_utc': const TimestampOrNullConverter().toJson(instance.dateUtc),
+      'distance': instance.distance,
+      'type': _$C2ResultTypeEnumMap[instance.type]!,
+      'time': const DecimalIntConverter.tenths().toJson(instance.time),
+      'workout_type': _$C2APIWorkoutTypeEnumMap[instance.workoutType]!,
+      'source': instance.source,
+      'weight_class': _$C2WeightClassEnumMap[instance.weightClass]!,
     };
+
+const _$C2ResultTypeEnumMap = {
+  C2ResultType.rower: 'rower',
+  C2ResultType.skierg: 'skierg',
+  C2ResultType.bike: 'bike',
+  C2ResultType.dynamic: 'dynamic',
+  C2ResultType.slides: 'slides',
+  C2ResultType.paddle: 'paddle',
+  C2ResultType.water: 'water',
+  C2ResultType.snow: 'snow',
+  C2ResultType.rollerski: 'rollerski',
+  C2ResultType.multierg: 'multierg',
+};
+
+const _$C2APIWorkoutTypeEnumMap = {
+  C2APIWorkoutType.unknown: 'unknown',
+  C2APIWorkoutType.JustRow: 'JustRow',
+  C2APIWorkoutType.FixedDistanceSplits: 'FixedDistanceSplits',
+  C2APIWorkoutType.FixedTimeSplits: 'FixedTimeSplits',
+  C2APIWorkoutType.FixedCalorie: 'FixedCalorie',
+  C2APIWorkoutType.FixedTimeInterval: 'FixedTimeInterval',
+  C2APIWorkoutType.FixedDistanceInterval: 'FixedDistanceInterval',
+  C2APIWorkoutType.FixedCalorieInterval: 'FixedCalorieInterval',
+  C2APIWorkoutType.VariableInterval: 'VariableInterval',
+  C2APIWorkoutType.VariableIntervalUndefinedRest:
+      'VariableIntervalUndefinedRest',
+};
+
+const _$C2WeightClassEnumMap = {
+  C2WeightClass.lightweight: 'L',
+  C2WeightClass.heavyweight: 'H',
+};
 
 _$C2HeartRateImpl _$$C2HeartRateImplFromJson(Map<String, dynamic> json) =>
     _$C2HeartRateImpl(
@@ -103,38 +161,6 @@ Map<String, dynamic> _$$C2ResultsImplToJson(_$C2ResultsImpl instance) =>
       'comments': instance.comments,
       'privacy': _$C2PrivacyLevelEnumMap[instance.privacy]!,
     };
-
-const _$C2ResultTypeEnumMap = {
-  C2ResultType.rower: 'rower',
-  C2ResultType.skierg: 'skierg',
-  C2ResultType.bike: 'bike',
-  C2ResultType.dynamic: 'dynamic',
-  C2ResultType.slides: 'slides',
-  C2ResultType.paddle: 'paddle',
-  C2ResultType.water: 'water',
-  C2ResultType.snow: 'snow',
-  C2ResultType.rollerski: 'rollerski',
-  C2ResultType.multierg: 'multierg',
-};
-
-const _$C2APIWorkoutTypeEnumMap = {
-  C2APIWorkoutType.unknown: 'unknown',
-  C2APIWorkoutType.JustRow: 'JustRow',
-  C2APIWorkoutType.FixedDistanceSplits: 'FixedDistanceSplits',
-  C2APIWorkoutType.FixedTimeSplits: 'FixedTimeSplits',
-  C2APIWorkoutType.FixedCalorie: 'FixedCalorie',
-  C2APIWorkoutType.FixedTimeInterval: 'FixedTimeInterval',
-  C2APIWorkoutType.FixedDistanceInterval: 'FixedDistanceInterval',
-  C2APIWorkoutType.FixedCalorieInterval: 'FixedCalorieInterval',
-  C2APIWorkoutType.VariableInterval: 'VariableInterval',
-  C2APIWorkoutType.VariableIntervalUndefinedRest:
-      'VariableIntervalUndefinedRest',
-};
-
-const _$C2WeightClassEnumMap = {
-  C2WeightClass.lightweight: 'L',
-  C2WeightClass.heavyweight: 'H',
-};
 
 const _$C2PrivacyLevelEnumMap = {
   C2PrivacyLevel.private: 'private',

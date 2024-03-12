@@ -15,18 +15,18 @@ class C2FullResults with _$C2FullResults {
 
   factory C2FullResults({
     @JsonKey(name: 'id') @Default(0) int id,
-    // @JsonKey(name: 'user_id') @Default(0) int userId,
-    // @JsonKey(name: 'date') @TimestampConverter() required DateTime date,
-    // @JsonKey(name: 'timezone') String? timezone,
-    // @JsonKey(name: 'date_utc') @TimestampOrNullConverter() DateTime? dateUtc,
-    // @JsonKey(name: 'distance') @Default(0) int distance,
-    // @JsonKey(name: 'type') @Default(C2ResultType.rower) C2ResultType type,
-    // @JsonKey(name: 'time') @DecimalIntConverter.tenths() required double time,
-    // @JsonKey(name: 'workout_type') @Default(C2APIWorkoutType.JustRow)
-    // C2APIWorkoutType workoutType,
-    // @JsonKey(name: 'source') @Default("c2logbook dart") String source,
-    // @JsonKey(name: 'weight_class') @Default(C2WeightClass.heavyweight)
-    // C2WeightClass weightClass,
+    @JsonKey(name: 'user_id') @Default(0) int userId,
+    @JsonKey(name: 'date') @TimestampConverter() required DateTime date,
+    @JsonKey(name: 'timezone') String? timezone,
+    @JsonKey(name: 'date_utc') @TimestampOrNullConverter() DateTime? dateUtc,
+    @JsonKey(name: 'distance') @Default(0) int distance,
+    @JsonKey(name: 'type') @Default(C2ResultType.rower) C2ResultType type,
+    @JsonKey(name: 'time') @DecimalIntConverter.tenths() required double time,
+    @JsonKey(name: 'workout_type') @Default(C2APIWorkoutType.JustRow)
+    C2APIWorkoutType workoutType,
+    @JsonKey(name: 'source') @Default("c2logbook dart") String source,
+    @JsonKey(name: 'weight_class') @Default(C2WeightClass.heavyweight)
+    C2WeightClass weightClass,
     // @JsonKey(name: 'verified') @Default(false) bool verified,
     // @JsonKey(name: 'ranked') @Default(false) bool ranked,
     // @JsonKey(name: 'comments')String? comments,
