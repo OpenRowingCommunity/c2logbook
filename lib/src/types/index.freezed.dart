@@ -1708,7 +1708,8 @@ C2Splits _$C2SplitsFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$C2Splits {
-// @JsonKey(name: 'type') @Default("time") String? type,
+  @JsonKey(name: 'type')
+  String? get type => throw _privateConstructorUsedError;
   @JsonKey(name: 'time')
   @DecimalIntConverter.tenths()
   double get time => throw _privateConstructorUsedError;
@@ -1733,7 +1734,8 @@ abstract class $C2SplitsCopyWith<$Res> {
       _$C2SplitsCopyWithImpl<$Res, C2Splits>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'time') @DecimalIntConverter.tenths() double time,
+      {@JsonKey(name: 'type') String? type,
+      @JsonKey(name: 'time') @DecimalIntConverter.tenths() double time,
       @JsonKey(name: 'distance') double distance,
       @JsonKey(name: 'calories_total') int caloriesTotal,
       @JsonKey(name: 'stroke_rate') int strokeRate,
@@ -1755,6 +1757,7 @@ class _$C2SplitsCopyWithImpl<$Res, $Val extends C2Splits>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? type = freezed,
     Object? time = null,
     Object? distance = null,
     Object? caloriesTotal = null,
@@ -1762,6 +1765,10 @@ class _$C2SplitsCopyWithImpl<$Res, $Val extends C2Splits>
     Object? heartRate = freezed,
   }) {
     return _then(_value.copyWith(
+      type: freezed == type
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as String?,
       time: null == time
           ? _value.time
           : time // ignore: cast_nullable_to_non_nullable
@@ -1807,7 +1814,8 @@ abstract class _$$C2SplitsImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'time') @DecimalIntConverter.tenths() double time,
+      {@JsonKey(name: 'type') String? type,
+      @JsonKey(name: 'time') @DecimalIntConverter.tenths() double time,
       @JsonKey(name: 'distance') double distance,
       @JsonKey(name: 'calories_total') int caloriesTotal,
       @JsonKey(name: 'stroke_rate') int strokeRate,
@@ -1828,6 +1836,7 @@ class __$$C2SplitsImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? type = freezed,
     Object? time = null,
     Object? distance = null,
     Object? caloriesTotal = null,
@@ -1835,6 +1844,10 @@ class __$$C2SplitsImplCopyWithImpl<$Res>
     Object? heartRate = freezed,
   }) {
     return _then(_$C2SplitsImpl(
+      type: freezed == type
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as String?,
       time: null == time
           ? _value.time
           : time // ignore: cast_nullable_to_non_nullable
@@ -1863,7 +1876,8 @@ class __$$C2SplitsImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$C2SplitsImpl extends _C2Splits {
   _$C2SplitsImpl(
-      {@JsonKey(name: 'time') @DecimalIntConverter.tenths() required this.time,
+      {@JsonKey(name: 'type') this.type = "time",
+      @JsonKey(name: 'time') @DecimalIntConverter.tenths() required this.time,
       @JsonKey(name: 'distance') this.distance = 0.0,
       @JsonKey(name: 'calories_total') this.caloriesTotal = 0,
       @JsonKey(name: 'stroke_rate') this.strokeRate = 0,
@@ -1873,7 +1887,9 @@ class _$C2SplitsImpl extends _C2Splits {
   factory _$C2SplitsImpl.fromJson(Map<String, dynamic> json) =>
       _$$C2SplitsImplFromJson(json);
 
-// @JsonKey(name: 'type') @Default("time") String? type,
+  @override
+  @JsonKey(name: 'type')
+  final String? type;
   @override
   @JsonKey(name: 'time')
   @DecimalIntConverter.tenths()
@@ -1893,7 +1909,7 @@ class _$C2SplitsImpl extends _C2Splits {
 
   @override
   String toString() {
-    return 'C2Splits(time: $time, distance: $distance, caloriesTotal: $caloriesTotal, strokeRate: $strokeRate, heartRate: $heartRate)';
+    return 'C2Splits(type: $type, time: $time, distance: $distance, caloriesTotal: $caloriesTotal, strokeRate: $strokeRate, heartRate: $heartRate)';
   }
 
   @override
@@ -1901,6 +1917,7 @@ class _$C2SplitsImpl extends _C2Splits {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$C2SplitsImpl &&
+            (identical(other.type, type) || other.type == type) &&
             (identical(other.time, time) || other.time == time) &&
             (identical(other.distance, distance) ||
                 other.distance == distance) &&
@@ -1915,7 +1932,7 @@ class _$C2SplitsImpl extends _C2Splits {
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
-      runtimeType, time, distance, caloriesTotal, strokeRate, heartRate);
+      runtimeType, type, time, distance, caloriesTotal, strokeRate, heartRate);
 
   @JsonKey(ignore: true)
   @override
@@ -1933,7 +1950,8 @@ class _$C2SplitsImpl extends _C2Splits {
 
 abstract class _C2Splits extends C2Splits {
   factory _C2Splits(
-          {@JsonKey(name: 'time')
+          {@JsonKey(name: 'type') final String? type,
+          @JsonKey(name: 'time')
           @DecimalIntConverter.tenths()
           required final double time,
           @JsonKey(name: 'distance') final double distance,
@@ -1946,7 +1964,10 @@ abstract class _C2Splits extends C2Splits {
   factory _C2Splits.fromJson(Map<String, dynamic> json) =
       _$C2SplitsImpl.fromJson;
 
-  @override // @JsonKey(name: 'type') @Default("time") String? type,
+  @override
+  @JsonKey(name: 'type')
+  String? get type;
+  @override
   @JsonKey(name: 'time')
   @DecimalIntConverter.tenths()
   double get time;
@@ -2436,8 +2457,6 @@ C2Workout _$C2WorkoutFromJson(Map<String, dynamic> json) {
 mixin _$C2Workout {
   @JsonKey(name: 'intervals')
   List<C2Intervals>? get intervals => throw _privateConstructorUsedError;
-  @JsonKey(name: 'splits')
-  List<C2Splits>? get splits => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -2450,9 +2469,7 @@ abstract class $C2WorkoutCopyWith<$Res> {
   factory $C2WorkoutCopyWith(C2Workout value, $Res Function(C2Workout) then) =
       _$C2WorkoutCopyWithImpl<$Res, C2Workout>;
   @useResult
-  $Res call(
-      {@JsonKey(name: 'intervals') List<C2Intervals>? intervals,
-      @JsonKey(name: 'splits') List<C2Splits>? splits});
+  $Res call({@JsonKey(name: 'intervals') List<C2Intervals>? intervals});
 }
 
 /// @nodoc
@@ -2469,17 +2486,12 @@ class _$C2WorkoutCopyWithImpl<$Res, $Val extends C2Workout>
   @override
   $Res call({
     Object? intervals = freezed,
-    Object? splits = freezed,
   }) {
     return _then(_value.copyWith(
       intervals: freezed == intervals
           ? _value.intervals
           : intervals // ignore: cast_nullable_to_non_nullable
               as List<C2Intervals>?,
-      splits: freezed == splits
-          ? _value.splits
-          : splits // ignore: cast_nullable_to_non_nullable
-              as List<C2Splits>?,
     ) as $Val);
   }
 }
@@ -2492,9 +2504,7 @@ abstract class _$$C2WorkoutImplCopyWith<$Res>
       __$$C2WorkoutImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {@JsonKey(name: 'intervals') List<C2Intervals>? intervals,
-      @JsonKey(name: 'splits') List<C2Splits>? splits});
+  $Res call({@JsonKey(name: 'intervals') List<C2Intervals>? intervals});
 }
 
 /// @nodoc
@@ -2509,17 +2519,12 @@ class __$$C2WorkoutImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? intervals = freezed,
-    Object? splits = freezed,
   }) {
     return _then(_$C2WorkoutImpl(
       intervals: freezed == intervals
           ? _value._intervals
           : intervals // ignore: cast_nullable_to_non_nullable
               as List<C2Intervals>?,
-      splits: freezed == splits
-          ? _value._splits
-          : splits // ignore: cast_nullable_to_non_nullable
-              as List<C2Splits>?,
     ));
   }
 }
@@ -2529,11 +2534,8 @@ class __$$C2WorkoutImplCopyWithImpl<$Res>
 class _$C2WorkoutImpl extends _C2Workout {
   _$C2WorkoutImpl(
       {@JsonKey(name: 'intervals')
-      final List<C2Intervals>? intervals = const <C2Intervals>[],
-      @JsonKey(name: 'splits')
-      final List<C2Splits>? splits = const <C2Splits>[]})
+      final List<C2Intervals>? intervals = const <C2Intervals>[]})
       : _intervals = intervals,
-        _splits = splits,
         super._();
 
   factory _$C2WorkoutImpl.fromJson(Map<String, dynamic> json) =>
@@ -2550,20 +2552,9 @@ class _$C2WorkoutImpl extends _C2Workout {
     return EqualUnmodifiableListView(value);
   }
 
-  final List<C2Splits>? _splits;
-  @override
-  @JsonKey(name: 'splits')
-  List<C2Splits>? get splits {
-    final value = _splits;
-    if (value == null) return null;
-    if (_splits is EqualUnmodifiableListView) return _splits;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
-
   @override
   String toString() {
-    return 'C2Workout(intervals: $intervals, splits: $splits)';
+    return 'C2Workout(intervals: $intervals)';
   }
 
   @override
@@ -2572,16 +2563,13 @@ class _$C2WorkoutImpl extends _C2Workout {
         (other.runtimeType == runtimeType &&
             other is _$C2WorkoutImpl &&
             const DeepCollectionEquality()
-                .equals(other._intervals, _intervals) &&
-            const DeepCollectionEquality().equals(other._splits, _splits));
+                .equals(other._intervals, _intervals));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(_intervals),
-      const DeepCollectionEquality().hash(_splits));
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_intervals));
 
   @JsonKey(ignore: true)
   @override
@@ -2599,8 +2587,8 @@ class _$C2WorkoutImpl extends _C2Workout {
 
 abstract class _C2Workout extends C2Workout {
   factory _C2Workout(
-      {@JsonKey(name: 'intervals') final List<C2Intervals>? intervals,
-      @JsonKey(name: 'splits') final List<C2Splits>? splits}) = _$C2WorkoutImpl;
+          {@JsonKey(name: 'intervals') final List<C2Intervals>? intervals}) =
+      _$C2WorkoutImpl;
   _C2Workout._() : super._();
 
   factory _C2Workout.fromJson(Map<String, dynamic> json) =
@@ -2609,9 +2597,6 @@ abstract class _C2Workout extends C2Workout {
   @override
   @JsonKey(name: 'intervals')
   List<C2Intervals>? get intervals;
-  @override
-  @JsonKey(name: 'splits')
-  List<C2Splits>? get splits;
   @override
   @JsonKey(ignore: true)
   _$$C2WorkoutImplCopyWith<_$C2WorkoutImpl> get copyWith =>

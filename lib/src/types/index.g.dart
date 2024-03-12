@@ -195,6 +195,7 @@ Map<String, dynamic> _$$C2ResultsImplToJson(_$C2ResultsImpl instance) =>
 
 _$C2SplitsImpl _$$C2SplitsImplFromJson(Map<String, dynamic> json) =>
     _$C2SplitsImpl(
+      type: json['type'] as String? ?? "time",
       time: const DecimalIntConverter.tenths().fromJson(json['time'] as int),
       distance: (json['distance'] as num?)?.toDouble() ?? 0.0,
       caloriesTotal: json['calories_total'] as int? ?? 0,
@@ -206,6 +207,7 @@ _$C2SplitsImpl _$$C2SplitsImplFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$C2SplitsImplToJson(_$C2SplitsImpl instance) =>
     <String, dynamic>{
+      'type': instance.type,
       'time': const DecimalIntConverter.tenths().toJson(instance.time),
       'distance': instance.distance,
       'calories_total': instance.caloriesTotal,
@@ -260,14 +262,9 @@ _$C2WorkoutImpl _$$C2WorkoutImplFromJson(Map<String, dynamic> json) =>
               ?.map((e) => C2Intervals.fromJson(e as Map<String, dynamic>))
               .toList() ??
           const <C2Intervals>[],
-      splits: (json['splits'] as List<dynamic>?)
-              ?.map((e) => C2Splits.fromJson(e as Map<String, dynamic>))
-              .toList() ??
-          const <C2Splits>[],
     );
 
 Map<String, dynamic> _$$C2WorkoutImplToJson(_$C2WorkoutImpl instance) =>
     <String, dynamic>{
       'intervals': instance.intervals?.map((e) => e.toJson()).toList(),
-      'splits': instance.splits?.map((e) => e.toJson()).toList(),
     };
