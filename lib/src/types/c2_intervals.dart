@@ -11,7 +11,7 @@ class C2Intervals with _$C2Intervals {
     @Default("time") String type,
     @DecimalIntConverter.tenths() required double time,
     @DecimalIntConverter.tenths() required double restTime,
-    @Default(0) double distance,
+    @Default(0.0) double distance,
     @Default(0) int caloriesTotal,
     @Default(0) int strokeRate,
     @Default(null) C2HeartRate? heartRate,

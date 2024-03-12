@@ -11,15 +11,13 @@ _$C2FullResultsImpl _$$C2FullResultsImplFromJson(Map<String, dynamic> json) =>
       id: json['id'] as int? ?? 0,
       userId: json['userId'] as int? ?? 0,
       date: const TimestampConverter().fromJson(json['date'] as String),
+      timezone: json['timezone'] as String?,
       dateUtc:
           const TimestampOrNullConverter().fromJson(json['dateUtc'] as String?),
-      timezone: json['timezone'] as String?,
       distance: json['distance'] as int? ?? 0,
       type: $enumDecodeNullable(_$C2ResultTypeEnumMap, json['type']) ??
           C2ResultType.rower,
       time: const DecimalIntConverter.tenths().fromJson(json['time'] as int),
-      restTime:
-          const DecimalIntConverter.tenths().fromJson(json['restTime'] as int),
       workoutType:
           $enumDecodeNullable(_$C2APIWorkoutTypeEnumMap, json['workoutType']) ??
               C2APIWorkoutType.JustRow,
@@ -27,23 +25,20 @@ _$C2FullResultsImpl _$$C2FullResultsImplFromJson(Map<String, dynamic> json) =>
       weightClass:
           $enumDecodeNullable(_$C2WeightClassEnumMap, json['weightClass']) ??
               C2WeightClass.heavyweight,
-      strokeRate: json['strokeRate'] as int?,
       verified: json['verified'] as bool? ?? false,
       ranked: json['ranked'] as bool? ?? false,
       comments: json['comments'] as String?,
       privacy: $enumDecodeNullable(_$C2PrivacyLevelEnumMap, json['privacy']) ??
           C2PrivacyLevel.private,
-      intervals: (json['intervals'] as List<dynamic>?)
-              ?.map((e) => C2Intervals.fromJson(e as Map<String, dynamic>))
-              .toList() ??
-          const <C2Intervals>[],
-      splits: (json['splits'] as List<dynamic>?)
-              ?.map((e) => C2Splits.fromJson(e as Map<String, dynamic>))
-              .toList() ??
-          const <C2Splits>[],
+      restTime:
+          const DecimalIntConverter.tenths().fromJson(json['restTime'] as int),
+      strokeRate: json['strokeRate'] as int?,
       heartRate: json['heartRate'] == null
           ? null
           : C2HeartRate.fromJson(json['heartRate'] as Map<String, dynamic>),
+      workout: json['workout'] == null
+          ? const <dynamic>[]
+          : C2Workout.fromJson(json['workout'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$C2FullResultsImplToJson(_$C2FullResultsImpl instance) =>
@@ -51,23 +46,22 @@ Map<String, dynamic> _$$C2FullResultsImplToJson(_$C2FullResultsImpl instance) =>
       'id': instance.id,
       'userId': instance.userId,
       'date': const TimestampConverter().toJson(instance.date),
-      'dateUtc': const TimestampOrNullConverter().toJson(instance.dateUtc),
       'timezone': instance.timezone,
+      'dateUtc': const TimestampOrNullConverter().toJson(instance.dateUtc),
       'distance': instance.distance,
       'type': _$C2ResultTypeEnumMap[instance.type]!,
       'time': const DecimalIntConverter.tenths().toJson(instance.time),
-      'restTime': const DecimalIntConverter.tenths().toJson(instance.restTime),
       'workoutType': _$C2APIWorkoutTypeEnumMap[instance.workoutType]!,
       'source': instance.source,
       'weightClass': _$C2WeightClassEnumMap[instance.weightClass]!,
-      'strokeRate': instance.strokeRate,
       'verified': instance.verified,
       'ranked': instance.ranked,
       'comments': instance.comments,
       'privacy': _$C2PrivacyLevelEnumMap[instance.privacy]!,
-      'intervals': instance.intervals.map((e) => e.toJson()).toList(),
-      'splits': instance.splits.map((e) => e.toJson()).toList(),
+      'restTime': const DecimalIntConverter.tenths().toJson(instance.restTime),
+      'strokeRate': instance.strokeRate,
       'heartRate': instance.heartRate?.toJson(),
+      'workout': instance.workout?.toJson(),
     };
 
 const _$C2ResultTypeEnumMap = {
@@ -131,7 +125,7 @@ _$C2IntervalsImpl _$$C2IntervalsImplFromJson(Map<String, dynamic> json) =>
       time: const DecimalIntConverter.tenths().fromJson(json['time'] as int),
       restTime:
           const DecimalIntConverter.tenths().fromJson(json['restTime'] as int),
-      distance: (json['distance'] as num?)?.toDouble() ?? 0,
+      distance: (json['distance'] as num?)?.toDouble() ?? 0.0,
       caloriesTotal: json['caloriesTotal'] as int? ?? 0,
       strokeRate: json['strokeRate'] as int? ?? 0,
       heartRate: json['heartRate'] == null
@@ -201,7 +195,7 @@ _$C2SplitsImpl _$$C2SplitsImplFromJson(Map<String, dynamic> json) =>
     _$C2SplitsImpl(
       type: json['type'] as String? ?? "time",
       time: const DecimalIntConverter.tenths().fromJson(json['time'] as int),
-      distance: (json['distance'] as num?)?.toDouble() ?? 0,
+      distance: (json['distance'] as num?)?.toDouble() ?? 0.0,
       caloriesTotal: json['caloriesTotal'] as int? ?? 0,
       strokeRate: json['strokeRate'] as int? ?? 0,
       heartRate: json['heartRate'] == null
@@ -258,4 +252,29 @@ Map<String, dynamic> _$$C2UserImplToJson(_$C2UserImpl instance) =>
       'weight': instance.weight,
       'roles': instance.roles,
       'logbookPrivacy': _$C2PrivacyLevelEnumMap[instance.logbookPrivacy]!,
+    };
+
+_$C2WorkoutImpl _$$C2WorkoutImplFromJson(Map<String, dynamic> json) =>
+    _$C2WorkoutImpl(
+      intervals: (json['intervals'] as List<dynamic>?)
+              ?.map((e) => C2Intervals.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const <C2Intervals>[],
+      splits: (json['splits'] as List<dynamic>?)
+              ?.map((e) => C2Splits.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const <C2Splits>[],
+      realTime: json['realTime'] as int? ?? null,
+      realDistance: (json['realDistance'] as num?)?.toDouble() ?? 0.0,
+      restTime:
+          const DecimalIntConverter.tenths().fromJson(json['restTime'] as int),
+    );
+
+Map<String, dynamic> _$$C2WorkoutImplToJson(_$C2WorkoutImpl instance) =>
+    <String, dynamic>{
+      'intervals': instance.intervals?.map((e) => e.toJson()).toList(),
+      'splits': instance.splits?.map((e) => e.toJson()).toList(),
+      'realTime': instance.realTime,
+      'realDistance': instance.realDistance,
+      'restTime': const DecimalIntConverter.tenths().toJson(instance.restTime),
     };

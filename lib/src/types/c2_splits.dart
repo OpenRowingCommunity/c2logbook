@@ -10,7 +10,7 @@ class C2Splits with _$C2Splits {
   factory C2Splits({
     @Default("time") String type,
     @DecimalIntConverter.tenths() required double time,
-    @Default(0) double distance,
+    @Default(0.0) double distance,
     @Default(0) int caloriesTotal,
     @Default(0) int strokeRate,
     @Default(null) C2HeartRate? heartRate,

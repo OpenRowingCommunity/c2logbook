@@ -23,7 +23,7 @@ void main() {
   final C2Results testResultsMin = C2Results(
       id: 3,
       userId: 1,
-      endDate: DateTime.parse("2013-06-21 00:00:00"),
+      date: DateTime.parse("2013-06-21 00:00:00"),
       distance: 23000,
       type: C2ResultType.rower,
       time: 15235.0,
@@ -36,7 +36,7 @@ void main() {
   final C2Results testResultsMax = C2Results(
       id: 3,
       userId: 1,
-      endDate: DateTime.parse("2013-06-21 00:00:00"),
+      date: DateTime.parse("2013-06-21 00:00:00"),
       dateUtc: DateTime.parse("2013-06-21 05:00:00Z"),
       timezone: "US/Eastern",
       distance: 23000,
@@ -52,7 +52,7 @@ void main() {
 
   group('Parsing Tests', () {
     test('Test Parsing minimal Result JSON', () {
-      final jsonData = json.decode("""{
+      final dynamic jsonData = json.decode("""{
       "id": 3,
       "user_id": 1,
       "date": "2013-06-21 00:00:00",
@@ -71,7 +71,7 @@ void main() {
     });
 
     test('Test Parsing maximal Result JSON', () {
-      final jsonData = json.decode("""{
+      final dynamic jsonData = json.decode("""{
       "id": 3,
       "user_id": 1,
       "date": "2013-06-21 00:00:00",
@@ -94,7 +94,7 @@ void main() {
     });
 
     test('Test Parsing User JSON', () {
-      final jsonData = json.decode("""{
+      final dynamic jsonData = json.decode("""{
     "id": 1,
     "username": "David Hart",
     "first_name": "David",
@@ -115,7 +115,7 @@ void main() {
   });
 
   test("Test parsing webhook JSON (minimal)", () {
-    final webhookJson = json.decode("""{
+    final dynamic webhookJson = json.decode("""{
         "data": {
           "type": "result-added",
           "result":
@@ -166,7 +166,7 @@ void main() {
           C2Results(
               id: 3,
               userId: 1,
-              endDate: DateTime.parse("2013-06-21 00:00:00"),
+              date: DateTime.parse("2013-06-21 00:00:00"),
               dateUtc: DateTime.parse("2013-06-21 05:00:00Z"),
               timezone: "US/Eastern",
               distance: 23000,
