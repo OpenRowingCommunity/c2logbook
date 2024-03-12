@@ -27,12 +27,12 @@ class C2FullResults with _$C2FullResults {
     @JsonKey(name: 'source') @Default("c2logbook dart") String source,
     @JsonKey(name: 'weight_class') @Default(C2WeightClass.heavyweight)
     C2WeightClass weightClass,
-    // @JsonKey(name: 'verified') @Default(false) bool verified,
-    // @JsonKey(name: 'ranked') @Default(false) bool ranked,
-    // @JsonKey(name: 'comments')String? comments,
-    // @JsonKey(name: 'privacy') @Default(C2PrivacyLevel.private) C2PrivacyLevel privacy,
-    // @JsonKey(name: 'rest_time') @DecimalIntConverter.tenths() required double restTime,
-    // @JsonKey(name: 'stroke_rate') int? strokeRate,
+    @JsonKey(name: 'verified') @Default(false) bool verified,
+    @JsonKey(name: 'ranked') @Default(false) bool ranked,
+    @JsonKey(name: 'comments')String? comments,
+    @JsonKey(name: 'privacy') @Default(C2PrivacyLevel.private) C2PrivacyLevel privacy,
+    @JsonKey(name: 'rest_time') @DecimalIntConverter.tenths() required double restTime,
+    @JsonKey(name: 'stroke_rate') int? strokeRate,
     // @JsonKey(name: 'heart_rate') @Default(null) C2HeartRate? heartRate,
     // @JsonKey(name: 'workout') @Default(null) C2Workout? workout,
   }) = _C2FullResults;

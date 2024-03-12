@@ -25,6 +25,14 @@ _$C2FullResultsImpl _$$C2FullResultsImplFromJson(Map<String, dynamic> json) =>
       weightClass:
           $enumDecodeNullable(_$C2WeightClassEnumMap, json['weight_class']) ??
               C2WeightClass.heavyweight,
+      verified: json['verified'] as bool? ?? false,
+      ranked: json['ranked'] as bool? ?? false,
+      comments: json['comments'] as String?,
+      privacy: $enumDecodeNullable(_$C2PrivacyLevelEnumMap, json['privacy']) ??
+          C2PrivacyLevel.private,
+      restTime:
+          const DecimalIntConverter.tenths().fromJson(json['rest_time'] as int),
+      strokeRate: json['stroke_rate'] as int?,
     );
 
 Map<String, dynamic> _$$C2FullResultsImplToJson(_$C2FullResultsImpl instance) =>
@@ -40,6 +48,12 @@ Map<String, dynamic> _$$C2FullResultsImplToJson(_$C2FullResultsImpl instance) =>
       'workout_type': _$C2APIWorkoutTypeEnumMap[instance.workoutType]!,
       'source': instance.source,
       'weight_class': _$C2WeightClassEnumMap[instance.weightClass]!,
+      'verified': instance.verified,
+      'ranked': instance.ranked,
+      'comments': instance.comments,
+      'privacy': _$C2PrivacyLevelEnumMap[instance.privacy]!,
+      'rest_time': const DecimalIntConverter.tenths().toJson(instance.restTime),
+      'stroke_rate': instance.strokeRate,
     };
 
 const _$C2ResultTypeEnumMap = {
@@ -72,6 +86,13 @@ const _$C2APIWorkoutTypeEnumMap = {
 const _$C2WeightClassEnumMap = {
   C2WeightClass.lightweight: 'L',
   C2WeightClass.heavyweight: 'H',
+};
+
+const _$C2PrivacyLevelEnumMap = {
+  C2PrivacyLevel.private: 'private',
+  C2PrivacyLevel.partners: 'partners',
+  C2PrivacyLevel.logged_in: 'logged_in',
+  C2PrivacyLevel.everyone: 'everyone',
 };
 
 _$C2HeartRateImpl _$$C2HeartRateImplFromJson(Map<String, dynamic> json) =>
@@ -161,13 +182,6 @@ Map<String, dynamic> _$$C2ResultsImplToJson(_$C2ResultsImpl instance) =>
       'comments': instance.comments,
       'privacy': _$C2PrivacyLevelEnumMap[instance.privacy]!,
     };
-
-const _$C2PrivacyLevelEnumMap = {
-  C2PrivacyLevel.private: 'private',
-  C2PrivacyLevel.partners: 'partners',
-  C2PrivacyLevel.logged_in: 'logged_in',
-  C2PrivacyLevel.everyone: 'everyone',
-};
 
 _$C2SplitsImpl _$$C2SplitsImplFromJson(Map<String, dynamic> json) =>
     _$C2SplitsImpl(
