@@ -37,7 +37,7 @@ _$C2FullResultsImpl _$$C2FullResultsImplFromJson(Map<String, dynamic> json) =>
           ? null
           : C2HeartRate.fromJson(json['heartRate'] as Map<String, dynamic>),
       workout: json['workout'] == null
-          ? const <dynamic>[]
+          ? null
           : C2Workout.fromJson(json['workout'] as Map<String, dynamic>),
     );
 

@@ -388,7 +388,7 @@ class _$C2FullResultsImpl extends _C2FullResults {
       @DecimalIntConverter.tenths() required this.restTime,
       this.strokeRate,
       this.heartRate = null,
-      this.workout = const <dynamic>[]})
+      this.workout = null})
       : super._();
 
   factory _$C2FullResultsImpl.fromJson(Map<String, dynamic> json) =>

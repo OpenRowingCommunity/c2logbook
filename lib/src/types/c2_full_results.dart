@@ -34,7 +34,7 @@ class C2FullResults with _$C2FullResults {
     @DecimalIntConverter.tenths() required double restTime,
     int? strokeRate,
     @Default(null) C2HeartRate? heartRate,
-    @Default(<dynamic>[]) C2Workout? workout,
+    @Default(null) C2Workout? workout,
   }) = _C2FullResults;
 
   factory C2FullResults.fromJson(Map<dynamic, dynamic> json) =>
