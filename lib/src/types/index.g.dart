@@ -30,8 +30,8 @@ _$C2FullResultsImpl _$$C2FullResultsImplFromJson(Map<String, dynamic> json) =>
       comments: json['comments'] as String?,
       privacy: $enumDecodeNullable(_$C2PrivacyLevelEnumMap, json['privacy']) ??
           C2PrivacyLevel.private,
-      restTime:
-          const DecimalIntConverter.tenths().fromJson(json['rest_time'] as int),
+      restTime: _$JsonConverterFromJson<int, double>(
+          json['rest_time'], const DecimalIntConverter.tenths().fromJson),
       strokeRate: json['stroke_rate'] as int?,
       heartRate: json['heart_rate'] == null
           ? null
@@ -59,7 +59,8 @@ Map<String, dynamic> _$$C2FullResultsImplToJson(_$C2FullResultsImpl instance) =>
       'ranked': instance.ranked,
       'comments': instance.comments,
       'privacy': _$C2PrivacyLevelEnumMap[instance.privacy]!,
-      'rest_time': const DecimalIntConverter.tenths().toJson(instance.restTime),
+      'rest_time': _$JsonConverterToJson<int, double>(
+          instance.restTime, const DecimalIntConverter.tenths().toJson),
       'stroke_rate': instance.strokeRate,
       'heart_rate': instance.heartRate?.toJson(),
       'workout': instance.workout?.toJson(),
@@ -104,6 +105,18 @@ const _$C2PrivacyLevelEnumMap = {
   C2PrivacyLevel.logged_in: 'logged_in',
   C2PrivacyLevel.everyone: 'everyone',
 };
+
+Value? _$JsonConverterFromJson<Json, Value>(
+  Object? json,
+  Value? Function(Json json) fromJson,
+) =>
+    json == null ? null : fromJson(json as Json);
+
+Json? _$JsonConverterToJson<Json, Value>(
+  Value? value,
+  Json? Function(Value value) toJson,
+) =>
+    value == null ? null : toJson(value);
 
 _$C2HeartRateImpl _$$C2HeartRateImplFromJson(Map<String, dynamic> json) =>
     _$C2HeartRateImpl(
@@ -262,9 +275,14 @@ _$C2WorkoutImpl _$$C2WorkoutImplFromJson(Map<String, dynamic> json) =>
               ?.map((e) => C2Intervals.fromJson(e as Map<String, dynamic>))
               .toList() ??
           const <C2Intervals>[],
+      splits: (json['splits'] as List<dynamic>?)
+              ?.map((e) => C2Splits.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const <C2Splits>[],
     );
 
 Map<String, dynamic> _$$C2WorkoutImplToJson(_$C2WorkoutImpl instance) =>
     <String, dynamic>{
       'intervals': instance.intervals?.map((e) => e.toJson()).toList(),
+      'splits': instance.splits?.map((e) => e.toJson()).toList(),
     };
