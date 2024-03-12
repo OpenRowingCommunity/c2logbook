@@ -827,7 +827,7 @@ mixin _$C2Intervals {
   int get strokeRate => throw _privateConstructorUsedError;
   String get machine => throw _privateConstructorUsedError;
   int get restDistance => throw _privateConstructorUsedError;
-  C2HeartRate get heartRate => throw _privateConstructorUsedError;
+  C2HeartRate? get heartRate => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -848,9 +848,9 @@ abstract class $C2IntervalsCopyWith<$Res> {
       int strokeRate,
       String machine,
       int restDistance,
-      C2HeartRate heartRate});
+      C2HeartRate? heartRate});
 
-  $C2HeartRateCopyWith<$Res> get heartRate;
+  $C2HeartRateCopyWith<$Res>? get heartRate;
 }
 
 /// @nodoc
@@ -872,7 +872,7 @@ class _$C2IntervalsCopyWithImpl<$Res, $Val extends C2Intervals>
     Object? strokeRate = null,
     Object? machine = null,
     Object? restDistance = null,
-    Object? heartRate = null,
+    Object? heartRate = freezed,
   }) {
     return _then(_value.copyWith(
       type: null == type
@@ -899,17 +899,21 @@ class _$C2IntervalsCopyWithImpl<$Res, $Val extends C2Intervals>
           ? _value.restDistance
           : restDistance // ignore: cast_nullable_to_non_nullable
               as int,
-      heartRate: null == heartRate
+      heartRate: freezed == heartRate
           ? _value.heartRate
           : heartRate // ignore: cast_nullable_to_non_nullable
-              as C2HeartRate,
+              as C2HeartRate?,
     ) as $Val);
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $C2HeartRateCopyWith<$Res> get heartRate {
-    return $C2HeartRateCopyWith<$Res>(_value.heartRate, (value) {
+  $C2HeartRateCopyWith<$Res>? get heartRate {
+    if (_value.heartRate == null) {
+      return null;
+    }
+
+    return $C2HeartRateCopyWith<$Res>(_value.heartRate!, (value) {
       return _then(_value.copyWith(heartRate: value) as $Val);
     });
   }
@@ -930,10 +934,10 @@ abstract class _$$C2IntervalsImplCopyWith<$Res>
       int strokeRate,
       String machine,
       int restDistance,
-      C2HeartRate heartRate});
+      C2HeartRate? heartRate});
 
   @override
-  $C2HeartRateCopyWith<$Res> get heartRate;
+  $C2HeartRateCopyWith<$Res>? get heartRate;
 }
 
 /// @nodoc
@@ -953,7 +957,7 @@ class __$$C2IntervalsImplCopyWithImpl<$Res>
     Object? strokeRate = null,
     Object? machine = null,
     Object? restDistance = null,
-    Object? heartRate = null,
+    Object? heartRate = freezed,
   }) {
     return _then(_$C2IntervalsImpl(
       type: null == type
@@ -980,10 +984,10 @@ class __$$C2IntervalsImplCopyWithImpl<$Res>
           ? _value.restDistance
           : restDistance // ignore: cast_nullable_to_non_nullable
               as int,
-      heartRate: null == heartRate
+      heartRate: freezed == heartRate
           ? _value.heartRate
           : heartRate // ignore: cast_nullable_to_non_nullable
-              as C2HeartRate,
+              as C2HeartRate?,
     ));
   }
 }
@@ -997,7 +1001,7 @@ class _$C2IntervalsImpl extends _C2Intervals {
       this.calories = 0,
       this.strokeRate = 0,
       this.machine = "rower",
-      this.restDistance = "0",
+      this.restDistance = 0,
       this.heartRate = null})
       : super._();
 
@@ -1024,7 +1028,7 @@ class _$C2IntervalsImpl extends _C2Intervals {
   final int restDistance;
   @override
   @JsonKey()
-  final C2HeartRate heartRate;
+  final C2HeartRate? heartRate;
 
   @override
   String toString() {
@@ -1076,7 +1080,7 @@ abstract class _C2Intervals extends C2Intervals {
       final int strokeRate,
       final String machine,
       final int restDistance,
-      final C2HeartRate heartRate}) = _$C2IntervalsImpl;
+      final C2HeartRate? heartRate}) = _$C2IntervalsImpl;
   _C2Intervals._() : super._();
 
   factory _C2Intervals.fromJson(Map<String, dynamic> json) =
@@ -1095,7 +1099,7 @@ abstract class _C2Intervals extends C2Intervals {
   @override
   int get restDistance;
   @override
-  C2HeartRate get heartRate;
+  C2HeartRate? get heartRate;
   @override
   @JsonKey(ignore: true)
   _$$C2IntervalsImplCopyWith<_$C2IntervalsImpl> get copyWith =>
@@ -1604,7 +1608,7 @@ mixin _$C2Splits {
   int get strokeRate => throw _privateConstructorUsedError;
   String get machine => throw _privateConstructorUsedError;
   int get restDistance => throw _privateConstructorUsedError;
-  C2HeartRate get heartRate => throw _privateConstructorUsedError;
+  C2HeartRate? get heartRate => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -1624,9 +1628,9 @@ abstract class $C2SplitsCopyWith<$Res> {
       int strokeRate,
       String machine,
       int restDistance,
-      C2HeartRate heartRate});
+      C2HeartRate? heartRate});
 
-  $C2HeartRateCopyWith<$Res> get heartRate;
+  $C2HeartRateCopyWith<$Res>? get heartRate;
 }
 
 /// @nodoc
@@ -1648,7 +1652,7 @@ class _$C2SplitsCopyWithImpl<$Res, $Val extends C2Splits>
     Object? strokeRate = null,
     Object? machine = null,
     Object? restDistance = null,
-    Object? heartRate = null,
+    Object? heartRate = freezed,
   }) {
     return _then(_value.copyWith(
       type: null == type
@@ -1675,17 +1679,21 @@ class _$C2SplitsCopyWithImpl<$Res, $Val extends C2Splits>
           ? _value.restDistance
           : restDistance // ignore: cast_nullable_to_non_nullable
               as int,
-      heartRate: null == heartRate
+      heartRate: freezed == heartRate
           ? _value.heartRate
           : heartRate // ignore: cast_nullable_to_non_nullable
-              as C2HeartRate,
+              as C2HeartRate?,
     ) as $Val);
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $C2HeartRateCopyWith<$Res> get heartRate {
-    return $C2HeartRateCopyWith<$Res>(_value.heartRate, (value) {
+  $C2HeartRateCopyWith<$Res>? get heartRate {
+    if (_value.heartRate == null) {
+      return null;
+    }
+
+    return $C2HeartRateCopyWith<$Res>(_value.heartRate!, (value) {
       return _then(_value.copyWith(heartRate: value) as $Val);
     });
   }
@@ -1706,10 +1714,10 @@ abstract class _$$C2SplitsImplCopyWith<$Res>
       int strokeRate,
       String machine,
       int restDistance,
-      C2HeartRate heartRate});
+      C2HeartRate? heartRate});
 
   @override
-  $C2HeartRateCopyWith<$Res> get heartRate;
+  $C2HeartRateCopyWith<$Res>? get heartRate;
 }
 
 /// @nodoc
@@ -1729,7 +1737,7 @@ class __$$C2SplitsImplCopyWithImpl<$Res>
     Object? strokeRate = null,
     Object? machine = null,
     Object? restDistance = null,
-    Object? heartRate = null,
+    Object? heartRate = freezed,
   }) {
     return _then(_$C2SplitsImpl(
       type: null == type
@@ -1756,10 +1764,10 @@ class __$$C2SplitsImplCopyWithImpl<$Res>
           ? _value.restDistance
           : restDistance // ignore: cast_nullable_to_non_nullable
               as int,
-      heartRate: null == heartRate
+      heartRate: freezed == heartRate
           ? _value.heartRate
           : heartRate // ignore: cast_nullable_to_non_nullable
-              as C2HeartRate,
+              as C2HeartRate?,
     ));
   }
 }
@@ -1800,7 +1808,7 @@ class _$C2SplitsImpl extends _C2Splits {
   final int restDistance;
   @override
   @JsonKey()
-  final C2HeartRate heartRate;
+  final C2HeartRate? heartRate;
 
   @override
   String toString() {
@@ -1852,7 +1860,7 @@ abstract class _C2Splits extends C2Splits {
       final int strokeRate,
       final String machine,
       final int restDistance,
-      final C2HeartRate heartRate}) = _$C2SplitsImpl;
+      final C2HeartRate? heartRate}) = _$C2SplitsImpl;
   _C2Splits._() : super._();
 
   factory _C2Splits.fromJson(Map<String, dynamic> json) =
@@ -1871,7 +1879,7 @@ abstract class _C2Splits extends C2Splits {
   @override
   int get restDistance;
   @override
-  C2HeartRate get heartRate;
+  C2HeartRate? get heartRate;
   @override
   @JsonKey(ignore: true)
   _$$C2SplitsImplCopyWith<_$C2SplitsImpl> get copyWith =>

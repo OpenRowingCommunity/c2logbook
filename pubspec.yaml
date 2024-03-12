@@ -1,6 +1,6 @@
 name: c2logbook
 description: A Dart wrapper providing an Object-Oriented interface to the Concept2 Logbook API 
-version: 0.0.4
+version: 0.0.5
 # repository: https://github.com/my_org/my_repo
 
 environment:

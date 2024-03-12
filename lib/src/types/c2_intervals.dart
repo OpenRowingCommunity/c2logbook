@@ -13,8 +13,8 @@ class C2Intervals with _$C2Intervals {
     @Default(0) int calories,
     @Default(0) int strokeRate,
     @Default("rower") String machine,
-    @Default("0") int restDistance,
-    @Default(null) C2HeartRate heartRate,
+    @Default(0) int restDistance,
+    @Default(null) C2HeartRate? heartRate,
   }) = _C2Intervals;
 
   factory C2Intervals.fromJson(Map<dynamic, dynamic> json) =>

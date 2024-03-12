@@ -14,7 +14,7 @@ class C2Splits with _$C2Splits {
     @Default(0) int strokeRate,
     @Default("rower") String machine,
     @Default("0") int restDistance,
-    @Default(null) C2HeartRate heartRate,
+    @Default(null) C2HeartRate? heartRate,
   }) = _C2Splits;
 
   factory C2Splits.fromJson(Map<dynamic, dynamic> json) =>

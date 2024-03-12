@@ -132,7 +132,7 @@ _$C2IntervalsImpl _$$C2IntervalsImplFromJson(Map<String, dynamic> json) =>
       calories: json['calories'] as int? ?? 0,
       strokeRate: json['strokeRate'] as int? ?? 0,
       machine: json['machine'] as String? ?? "rower",
-      restDistance: json['restDistance'] as int? ?? "0",
+      restDistance: json['restDistance'] as int? ?? 0,
       heartRate: json['heartRate'] == null
           ? null
           : C2HeartRate.fromJson(json['heartRate'] as Map<String, dynamic>),
@@ -146,7 +146,7 @@ Map<String, dynamic> _$$C2IntervalsImplToJson(_$C2IntervalsImpl instance) =>
       'strokeRate': instance.strokeRate,
       'machine': instance.machine,
       'restDistance': instance.restDistance,
-      'heartRate': instance.heartRate.toJson(),
+      'heartRate': instance.heartRate?.toJson(),
     };
 
 _$C2ResultsImpl _$$C2ResultsImplFromJson(Map<String, dynamic> json) =>
@@ -217,7 +217,7 @@ Map<String, dynamic> _$$C2SplitsImplToJson(_$C2SplitsImpl instance) =>
       'strokeRate': instance.strokeRate,
       'machine': instance.machine,
       'restDistance': instance.restDistance,
-      'heartRate': instance.heartRate.toJson(),
+      'heartRate': instance.heartRate?.toJson(),
     };
 
 _$C2UserImpl _$$C2UserImplFromJson(Map<String, dynamic> json) => _$C2UserImpl(
