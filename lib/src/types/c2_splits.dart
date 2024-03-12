@@ -8,7 +8,7 @@ class C2Splits with _$C2Splits {
   C2Splits._();
 
   factory C2Splits({
-    @JsonKey(name: 'type') @Default("time") String? type,
+    // @JsonKey(name: 'type') @Default("time") String? type,
     @JsonKey(name: 'time') @DecimalIntConverter.tenths() required double time,
     @JsonKey(name: 'distance') @Default(0.0) double distance,
     @JsonKey(name: 'calories_total') @Default(0) int caloriesTotal,
