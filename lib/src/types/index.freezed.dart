@@ -20,28 +20,46 @@ C2FullResults _$C2FullResultsFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$C2FullResults {
+  @JsonKey(name: 'id')
   int get id => throw _privateConstructorUsedError;
+  @JsonKey(name: 'user_id')
   int get userId => throw _privateConstructorUsedError;
+  @JsonKey(name: 'date')
   @TimestampConverter()
   DateTime get date => throw _privateConstructorUsedError;
+  @JsonKey(name: 'timezone')
   String? get timezone => throw _privateConstructorUsedError;
+  @JsonKey(name: 'date_utc')
   @TimestampOrNullConverter()
   DateTime? get dateUtc => throw _privateConstructorUsedError;
+  @JsonKey(name: 'distance')
   int get distance => throw _privateConstructorUsedError;
+  @JsonKey(name: 'type')
   C2ResultType get type => throw _privateConstructorUsedError;
+  @JsonKey(name: 'time')
   @DecimalIntConverter.tenths()
   double get time => throw _privateConstructorUsedError;
+  @JsonKey(name: 'workout_type')
   C2APIWorkoutType get workoutType => throw _privateConstructorUsedError;
+  @JsonKey(name: 'source')
   String get source => throw _privateConstructorUsedError;
+  @JsonKey(name: 'weight_class')
   C2WeightClass get weightClass => throw _privateConstructorUsedError;
+  @JsonKey(name: 'verified')
   bool get verified => throw _privateConstructorUsedError;
+  @JsonKey(name: 'ranked')
   bool get ranked => throw _privateConstructorUsedError;
+  @JsonKey(name: 'comments')
   String? get comments => throw _privateConstructorUsedError;
+  @JsonKey(name: 'privacy')
   C2PrivacyLevel get privacy => throw _privateConstructorUsedError;
+  @JsonKey(name: 'stroke_rate')
   @DecimalIntConverter.tenths()
   double get restTime => throw _privateConstructorUsedError;
   int? get strokeRate => throw _privateConstructorUsedError;
+  @JsonKey(name: 'date_rate')
   C2HeartRate? get heartRate => throw _privateConstructorUsedError;
+  @JsonKey(name: 'workout')
   C2Workout? get workout => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -57,25 +75,27 @@ abstract class $C2FullResultsCopyWith<$Res> {
       _$C2FullResultsCopyWithImpl<$Res, C2FullResults>;
   @useResult
   $Res call(
-      {int id,
-      int userId,
-      @TimestampConverter() DateTime date,
-      String? timezone,
-      @TimestampOrNullConverter() DateTime? dateUtc,
-      int distance,
-      C2ResultType type,
-      @DecimalIntConverter.tenths() double time,
-      C2APIWorkoutType workoutType,
-      String source,
-      C2WeightClass weightClass,
-      bool verified,
-      bool ranked,
-      String? comments,
-      C2PrivacyLevel privacy,
-      @DecimalIntConverter.tenths() double restTime,
+      {@JsonKey(name: 'id') int id,
+      @JsonKey(name: 'user_id') int userId,
+      @JsonKey(name: 'date') @TimestampConverter() DateTime date,
+      @JsonKey(name: 'timezone') String? timezone,
+      @JsonKey(name: 'date_utc') @TimestampOrNullConverter() DateTime? dateUtc,
+      @JsonKey(name: 'distance') int distance,
+      @JsonKey(name: 'type') C2ResultType type,
+      @JsonKey(name: 'time') @DecimalIntConverter.tenths() double time,
+      @JsonKey(name: 'workout_type') C2APIWorkoutType workoutType,
+      @JsonKey(name: 'source') String source,
+      @JsonKey(name: 'weight_class') C2WeightClass weightClass,
+      @JsonKey(name: 'verified') bool verified,
+      @JsonKey(name: 'ranked') bool ranked,
+      @JsonKey(name: 'comments') String? comments,
+      @JsonKey(name: 'privacy') C2PrivacyLevel privacy,
+      @JsonKey(name: 'stroke_rate')
+      @DecimalIntConverter.tenths()
+      double restTime,
       int? strokeRate,
-      C2HeartRate? heartRate,
-      C2Workout? workout});
+      @JsonKey(name: 'date_rate') C2HeartRate? heartRate,
+      @JsonKey(name: 'workout') C2Workout? workout});
 
   $C2HeartRateCopyWith<$Res>? get heartRate;
   $C2WorkoutCopyWith<$Res>? get workout;
@@ -228,25 +248,27 @@ abstract class _$$C2FullResultsImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {int id,
-      int userId,
-      @TimestampConverter() DateTime date,
-      String? timezone,
-      @TimestampOrNullConverter() DateTime? dateUtc,
-      int distance,
-      C2ResultType type,
-      @DecimalIntConverter.tenths() double time,
-      C2APIWorkoutType workoutType,
-      String source,
-      C2WeightClass weightClass,
-      bool verified,
-      bool ranked,
-      String? comments,
-      C2PrivacyLevel privacy,
-      @DecimalIntConverter.tenths() double restTime,
+      {@JsonKey(name: 'id') int id,
+      @JsonKey(name: 'user_id') int userId,
+      @JsonKey(name: 'date') @TimestampConverter() DateTime date,
+      @JsonKey(name: 'timezone') String? timezone,
+      @JsonKey(name: 'date_utc') @TimestampOrNullConverter() DateTime? dateUtc,
+      @JsonKey(name: 'distance') int distance,
+      @JsonKey(name: 'type') C2ResultType type,
+      @JsonKey(name: 'time') @DecimalIntConverter.tenths() double time,
+      @JsonKey(name: 'workout_type') C2APIWorkoutType workoutType,
+      @JsonKey(name: 'source') String source,
+      @JsonKey(name: 'weight_class') C2WeightClass weightClass,
+      @JsonKey(name: 'verified') bool verified,
+      @JsonKey(name: 'ranked') bool ranked,
+      @JsonKey(name: 'comments') String? comments,
+      @JsonKey(name: 'privacy') C2PrivacyLevel privacy,
+      @JsonKey(name: 'stroke_rate')
+      @DecimalIntConverter.tenths()
+      double restTime,
       int? strokeRate,
-      C2HeartRate? heartRate,
-      C2Workout? workout});
+      @JsonKey(name: 'date_rate') C2HeartRate? heartRate,
+      @JsonKey(name: 'workout') C2Workout? workout});
 
   @override
   $C2HeartRateCopyWith<$Res>? get heartRate;
@@ -370,83 +392,93 @@ class __$$C2FullResultsImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$C2FullResultsImpl extends _C2FullResults {
   _$C2FullResultsImpl(
-      {this.id = 0,
-      this.userId = 0,
-      @TimestampConverter() required this.date,
-      this.timezone,
-      @TimestampOrNullConverter() this.dateUtc,
-      this.distance = 0,
-      this.type = C2ResultType.rower,
-      @DecimalIntConverter.tenths() required this.time,
+      {@JsonKey(name: 'id') this.id = 0,
+      @JsonKey(name: 'user_id') this.userId = 0,
+      @JsonKey(name: 'date') @TimestampConverter() required this.date,
+      @JsonKey(name: 'timezone') this.timezone,
+      @JsonKey(name: 'date_utc') @TimestampOrNullConverter() this.dateUtc,
+      @JsonKey(name: 'distance') this.distance = 0,
+      @JsonKey(name: 'type') this.type = C2ResultType.rower,
+      @JsonKey(name: 'time') @DecimalIntConverter.tenths() required this.time,
+      @JsonKey(name: 'workout_type')
       this.workoutType = C2APIWorkoutType.JustRow,
-      this.source = "c2logbook dart",
+      @JsonKey(name: 'source') this.source = "c2logbook dart",
+      @JsonKey(name: 'weight_class')
       this.weightClass = C2WeightClass.heavyweight,
-      this.verified = false,
-      this.ranked = false,
-      this.comments,
-      this.privacy = C2PrivacyLevel.private,
-      @DecimalIntConverter.tenths() required this.restTime,
+      @JsonKey(name: 'verified') this.verified = false,
+      @JsonKey(name: 'ranked') this.ranked = false,
+      @JsonKey(name: 'comments') this.comments,
+      @JsonKey(name: 'privacy') this.privacy = C2PrivacyLevel.private,
+      @JsonKey(name: 'stroke_rate')
+      @DecimalIntConverter.tenths()
+      required this.restTime,
       this.strokeRate,
-      this.heartRate = null,
-      this.workout = null})
+      @JsonKey(name: 'date_rate') this.heartRate = null,
+      @JsonKey(name: 'workout') this.workout = null})
       : super._();
 
   factory _$C2FullResultsImpl.fromJson(Map<String, dynamic> json) =>
       _$$C2FullResultsImplFromJson(json);
 
   @override
-  @JsonKey()
+  @JsonKey(name: 'id')
   final int id;
   @override
-  @JsonKey()
+  @JsonKey(name: 'user_id')
   final int userId;
   @override
+  @JsonKey(name: 'date')
   @TimestampConverter()
   final DateTime date;
   @override
+  @JsonKey(name: 'timezone')
   final String? timezone;
   @override
+  @JsonKey(name: 'date_utc')
   @TimestampOrNullConverter()
   final DateTime? dateUtc;
   @override
-  @JsonKey()
+  @JsonKey(name: 'distance')
   final int distance;
   @override
-  @JsonKey()
+  @JsonKey(name: 'type')
   final C2ResultType type;
   @override
+  @JsonKey(name: 'time')
   @DecimalIntConverter.tenths()
   final double time;
   @override
-  @JsonKey()
+  @JsonKey(name: 'workout_type')
   final C2APIWorkoutType workoutType;
   @override
-  @JsonKey()
+  @JsonKey(name: 'source')
   final String source;
   @override
-  @JsonKey()
+  @JsonKey(name: 'weight_class')
   final C2WeightClass weightClass;
   @override
-  @JsonKey()
+  @JsonKey(name: 'verified')
   final bool verified;
   @override
-  @JsonKey()
+  @JsonKey(name: 'ranked')
   final bool ranked;
   @override
+  @JsonKey(name: 'comments')
   final String? comments;
   @override
-  @JsonKey()
+  @JsonKey(name: 'privacy')
   final C2PrivacyLevel privacy;
   @override
+  @JsonKey(name: 'stroke_rate')
   @DecimalIntConverter.tenths()
   final double restTime;
   @override
   final int? strokeRate;
   @override
-  @JsonKey()
+  @JsonKey(name: 'date_rate')
   final C2HeartRate? heartRate;
   @override
-  @JsonKey()
+  @JsonKey(name: 'workout')
   final C2Workout? workout;
 
   @override
@@ -530,24 +562,31 @@ class _$C2FullResultsImpl extends _C2FullResults {
 
 abstract class _C2FullResults extends C2FullResults {
   factory _C2FullResults(
-      {final int id,
-      final int userId,
-      @TimestampConverter() required final DateTime date,
-      final String? timezone,
-      @TimestampOrNullConverter() final DateTime? dateUtc,
-      final int distance,
-      final C2ResultType type,
-      @DecimalIntConverter.tenths() required final double time,
-      final C2APIWorkoutType workoutType,
-      final String source,
-      final C2WeightClass weightClass,
-      final bool verified,
-      final bool ranked,
-      final String? comments,
-      final C2PrivacyLevel privacy,
-      @DecimalIntConverter.tenths() required final double restTime,
+      {@JsonKey(name: 'id') final int id,
+      @JsonKey(name: 'user_id') final int userId,
+      @JsonKey(name: 'date') @TimestampConverter() required final DateTime date,
+      @JsonKey(name: 'timezone') final String? timezone,
+      @JsonKey(name: 'date_utc')
+      @TimestampOrNullConverter()
+      final DateTime? dateUtc,
+      @JsonKey(name: 'distance') final int distance,
+      @JsonKey(name: 'type') final C2ResultType type,
+      @JsonKey(name: 'time')
+      @DecimalIntConverter.tenths()
+      required final double time,
+      @JsonKey(name: 'workout_type') final C2APIWorkoutType workoutType,
+      @JsonKey(name: 'source') final String source,
+      @JsonKey(name: 'weight_class') final C2WeightClass weightClass,
+      @JsonKey(name: 'verified') final bool verified,
+      @JsonKey(name: 'ranked') final bool ranked,
+      @JsonKey(name: 'comments') final String? comments,
+      @JsonKey(name: 'privacy') final C2PrivacyLevel privacy,
+      @JsonKey(name: 'stroke_rate')
+      @DecimalIntConverter.tenths()
+      required final double restTime,
       final int? strokeRate,
-      final C2HeartRate? heartRate,
+      @JsonKey(name: 'date_rate') final C2HeartRate? heartRate,
+      @JsonKey(name: 'workout')
       final C2Workout? workout}) = _$C2FullResultsImpl;
   _C2FullResults._() : super._();
 
@@ -555,46 +594,64 @@ abstract class _C2FullResults extends C2FullResults {
       _$C2FullResultsImpl.fromJson;
 
   @override
+  @JsonKey(name: 'id')
   int get id;
   @override
+  @JsonKey(name: 'user_id')
   int get userId;
   @override
+  @JsonKey(name: 'date')
   @TimestampConverter()
   DateTime get date;
   @override
+  @JsonKey(name: 'timezone')
   String? get timezone;
   @override
+  @JsonKey(name: 'date_utc')
   @TimestampOrNullConverter()
   DateTime? get dateUtc;
   @override
+  @JsonKey(name: 'distance')
   int get distance;
   @override
+  @JsonKey(name: 'type')
   C2ResultType get type;
   @override
+  @JsonKey(name: 'time')
   @DecimalIntConverter.tenths()
   double get time;
   @override
+  @JsonKey(name: 'workout_type')
   C2APIWorkoutType get workoutType;
   @override
+  @JsonKey(name: 'source')
   String get source;
   @override
+  @JsonKey(name: 'weight_class')
   C2WeightClass get weightClass;
   @override
+  @JsonKey(name: 'verified')
   bool get verified;
   @override
+  @JsonKey(name: 'ranked')
   bool get ranked;
   @override
+  @JsonKey(name: 'comments')
   String? get comments;
   @override
+  @JsonKey(name: 'privacy')
   C2PrivacyLevel get privacy;
   @override
+  @JsonKey(name: 'stroke_rate')
   @DecimalIntConverter.tenths()
   double get restTime;
   @override
   int? get strokeRate;
   @override
+  @JsonKey(name: 'date_rate')
   C2HeartRate? get heartRate;
   @override
+  @JsonKey(name: 'workout')
   C2Workout? get workout;
   @override
   @JsonKey(ignore: true)
@@ -608,9 +665,13 @@ C2HeartRate _$C2HeartRateFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$C2HeartRate {
+  @JsonKey(name: 'min')
   int get min => throw _privateConstructorUsedError;
+  @JsonKey(name: 'average')
   int get average => throw _privateConstructorUsedError;
+  @JsonKey(name: 'max')
   int get max => throw _privateConstructorUsedError;
+  @JsonKey(name: 'ending')
   int get ending => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -625,7 +686,11 @@ abstract class $C2HeartRateCopyWith<$Res> {
           C2HeartRate value, $Res Function(C2HeartRate) then) =
       _$C2HeartRateCopyWithImpl<$Res, C2HeartRate>;
   @useResult
-  $Res call({int min, int average, int max, int ending});
+  $Res call(
+      {@JsonKey(name: 'min') int min,
+      @JsonKey(name: 'average') int average,
+      @JsonKey(name: 'max') int max,
+      @JsonKey(name: 'ending') int ending});
 }
 
 /// @nodoc
@@ -675,7 +740,11 @@ abstract class _$$C2HeartRateImplCopyWith<$Res>
       __$$C2HeartRateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int min, int average, int max, int ending});
+  $Res call(
+      {@JsonKey(name: 'min') int min,
+      @JsonKey(name: 'average') int average,
+      @JsonKey(name: 'max') int max,
+      @JsonKey(name: 'ending') int ending});
 }
 
 /// @nodoc
@@ -719,23 +788,26 @@ class __$$C2HeartRateImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$C2HeartRateImpl extends _C2HeartRate {
   _$C2HeartRateImpl(
-      {this.min = 0, this.average = 0, this.max = 0, this.ending = 0})
+      {@JsonKey(name: 'min') this.min = 0,
+      @JsonKey(name: 'average') this.average = 0,
+      @JsonKey(name: 'max') this.max = 0,
+      @JsonKey(name: 'ending') this.ending = 0})
       : super._();
 
   factory _$C2HeartRateImpl.fromJson(Map<String, dynamic> json) =>
       _$$C2HeartRateImplFromJson(json);
 
   @override
-  @JsonKey()
+  @JsonKey(name: 'min')
   final int min;
   @override
-  @JsonKey()
+  @JsonKey(name: 'average')
   final int average;
   @override
-  @JsonKey()
+  @JsonKey(name: 'max')
   final int max;
   @override
-  @JsonKey()
+  @JsonKey(name: 'ending')
   final int ending;
 
   @override
@@ -774,22 +846,26 @@ class _$C2HeartRateImpl extends _C2HeartRate {
 
 abstract class _C2HeartRate extends C2HeartRate {
   factory _C2HeartRate(
-      {final int min,
-      final int average,
-      final int max,
-      final int ending}) = _$C2HeartRateImpl;
+      {@JsonKey(name: 'min') final int min,
+      @JsonKey(name: 'average') final int average,
+      @JsonKey(name: 'max') final int max,
+      @JsonKey(name: 'ending') final int ending}) = _$C2HeartRateImpl;
   _C2HeartRate._() : super._();
 
   factory _C2HeartRate.fromJson(Map<String, dynamic> json) =
       _$C2HeartRateImpl.fromJson;
 
   @override
+  @JsonKey(name: 'min')
   int get min;
   @override
+  @JsonKey(name: 'average')
   int get average;
   @override
+  @JsonKey(name: 'max')
   int get max;
   @override
+  @JsonKey(name: 'ending')
   int get ending;
   @override
   @JsonKey(ignore: true)
@@ -803,14 +879,21 @@ C2Intervals _$C2IntervalsFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$C2Intervals {
+  @JsonKey(name: 'id')
   String get type => throw _privateConstructorUsedError;
+  @JsonKey(name: 'time')
   @DecimalIntConverter.tenths()
   double get time => throw _privateConstructorUsedError;
+  @JsonKey(name: 'rest_time')
   @DecimalIntConverter.tenths()
   double get restTime => throw _privateConstructorUsedError;
+  @JsonKey(name: 'distance')
   double get distance => throw _privateConstructorUsedError;
+  @JsonKey(name: 'calories_total')
   int get caloriesTotal => throw _privateConstructorUsedError;
+  @JsonKey(name: 'stroke_rate')
   int get strokeRate => throw _privateConstructorUsedError;
+  @JsonKey(name: 'heart_rate')
   C2HeartRate? get heartRate => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -826,13 +909,13 @@ abstract class $C2IntervalsCopyWith<$Res> {
       _$C2IntervalsCopyWithImpl<$Res, C2Intervals>;
   @useResult
   $Res call(
-      {String type,
-      @DecimalIntConverter.tenths() double time,
-      @DecimalIntConverter.tenths() double restTime,
-      double distance,
-      int caloriesTotal,
-      int strokeRate,
-      C2HeartRate? heartRate});
+      {@JsonKey(name: 'id') String type,
+      @JsonKey(name: 'time') @DecimalIntConverter.tenths() double time,
+      @JsonKey(name: 'rest_time') @DecimalIntConverter.tenths() double restTime,
+      @JsonKey(name: 'distance') double distance,
+      @JsonKey(name: 'calories_total') int caloriesTotal,
+      @JsonKey(name: 'stroke_rate') int strokeRate,
+      @JsonKey(name: 'heart_rate') C2HeartRate? heartRate});
 
   $C2HeartRateCopyWith<$Res>? get heartRate;
 }
@@ -912,13 +995,13 @@ abstract class _$$C2IntervalsImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String type,
-      @DecimalIntConverter.tenths() double time,
-      @DecimalIntConverter.tenths() double restTime,
-      double distance,
-      int caloriesTotal,
-      int strokeRate,
-      C2HeartRate? heartRate});
+      {@JsonKey(name: 'id') String type,
+      @JsonKey(name: 'time') @DecimalIntConverter.tenths() double time,
+      @JsonKey(name: 'rest_time') @DecimalIntConverter.tenths() double restTime,
+      @JsonKey(name: 'distance') double distance,
+      @JsonKey(name: 'calories_total') int caloriesTotal,
+      @JsonKey(name: 'stroke_rate') int strokeRate,
+      @JsonKey(name: 'heart_rate') C2HeartRate? heartRate});
 
   @override
   $C2HeartRateCopyWith<$Res>? get heartRate;
@@ -980,38 +1063,42 @@ class __$$C2IntervalsImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$C2IntervalsImpl extends _C2Intervals {
   _$C2IntervalsImpl(
-      {this.type = "time",
-      @DecimalIntConverter.tenths() required this.time,
-      @DecimalIntConverter.tenths() required this.restTime,
-      this.distance = 0.0,
-      this.caloriesTotal = 0,
-      this.strokeRate = 0,
-      this.heartRate = null})
+      {@JsonKey(name: 'id') this.type = "type",
+      @JsonKey(name: 'time') @DecimalIntConverter.tenths() required this.time,
+      @JsonKey(name: 'rest_time')
+      @DecimalIntConverter.tenths()
+      required this.restTime,
+      @JsonKey(name: 'distance') this.distance = 0.0,
+      @JsonKey(name: 'calories_total') this.caloriesTotal = 0,
+      @JsonKey(name: 'stroke_rate') this.strokeRate = 0,
+      @JsonKey(name: 'heart_rate') this.heartRate = null})
       : super._();
 
   factory _$C2IntervalsImpl.fromJson(Map<String, dynamic> json) =>
       _$$C2IntervalsImplFromJson(json);
 
   @override
-  @JsonKey()
+  @JsonKey(name: 'id')
   final String type;
   @override
+  @JsonKey(name: 'time')
   @DecimalIntConverter.tenths()
   final double time;
   @override
+  @JsonKey(name: 'rest_time')
   @DecimalIntConverter.tenths()
   final double restTime;
   @override
-  @JsonKey()
+  @JsonKey(name: 'distance')
   final double distance;
   @override
-  @JsonKey()
+  @JsonKey(name: 'calories_total')
   final int caloriesTotal;
   @override
-  @JsonKey()
+  @JsonKey(name: 'stroke_rate')
   final int strokeRate;
   @override
-  @JsonKey()
+  @JsonKey(name: 'heart_rate')
   final C2HeartRate? heartRate;
 
   @override
@@ -1059,33 +1146,45 @@ class _$C2IntervalsImpl extends _C2Intervals {
 
 abstract class _C2Intervals extends C2Intervals {
   factory _C2Intervals(
-      {final String type,
-      @DecimalIntConverter.tenths() required final double time,
-      @DecimalIntConverter.tenths() required final double restTime,
-      final double distance,
-      final int caloriesTotal,
-      final int strokeRate,
-      final C2HeartRate? heartRate}) = _$C2IntervalsImpl;
+          {@JsonKey(name: 'id') final String type,
+          @JsonKey(name: 'time')
+          @DecimalIntConverter.tenths()
+          required final double time,
+          @JsonKey(name: 'rest_time')
+          @DecimalIntConverter.tenths()
+          required final double restTime,
+          @JsonKey(name: 'distance') final double distance,
+          @JsonKey(name: 'calories_total') final int caloriesTotal,
+          @JsonKey(name: 'stroke_rate') final int strokeRate,
+          @JsonKey(name: 'heart_rate') final C2HeartRate? heartRate}) =
+      _$C2IntervalsImpl;
   _C2Intervals._() : super._();
 
   factory _C2Intervals.fromJson(Map<String, dynamic> json) =
       _$C2IntervalsImpl.fromJson;
 
   @override
+  @JsonKey(name: 'id')
   String get type;
   @override
+  @JsonKey(name: 'time')
   @DecimalIntConverter.tenths()
   double get time;
   @override
+  @JsonKey(name: 'rest_time')
   @DecimalIntConverter.tenths()
   double get restTime;
   @override
+  @JsonKey(name: 'distance')
   double get distance;
   @override
+  @JsonKey(name: 'calories_total')
   int get caloriesTotal;
   @override
+  @JsonKey(name: 'stroke_rate')
   int get strokeRate;
   @override
+  @JsonKey(name: 'heart_rate')
   C2HeartRate? get heartRate;
   @override
   @JsonKey(ignore: true)
@@ -1585,12 +1684,18 @@ C2Splits _$C2SplitsFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$C2Splits {
+  @JsonKey(name: 'type')
   String get type => throw _privateConstructorUsedError;
+  @JsonKey(name: 'time')
   @DecimalIntConverter.tenths()
   double get time => throw _privateConstructorUsedError;
+  @JsonKey(name: 'distance')
   double get distance => throw _privateConstructorUsedError;
+  @JsonKey(name: 'calories_total')
   int get caloriesTotal => throw _privateConstructorUsedError;
+  @JsonKey(name: 'stroke_rate')
   int get strokeRate => throw _privateConstructorUsedError;
+  @JsonKey(name: 'heart_rate')
   C2HeartRate? get heartRate => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -1605,12 +1710,12 @@ abstract class $C2SplitsCopyWith<$Res> {
       _$C2SplitsCopyWithImpl<$Res, C2Splits>;
   @useResult
   $Res call(
-      {String type,
-      @DecimalIntConverter.tenths() double time,
-      double distance,
-      int caloriesTotal,
-      int strokeRate,
-      C2HeartRate? heartRate});
+      {@JsonKey(name: 'type') String type,
+      @JsonKey(name: 'time') @DecimalIntConverter.tenths() double time,
+      @JsonKey(name: 'distance') double distance,
+      @JsonKey(name: 'calories_total') int caloriesTotal,
+      @JsonKey(name: 'stroke_rate') int strokeRate,
+      @JsonKey(name: 'heart_rate') C2HeartRate? heartRate});
 
   $C2HeartRateCopyWith<$Res>? get heartRate;
 }
@@ -1685,12 +1790,12 @@ abstract class _$$C2SplitsImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String type,
-      @DecimalIntConverter.tenths() double time,
-      double distance,
-      int caloriesTotal,
-      int strokeRate,
-      C2HeartRate? heartRate});
+      {@JsonKey(name: 'type') String type,
+      @JsonKey(name: 'time') @DecimalIntConverter.tenths() double time,
+      @JsonKey(name: 'distance') double distance,
+      @JsonKey(name: 'calories_total') int caloriesTotal,
+      @JsonKey(name: 'stroke_rate') int strokeRate,
+      @JsonKey(name: 'heart_rate') C2HeartRate? heartRate});
 
   @override
   $C2HeartRateCopyWith<$Res>? get heartRate;
@@ -1747,34 +1852,35 @@ class __$$C2SplitsImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$C2SplitsImpl extends _C2Splits {
   _$C2SplitsImpl(
-      {this.type = "time",
-      @DecimalIntConverter.tenths() required this.time,
-      this.distance = 0.0,
-      this.caloriesTotal = 0,
-      this.strokeRate = 0,
-      this.heartRate = null})
+      {@JsonKey(name: 'type') this.type = "time",
+      @JsonKey(name: 'time') @DecimalIntConverter.tenths() required this.time,
+      @JsonKey(name: 'distance') this.distance = 0.0,
+      @JsonKey(name: 'calories_total') this.caloriesTotal = 0,
+      @JsonKey(name: 'stroke_rate') this.strokeRate = 0,
+      @JsonKey(name: 'heart_rate') this.heartRate = null})
       : super._();
 
   factory _$C2SplitsImpl.fromJson(Map<String, dynamic> json) =>
       _$$C2SplitsImplFromJson(json);
 
   @override
-  @JsonKey()
+  @JsonKey(name: 'type')
   final String type;
   @override
+  @JsonKey(name: 'time')
   @DecimalIntConverter.tenths()
   final double time;
   @override
-  @JsonKey()
+  @JsonKey(name: 'distance')
   final double distance;
   @override
-  @JsonKey()
+  @JsonKey(name: 'calories_total')
   final int caloriesTotal;
   @override
-  @JsonKey()
+  @JsonKey(name: 'stroke_rate')
   final int strokeRate;
   @override
-  @JsonKey()
+  @JsonKey(name: 'heart_rate')
   final C2HeartRate? heartRate;
 
   @override
@@ -1820,29 +1926,38 @@ class _$C2SplitsImpl extends _C2Splits {
 
 abstract class _C2Splits extends C2Splits {
   factory _C2Splits(
-      {final String type,
-      @DecimalIntConverter.tenths() required final double time,
-      final double distance,
-      final int caloriesTotal,
-      final int strokeRate,
-      final C2HeartRate? heartRate}) = _$C2SplitsImpl;
+          {@JsonKey(name: 'type') final String type,
+          @JsonKey(name: 'time')
+          @DecimalIntConverter.tenths()
+          required final double time,
+          @JsonKey(name: 'distance') final double distance,
+          @JsonKey(name: 'calories_total') final int caloriesTotal,
+          @JsonKey(name: 'stroke_rate') final int strokeRate,
+          @JsonKey(name: 'heart_rate') final C2HeartRate? heartRate}) =
+      _$C2SplitsImpl;
   _C2Splits._() : super._();
 
   factory _C2Splits.fromJson(Map<String, dynamic> json) =
       _$C2SplitsImpl.fromJson;
 
   @override
+  @JsonKey(name: 'type')
   String get type;
   @override
+  @JsonKey(name: 'time')
   @DecimalIntConverter.tenths()
   double get time;
   @override
+  @JsonKey(name: 'distance')
   double get distance;
   @override
+  @JsonKey(name: 'calories_total')
   int get caloriesTotal;
   @override
+  @JsonKey(name: 'stroke_rate')
   int get strokeRate;
   @override
+  @JsonKey(name: 'heart_rate')
   C2HeartRate? get heartRate;
   @override
   @JsonKey(ignore: true)

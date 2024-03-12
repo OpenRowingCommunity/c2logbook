@@ -7,7 +7,7 @@ class C2User with _$C2User {
   const factory C2User(
       {@Default(0) int id,
       @Default('') String username,
-       @Default('') String firstName,
+      @Default('') String firstName,
       @Default('') String lastName,
       @Default('F') String gender,
       @Default('1970-01-01') String birthday,

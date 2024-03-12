@@ -14,27 +14,27 @@ class C2FullResults with _$C2FullResults {
   C2FullResults._();
 
   factory C2FullResults({
-    @Default(0) int id,
-    @Default(0) int userId,
-    @TimestampConverter() required DateTime date,
-    String? timezone,
-    @TimestampOrNullConverter() DateTime? dateUtc,
-    @Default(0) int distance,
-    @Default(C2ResultType.rower) C2ResultType type,
-    @DecimalIntConverter.tenths() required double time,
-    @Default(C2APIWorkoutType.JustRow)
+    @JsonKey(name: 'id') @Default(0) int id,
+    @JsonKey(name: 'user_id') @Default(0) int userId,
+    @JsonKey(name: 'date') @TimestampConverter() required DateTime date,
+    @JsonKey(name: 'timezone') String? timezone,
+    @JsonKey(name: 'date_utc') @TimestampOrNullConverter() DateTime? dateUtc,
+    @JsonKey(name: 'distance') @Default(0) int distance,
+    @JsonKey(name: 'type') @Default(C2ResultType.rower) C2ResultType type,
+    @JsonKey(name: 'time') @DecimalIntConverter.tenths() required double time,
+    @JsonKey(name: 'workout_type') @Default(C2APIWorkoutType.JustRow)
     C2APIWorkoutType workoutType,
-    @Default("c2logbook dart") String source,
-    @Default(C2WeightClass.heavyweight)
+    @JsonKey(name: 'source') @Default("c2logbook dart") String source,
+    @JsonKey(name: 'weight_class') @Default(C2WeightClass.heavyweight)
     C2WeightClass weightClass,
-    @Default(false) bool verified,
-    @Default(false) bool ranked,
-    String? comments,
-    @Default(C2PrivacyLevel.private) C2PrivacyLevel privacy,
-    @DecimalIntConverter.tenths() required double restTime,
+    @JsonKey(name: 'verified') @Default(false) bool verified,
+    @JsonKey(name: 'ranked') @Default(false) bool ranked,
+    @JsonKey(name: 'comments')String? comments,
+    @JsonKey(name: 'privacy') @Default(C2PrivacyLevel.private) C2PrivacyLevel privacy,
+    @JsonKey(name: 'stroke_rate') @DecimalIntConverter.tenths() required double restTime,
     int? strokeRate,
-    @Default(null) C2HeartRate? heartRate,
-    @Default(null) C2Workout? workout,
+    @JsonKey(name: 'date_rate') @Default(null) C2HeartRate? heartRate,
+    @JsonKey(name: 'workout') @Default(null) C2Workout? workout,
   }) = _C2FullResults;
 
   factory C2FullResults.fromJson(Map<dynamic, dynamic> json) =>
