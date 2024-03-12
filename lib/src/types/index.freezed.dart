@@ -904,7 +904,7 @@ C2Intervals _$C2IntervalsFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$C2Intervals {
   @JsonKey(name: 'id')
-  String get type => throw _privateConstructorUsedError;
+  String? get type => throw _privateConstructorUsedError;
   @JsonKey(name: 'time')
   @DecimalIntConverter.tenths()
   double get time => throw _privateConstructorUsedError;
@@ -933,7 +933,7 @@ abstract class $C2IntervalsCopyWith<$Res> {
       _$C2IntervalsCopyWithImpl<$Res, C2Intervals>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'id') String type,
+      {@JsonKey(name: 'id') String? type,
       @JsonKey(name: 'time') @DecimalIntConverter.tenths() double time,
       @JsonKey(name: 'rest_time') @DecimalIntConverter.tenths() double restTime,
       @JsonKey(name: 'distance') double distance,
@@ -957,7 +957,7 @@ class _$C2IntervalsCopyWithImpl<$Res, $Val extends C2Intervals>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? type = null,
+    Object? type = freezed,
     Object? time = null,
     Object? restTime = null,
     Object? distance = null,
@@ -966,10 +966,10 @@ class _$C2IntervalsCopyWithImpl<$Res, $Val extends C2Intervals>
     Object? heartRate = freezed,
   }) {
     return _then(_value.copyWith(
-      type: null == type
+      type: freezed == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       time: null == time
           ? _value.time
           : time // ignore: cast_nullable_to_non_nullable
@@ -1019,7 +1019,7 @@ abstract class _$$C2IntervalsImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'id') String type,
+      {@JsonKey(name: 'id') String? type,
       @JsonKey(name: 'time') @DecimalIntConverter.tenths() double time,
       @JsonKey(name: 'rest_time') @DecimalIntConverter.tenths() double restTime,
       @JsonKey(name: 'distance') double distance,
@@ -1042,7 +1042,7 @@ class __$$C2IntervalsImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? type = null,
+    Object? type = freezed,
     Object? time = null,
     Object? restTime = null,
     Object? distance = null,
@@ -1051,10 +1051,10 @@ class __$$C2IntervalsImplCopyWithImpl<$Res>
     Object? heartRate = freezed,
   }) {
     return _then(_$C2IntervalsImpl(
-      type: null == type
+      type: freezed == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       time: null == time
           ? _value.time
           : time // ignore: cast_nullable_to_non_nullable
@@ -1103,7 +1103,7 @@ class _$C2IntervalsImpl extends _C2Intervals {
 
   @override
   @JsonKey(name: 'id')
-  final String type;
+  final String? type;
   @override
   @JsonKey(name: 'time')
   @DecimalIntConverter.tenths()
@@ -1170,7 +1170,7 @@ class _$C2IntervalsImpl extends _C2Intervals {
 
 abstract class _C2Intervals extends C2Intervals {
   factory _C2Intervals(
-          {@JsonKey(name: 'id') final String type,
+          {@JsonKey(name: 'id') final String? type,
           @JsonKey(name: 'time')
           @DecimalIntConverter.tenths()
           required final double time,
@@ -1189,7 +1189,7 @@ abstract class _C2Intervals extends C2Intervals {
 
   @override
   @JsonKey(name: 'id')
-  String get type;
+  String? get type;
   @override
   @JsonKey(name: 'time')
   @DecimalIntConverter.tenths()
@@ -1709,7 +1709,7 @@ C2Splits _$C2SplitsFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$C2Splits {
   @JsonKey(name: 'type')
-  String get type => throw _privateConstructorUsedError;
+  String? get type => throw _privateConstructorUsedError;
   @JsonKey(name: 'time')
   @DecimalIntConverter.tenths()
   double get time => throw _privateConstructorUsedError;
@@ -1734,7 +1734,7 @@ abstract class $C2SplitsCopyWith<$Res> {
       _$C2SplitsCopyWithImpl<$Res, C2Splits>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'type') String type,
+      {@JsonKey(name: 'type') String? type,
       @JsonKey(name: 'time') @DecimalIntConverter.tenths() double time,
       @JsonKey(name: 'distance') double distance,
       @JsonKey(name: 'calories_total') int caloriesTotal,
@@ -1757,7 +1757,7 @@ class _$C2SplitsCopyWithImpl<$Res, $Val extends C2Splits>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? type = null,
+    Object? type = freezed,
     Object? time = null,
     Object? distance = null,
     Object? caloriesTotal = null,
@@ -1765,10 +1765,10 @@ class _$C2SplitsCopyWithImpl<$Res, $Val extends C2Splits>
     Object? heartRate = freezed,
   }) {
     return _then(_value.copyWith(
-      type: null == type
+      type: freezed == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       time: null == time
           ? _value.time
           : time // ignore: cast_nullable_to_non_nullable
@@ -1814,7 +1814,7 @@ abstract class _$$C2SplitsImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'type') String type,
+      {@JsonKey(name: 'type') String? type,
       @JsonKey(name: 'time') @DecimalIntConverter.tenths() double time,
       @JsonKey(name: 'distance') double distance,
       @JsonKey(name: 'calories_total') int caloriesTotal,
@@ -1836,7 +1836,7 @@ class __$$C2SplitsImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? type = null,
+    Object? type = freezed,
     Object? time = null,
     Object? distance = null,
     Object? caloriesTotal = null,
@@ -1844,10 +1844,10 @@ class __$$C2SplitsImplCopyWithImpl<$Res>
     Object? heartRate = freezed,
   }) {
     return _then(_$C2SplitsImpl(
-      type: null == type
+      type: freezed == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       time: null == time
           ? _value.time
           : time // ignore: cast_nullable_to_non_nullable
@@ -1889,7 +1889,7 @@ class _$C2SplitsImpl extends _C2Splits {
 
   @override
   @JsonKey(name: 'type')
-  final String type;
+  final String? type;
   @override
   @JsonKey(name: 'time')
   @DecimalIntConverter.tenths()
@@ -1950,7 +1950,7 @@ class _$C2SplitsImpl extends _C2Splits {
 
 abstract class _C2Splits extends C2Splits {
   factory _C2Splits(
-          {@JsonKey(name: 'type') final String type,
+          {@JsonKey(name: 'type') final String? type,
           @JsonKey(name: 'time')
           @DecimalIntConverter.tenths()
           required final double time,
@@ -1966,7 +1966,7 @@ abstract class _C2Splits extends C2Splits {
 
   @override
   @JsonKey(name: 'type')
-  String get type;
+  String? get type;
   @override
   @JsonKey(name: 'time')
   @DecimalIntConverter.tenths()
