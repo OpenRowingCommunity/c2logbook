@@ -13,7 +13,7 @@ class C2Splits with _$C2Splits {
     @Default(0) int calories,
     @Default(0) int strokeRate,
     @Default("rower") String machine,
-    @Default("0") int restDistance,
+    @Default(0) int restDistance,
     @Default(null) C2HeartRate? heartRate,
   }) = _C2Splits;
 
