@@ -16,7 +16,7 @@ class C2FullResults with _$C2FullResults {
   factory C2FullResults({
     @Default(0) int id,
     @Default(0) int userId,
-    @TimestampConverter() required DateTime endDate,
+    @TimestampConverter() required DateTime date,
     @TimestampOrNullConverter() DateTime? dateUtc,
     String? timezone,
     @Default(0) int distance,
@@ -35,7 +35,7 @@ class C2FullResults with _$C2FullResults {
     @Default(C2PrivacyLevel.private) C2PrivacyLevel privacy,
     @Default(<C2Intervals>[]) List<C2Intervals> intervals,
     @Default(<C2Splits>[]) List<C2Splits> splits,
-    @Default(null) C2HeartRate heartRate,
+    @Default(null) C2HeartRate? heartRate,
   }) = _C2FullResults;
 
   factory C2FullResults.fromJson(Map<dynamic, dynamic> json) =>

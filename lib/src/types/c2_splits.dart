@@ -9,11 +9,10 @@ class C2Splits with _$C2Splits {
 
   factory C2Splits({
     @Default("time") String type,
-    @Default(0) int time,
-    @Default(0) int calories,
+    @DecimalIntConverter.tenths() required double time,
+    @Default(0) double distance,
+    @Default(0) int caloriesTotal,
     @Default(0) int strokeRate,
-    @Default("rower") String machine,
-    @Default(0) int restDistance,
     @Default(null) C2HeartRate? heartRate,
   }) = _C2Splits;
 

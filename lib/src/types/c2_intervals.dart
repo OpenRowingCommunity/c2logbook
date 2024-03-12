@@ -9,11 +9,11 @@ class C2Intervals with _$C2Intervals {
 
   factory C2Intervals({
     @Default("time") String type,
-    @Default(0) int time,
-    @Default(0) int calories,
+    @DecimalIntConverter.tenths() required double time,
+    @DecimalIntConverter.tenths() required double restTime,
+    @Default(0) double distance,
+    @Default(0) int caloriesTotal,
     @Default(0) int strokeRate,
-    @Default("rower") String machine,
-    @Default(0) int restDistance,
     @Default(null) C2HeartRate? heartRate,
   }) = _C2Intervals;
 
