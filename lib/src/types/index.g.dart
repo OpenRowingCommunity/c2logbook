@@ -33,6 +33,13 @@ _$C2FullResultsImpl _$$C2FullResultsImplFromJson(Map<String, dynamic> json) =>
       restTime:
           const DecimalIntConverter.tenths().fromJson(json['rest_time'] as int),
       strokeRate: json['stroke_rate'] as int?,
+      heartRate: json['heart_rate'] == null
+          ? null
+          : C2HeartRate.fromJson(json['heart_rate'] as Map<String, dynamic>),
+      workout: json['workout'] == null
+          ? null
+          : C2Workout.fromJson(json['workout'] as Map<String, dynamic>),
+      restDistance: (json['rest_distance'] as num?)?.toDouble() ?? 0.0,
     );
 
 Map<String, dynamic> _$$C2FullResultsImplToJson(_$C2FullResultsImpl instance) =>
@@ -54,6 +61,9 @@ Map<String, dynamic> _$$C2FullResultsImplToJson(_$C2FullResultsImpl instance) =>
       'privacy': _$C2PrivacyLevelEnumMap[instance.privacy]!,
       'rest_time': const DecimalIntConverter.tenths().toJson(instance.restTime),
       'stroke_rate': instance.strokeRate,
+      'heart_rate': instance.heartRate?.toJson(),
+      'workout': instance.workout?.toJson(),
+      'rest_distance': instance.restDistance,
     };
 
 const _$C2ResultTypeEnumMap = {
@@ -256,17 +266,10 @@ _$C2WorkoutImpl _$$C2WorkoutImplFromJson(Map<String, dynamic> json) =>
               ?.map((e) => C2Splits.fromJson(e as Map<String, dynamic>))
               .toList() ??
           const <C2Splits>[],
-      realTime: json['realTime'] as int? ?? null,
-      realDistance: (json['realDistance'] as num?)?.toDouble() ?? 0.0,
-      restTime:
-          const DecimalIntConverter.tenths().fromJson(json['restTime'] as int),
     );
 
 Map<String, dynamic> _$$C2WorkoutImplToJson(_$C2WorkoutImpl instance) =>
     <String, dynamic>{
       'intervals': instance.intervals?.map((e) => e.toJson()).toList(),
       'splits': instance.splits?.map((e) => e.toJson()).toList(),
-      'realTime': instance.realTime,
-      'realDistance': instance.realDistance,
-      'restTime': const DecimalIntConverter.tenths().toJson(instance.restTime),
     };

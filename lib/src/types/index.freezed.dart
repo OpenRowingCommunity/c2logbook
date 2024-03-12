@@ -58,6 +58,12 @@ mixin _$C2FullResults {
   double get restTime => throw _privateConstructorUsedError;
   @JsonKey(name: 'stroke_rate')
   int? get strokeRate => throw _privateConstructorUsedError;
+  @JsonKey(name: 'heart_rate')
+  C2HeartRate? get heartRate => throw _privateConstructorUsedError;
+  @JsonKey(name: 'workout')
+  C2Workout? get workout => throw _privateConstructorUsedError;
+  @JsonKey(name: 'rest_distance')
+  double get restDistance => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -88,7 +94,13 @@ abstract class $C2FullResultsCopyWith<$Res> {
       @JsonKey(name: 'comments') String? comments,
       @JsonKey(name: 'privacy') C2PrivacyLevel privacy,
       @JsonKey(name: 'rest_time') @DecimalIntConverter.tenths() double restTime,
-      @JsonKey(name: 'stroke_rate') int? strokeRate});
+      @JsonKey(name: 'stroke_rate') int? strokeRate,
+      @JsonKey(name: 'heart_rate') C2HeartRate? heartRate,
+      @JsonKey(name: 'workout') C2Workout? workout,
+      @JsonKey(name: 'rest_distance') double restDistance});
+
+  $C2HeartRateCopyWith<$Res>? get heartRate;
+  $C2WorkoutCopyWith<$Res>? get workout;
 }
 
 /// @nodoc
@@ -121,6 +133,9 @@ class _$C2FullResultsCopyWithImpl<$Res, $Val extends C2FullResults>
     Object? privacy = null,
     Object? restTime = null,
     Object? strokeRate = freezed,
+    Object? heartRate = freezed,
+    Object? workout = freezed,
+    Object? restDistance = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -191,7 +206,43 @@ class _$C2FullResultsCopyWithImpl<$Res, $Val extends C2FullResults>
           ? _value.strokeRate
           : strokeRate // ignore: cast_nullable_to_non_nullable
               as int?,
+      heartRate: freezed == heartRate
+          ? _value.heartRate
+          : heartRate // ignore: cast_nullable_to_non_nullable
+              as C2HeartRate?,
+      workout: freezed == workout
+          ? _value.workout
+          : workout // ignore: cast_nullable_to_non_nullable
+              as C2Workout?,
+      restDistance: null == restDistance
+          ? _value.restDistance
+          : restDistance // ignore: cast_nullable_to_non_nullable
+              as double,
     ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $C2HeartRateCopyWith<$Res>? get heartRate {
+    if (_value.heartRate == null) {
+      return null;
+    }
+
+    return $C2HeartRateCopyWith<$Res>(_value.heartRate!, (value) {
+      return _then(_value.copyWith(heartRate: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $C2WorkoutCopyWith<$Res>? get workout {
+    if (_value.workout == null) {
+      return null;
+    }
+
+    return $C2WorkoutCopyWith<$Res>(_value.workout!, (value) {
+      return _then(_value.copyWith(workout: value) as $Val);
+    });
   }
 }
 
@@ -220,7 +271,15 @@ abstract class _$$C2FullResultsImplCopyWith<$Res>
       @JsonKey(name: 'comments') String? comments,
       @JsonKey(name: 'privacy') C2PrivacyLevel privacy,
       @JsonKey(name: 'rest_time') @DecimalIntConverter.tenths() double restTime,
-      @JsonKey(name: 'stroke_rate') int? strokeRate});
+      @JsonKey(name: 'stroke_rate') int? strokeRate,
+      @JsonKey(name: 'heart_rate') C2HeartRate? heartRate,
+      @JsonKey(name: 'workout') C2Workout? workout,
+      @JsonKey(name: 'rest_distance') double restDistance});
+
+  @override
+  $C2HeartRateCopyWith<$Res>? get heartRate;
+  @override
+  $C2WorkoutCopyWith<$Res>? get workout;
 }
 
 /// @nodoc
@@ -251,6 +310,9 @@ class __$$C2FullResultsImplCopyWithImpl<$Res>
     Object? privacy = null,
     Object? restTime = null,
     Object? strokeRate = freezed,
+    Object? heartRate = freezed,
+    Object? workout = freezed,
+    Object? restDistance = null,
   }) {
     return _then(_$C2FullResultsImpl(
       id: null == id
@@ -321,6 +383,18 @@ class __$$C2FullResultsImplCopyWithImpl<$Res>
           ? _value.strokeRate
           : strokeRate // ignore: cast_nullable_to_non_nullable
               as int?,
+      heartRate: freezed == heartRate
+          ? _value.heartRate
+          : heartRate // ignore: cast_nullable_to_non_nullable
+              as C2HeartRate?,
+      workout: freezed == workout
+          ? _value.workout
+          : workout // ignore: cast_nullable_to_non_nullable
+              as C2Workout?,
+      restDistance: null == restDistance
+          ? _value.restDistance
+          : restDistance // ignore: cast_nullable_to_non_nullable
+              as double,
     ));
   }
 }
@@ -349,7 +423,10 @@ class _$C2FullResultsImpl extends _C2FullResults {
       @JsonKey(name: 'rest_time')
       @DecimalIntConverter.tenths()
       required this.restTime,
-      @JsonKey(name: 'stroke_rate') this.strokeRate})
+      @JsonKey(name: 'stroke_rate') this.strokeRate,
+      @JsonKey(name: 'heart_rate') this.heartRate = null,
+      @JsonKey(name: 'workout') this.workout = null,
+      @JsonKey(name: 'rest_distance') this.restDistance = 0.0})
       : super._();
 
   factory _$C2FullResultsImpl.fromJson(Map<String, dynamic> json) =>
@@ -410,10 +487,19 @@ class _$C2FullResultsImpl extends _C2FullResults {
   @override
   @JsonKey(name: 'stroke_rate')
   final int? strokeRate;
+  @override
+  @JsonKey(name: 'heart_rate')
+  final C2HeartRate? heartRate;
+  @override
+  @JsonKey(name: 'workout')
+  final C2Workout? workout;
+  @override
+  @JsonKey(name: 'rest_distance')
+  final double restDistance;
 
   @override
   String toString() {
-    return 'C2FullResults(id: $id, userId: $userId, date: $date, timezone: $timezone, dateUtc: $dateUtc, distance: $distance, type: $type, time: $time, workoutType: $workoutType, source: $source, weightClass: $weightClass, verified: $verified, ranked: $ranked, comments: $comments, privacy: $privacy, restTime: $restTime, strokeRate: $strokeRate)';
+    return 'C2FullResults(id: $id, userId: $userId, date: $date, timezone: $timezone, dateUtc: $dateUtc, distance: $distance, type: $type, time: $time, workoutType: $workoutType, source: $source, weightClass: $weightClass, verified: $verified, ranked: $ranked, comments: $comments, privacy: $privacy, restTime: $restTime, strokeRate: $strokeRate, heartRate: $heartRate, workout: $workout, restDistance: $restDistance)';
   }
 
   @override
@@ -445,30 +531,39 @@ class _$C2FullResultsImpl extends _C2FullResults {
             (identical(other.restTime, restTime) ||
                 other.restTime == restTime) &&
             (identical(other.strokeRate, strokeRate) ||
-                other.strokeRate == strokeRate));
+                other.strokeRate == strokeRate) &&
+            (identical(other.heartRate, heartRate) ||
+                other.heartRate == heartRate) &&
+            (identical(other.workout, workout) || other.workout == workout) &&
+            (identical(other.restDistance, restDistance) ||
+                other.restDistance == restDistance));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      id,
-      userId,
-      date,
-      timezone,
-      dateUtc,
-      distance,
-      type,
-      time,
-      workoutType,
-      source,
-      weightClass,
-      verified,
-      ranked,
-      comments,
-      privacy,
-      restTime,
-      strokeRate);
+  int get hashCode => Object.hashAll([
+        runtimeType,
+        id,
+        userId,
+        date,
+        timezone,
+        dateUtc,
+        distance,
+        type,
+        time,
+        workoutType,
+        source,
+        weightClass,
+        verified,
+        ranked,
+        comments,
+        privacy,
+        restTime,
+        strokeRate,
+        heartRate,
+        workout,
+        restDistance
+      ]);
 
   @JsonKey(ignore: true)
   @override
@@ -508,8 +603,11 @@ abstract class _C2FullResults extends C2FullResults {
       @JsonKey(name: 'rest_time')
       @DecimalIntConverter.tenths()
       required final double restTime,
-      @JsonKey(name: 'stroke_rate')
-      final int? strokeRate}) = _$C2FullResultsImpl;
+      @JsonKey(name: 'stroke_rate') final int? strokeRate,
+      @JsonKey(name: 'heart_rate') final C2HeartRate? heartRate,
+      @JsonKey(name: 'workout') final C2Workout? workout,
+      @JsonKey(name: 'rest_distance')
+      final double restDistance}) = _$C2FullResultsImpl;
   _C2FullResults._() : super._();
 
   factory _C2FullResults.fromJson(Map<String, dynamic> json) =
@@ -570,6 +668,15 @@ abstract class _C2FullResults extends C2FullResults {
   @override
   @JsonKey(name: 'stroke_rate')
   int? get strokeRate;
+  @override
+  @JsonKey(name: 'heart_rate')
+  C2HeartRate? get heartRate;
+  @override
+  @JsonKey(name: 'workout')
+  C2Workout? get workout;
+  @override
+  @JsonKey(name: 'rest_distance')
+  double get restDistance;
   @override
   @JsonKey(ignore: true)
   _$$C2FullResultsImplCopyWith<_$C2FullResultsImpl> get copyWith =>
@@ -2348,12 +2455,10 @@ C2Workout _$C2WorkoutFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$C2Workout {
+  @JsonKey(name: 'intervals')
   List<C2Intervals>? get intervals => throw _privateConstructorUsedError;
+  @JsonKey(name: 'splits')
   List<C2Splits>? get splits => throw _privateConstructorUsedError;
-  int? get realTime => throw _privateConstructorUsedError;
-  double get realDistance => throw _privateConstructorUsedError;
-  @DecimalIntConverter.tenths()
-  double get restTime => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -2367,11 +2472,8 @@ abstract class $C2WorkoutCopyWith<$Res> {
       _$C2WorkoutCopyWithImpl<$Res, C2Workout>;
   @useResult
   $Res call(
-      {List<C2Intervals>? intervals,
-      List<C2Splits>? splits,
-      int? realTime,
-      double realDistance,
-      @DecimalIntConverter.tenths() double restTime});
+      {@JsonKey(name: 'intervals') List<C2Intervals>? intervals,
+      @JsonKey(name: 'splits') List<C2Splits>? splits});
 }
 
 /// @nodoc
@@ -2389,9 +2491,6 @@ class _$C2WorkoutCopyWithImpl<$Res, $Val extends C2Workout>
   $Res call({
     Object? intervals = freezed,
     Object? splits = freezed,
-    Object? realTime = freezed,
-    Object? realDistance = null,
-    Object? restTime = null,
   }) {
     return _then(_value.copyWith(
       intervals: freezed == intervals
@@ -2402,18 +2501,6 @@ class _$C2WorkoutCopyWithImpl<$Res, $Val extends C2Workout>
           ? _value.splits
           : splits // ignore: cast_nullable_to_non_nullable
               as List<C2Splits>?,
-      realTime: freezed == realTime
-          ? _value.realTime
-          : realTime // ignore: cast_nullable_to_non_nullable
-              as int?,
-      realDistance: null == realDistance
-          ? _value.realDistance
-          : realDistance // ignore: cast_nullable_to_non_nullable
-              as double,
-      restTime: null == restTime
-          ? _value.restTime
-          : restTime // ignore: cast_nullable_to_non_nullable
-              as double,
     ) as $Val);
   }
 }
@@ -2427,11 +2514,8 @@ abstract class _$$C2WorkoutImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {List<C2Intervals>? intervals,
-      List<C2Splits>? splits,
-      int? realTime,
-      double realDistance,
-      @DecimalIntConverter.tenths() double restTime});
+      {@JsonKey(name: 'intervals') List<C2Intervals>? intervals,
+      @JsonKey(name: 'splits') List<C2Splits>? splits});
 }
 
 /// @nodoc
@@ -2447,9 +2531,6 @@ class __$$C2WorkoutImplCopyWithImpl<$Res>
   $Res call({
     Object? intervals = freezed,
     Object? splits = freezed,
-    Object? realTime = freezed,
-    Object? realDistance = null,
-    Object? restTime = null,
   }) {
     return _then(_$C2WorkoutImpl(
       intervals: freezed == intervals
@@ -2460,18 +2541,6 @@ class __$$C2WorkoutImplCopyWithImpl<$Res>
           ? _value._splits
           : splits // ignore: cast_nullable_to_non_nullable
               as List<C2Splits>?,
-      realTime: freezed == realTime
-          ? _value.realTime
-          : realTime // ignore: cast_nullable_to_non_nullable
-              as int?,
-      realDistance: null == realDistance
-          ? _value.realDistance
-          : realDistance // ignore: cast_nullable_to_non_nullable
-              as double,
-      restTime: null == restTime
-          ? _value.restTime
-          : restTime // ignore: cast_nullable_to_non_nullable
-              as double,
     ));
   }
 }
@@ -2480,11 +2549,10 @@ class __$$C2WorkoutImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$C2WorkoutImpl extends _C2Workout {
   _$C2WorkoutImpl(
-      {final List<C2Intervals>? intervals = const <C2Intervals>[],
-      final List<C2Splits>? splits = const <C2Splits>[],
-      this.realTime = null,
-      this.realDistance = 0.0,
-      @DecimalIntConverter.tenths() required this.restTime})
+      {@JsonKey(name: 'intervals')
+      final List<C2Intervals>? intervals = const <C2Intervals>[],
+      @JsonKey(name: 'splits')
+      final List<C2Splits>? splits = const <C2Splits>[]})
       : _intervals = intervals,
         _splits = splits,
         super._();
@@ -2494,7 +2562,7 @@ class _$C2WorkoutImpl extends _C2Workout {
 
   final List<C2Intervals>? _intervals;
   @override
-  @JsonKey()
+  @JsonKey(name: 'intervals')
   List<C2Intervals>? get intervals {
     final value = _intervals;
     if (value == null) return null;
@@ -2505,7 +2573,7 @@ class _$C2WorkoutImpl extends _C2Workout {
 
   final List<C2Splits>? _splits;
   @override
-  @JsonKey()
+  @JsonKey(name: 'splits')
   List<C2Splits>? get splits {
     final value = _splits;
     if (value == null) return null;
@@ -2515,18 +2583,8 @@ class _$C2WorkoutImpl extends _C2Workout {
   }
 
   @override
-  @JsonKey()
-  final int? realTime;
-  @override
-  @JsonKey()
-  final double realDistance;
-  @override
-  @DecimalIntConverter.tenths()
-  final double restTime;
-
-  @override
   String toString() {
-    return 'C2Workout(intervals: $intervals, splits: $splits, realTime: $realTime, realDistance: $realDistance, restTime: $restTime)';
+    return 'C2Workout(intervals: $intervals, splits: $splits)';
   }
 
   @override
@@ -2536,13 +2594,7 @@ class _$C2WorkoutImpl extends _C2Workout {
             other is _$C2WorkoutImpl &&
             const DeepCollectionEquality()
                 .equals(other._intervals, _intervals) &&
-            const DeepCollectionEquality().equals(other._splits, _splits) &&
-            (identical(other.realTime, realTime) ||
-                other.realTime == realTime) &&
-            (identical(other.realDistance, realDistance) ||
-                other.realDistance == realDistance) &&
-            (identical(other.restTime, restTime) ||
-                other.restTime == restTime));
+            const DeepCollectionEquality().equals(other._splits, _splits));
   }
 
   @JsonKey(ignore: true)
@@ -2550,10 +2602,7 @@ class _$C2WorkoutImpl extends _C2Workout {
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(_intervals),
-      const DeepCollectionEquality().hash(_splits),
-      realTime,
-      realDistance,
-      restTime);
+      const DeepCollectionEquality().hash(_splits));
 
   @JsonKey(ignore: true)
   @override
@@ -2571,28 +2620,19 @@ class _$C2WorkoutImpl extends _C2Workout {
 
 abstract class _C2Workout extends C2Workout {
   factory _C2Workout(
-          {final List<C2Intervals>? intervals,
-          final List<C2Splits>? splits,
-          final int? realTime,
-          final double realDistance,
-          @DecimalIntConverter.tenths() required final double restTime}) =
-      _$C2WorkoutImpl;
+      {@JsonKey(name: 'intervals') final List<C2Intervals>? intervals,
+      @JsonKey(name: 'splits') final List<C2Splits>? splits}) = _$C2WorkoutImpl;
   _C2Workout._() : super._();
 
   factory _C2Workout.fromJson(Map<String, dynamic> json) =
       _$C2WorkoutImpl.fromJson;
 
   @override
+  @JsonKey(name: 'intervals')
   List<C2Intervals>? get intervals;
   @override
+  @JsonKey(name: 'splits')
   List<C2Splits>? get splits;
-  @override
-  int? get realTime;
-  @override
-  double get realDistance;
-  @override
-  @DecimalIntConverter.tenths()
-  double get restTime;
   @override
   @JsonKey(ignore: true)
   _$$C2WorkoutImplCopyWith<_$C2WorkoutImpl> get copyWith =>

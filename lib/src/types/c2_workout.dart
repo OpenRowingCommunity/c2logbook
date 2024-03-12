@@ -8,11 +8,8 @@ class C2Workout with _$C2Workout {
   C2Workout._();
 
   factory C2Workout({
-    @Default(<C2Intervals>[]) List<C2Intervals>? intervals,
-    @Default(<C2Splits>[]) List<C2Splits>? splits,
-    @Default(null) int? realTime,
-    @Default(0.0) double realDistance,
-    @DecimalIntConverter.tenths() required double restTime,
+    @JsonKey(name: 'intervals') @Default(<C2Intervals>[]) List<C2Intervals>? intervals,
+    @JsonKey(name: 'splits') @Default(<C2Splits>[]) List<C2Splits>? splits,
     }) = _C2Workout;
 
   factory C2Workout.fromJson(Map<dynamic, dynamic> json) =>
