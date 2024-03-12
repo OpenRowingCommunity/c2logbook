@@ -30,12 +30,12 @@ _$C2FullResultsImpl _$$C2FullResultsImplFromJson(Map<String, dynamic> json) =>
       comments: json['comments'] as String?,
       privacy: $enumDecodeNullable(_$C2PrivacyLevelEnumMap, json['privacy']) ??
           C2PrivacyLevel.private,
-      restTime: const DecimalIntConverter.tenths()
-          .fromJson(json['stroke_rate'] as int),
-      strokeRate: json['strokeRate'] as int?,
-      heartRate: json['date_rate'] == null
+      restTime:
+          const DecimalIntConverter.tenths().fromJson(json['rest_time'] as int),
+      strokeRate: json['stroke_rate'] as int?,
+      heartRate: json['heart_rate'] == null
           ? null
-          : C2HeartRate.fromJson(json['date_rate'] as Map<String, dynamic>),
+          : C2HeartRate.fromJson(json['heart_rate'] as Map<String, dynamic>),
       workout: json['workout'] == null
           ? null
           : C2Workout.fromJson(json['workout'] as Map<String, dynamic>),
@@ -58,10 +58,9 @@ Map<String, dynamic> _$$C2FullResultsImplToJson(_$C2FullResultsImpl instance) =>
       'ranked': instance.ranked,
       'comments': instance.comments,
       'privacy': _$C2PrivacyLevelEnumMap[instance.privacy]!,
-      'stroke_rate':
-          const DecimalIntConverter.tenths().toJson(instance.restTime),
-      'strokeRate': instance.strokeRate,
-      'date_rate': instance.heartRate?.toJson(),
+      'rest_time': const DecimalIntConverter.tenths().toJson(instance.restTime),
+      'stroke_rate': instance.strokeRate,
+      'heart_rate': instance.heartRate?.toJson(),
       'workout': instance.workout?.toJson(),
     };
 

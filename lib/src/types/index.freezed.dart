@@ -53,11 +53,12 @@ mixin _$C2FullResults {
   String? get comments => throw _privateConstructorUsedError;
   @JsonKey(name: 'privacy')
   C2PrivacyLevel get privacy => throw _privateConstructorUsedError;
-  @JsonKey(name: 'stroke_rate')
+  @JsonKey(name: 'rest_time')
   @DecimalIntConverter.tenths()
   double get restTime => throw _privateConstructorUsedError;
+  @JsonKey(name: 'stroke_rate')
   int? get strokeRate => throw _privateConstructorUsedError;
-  @JsonKey(name: 'date_rate')
+  @JsonKey(name: 'heart_rate')
   C2HeartRate? get heartRate => throw _privateConstructorUsedError;
   @JsonKey(name: 'workout')
   C2Workout? get workout => throw _privateConstructorUsedError;
@@ -90,11 +91,9 @@ abstract class $C2FullResultsCopyWith<$Res> {
       @JsonKey(name: 'ranked') bool ranked,
       @JsonKey(name: 'comments') String? comments,
       @JsonKey(name: 'privacy') C2PrivacyLevel privacy,
-      @JsonKey(name: 'stroke_rate')
-      @DecimalIntConverter.tenths()
-      double restTime,
-      int? strokeRate,
-      @JsonKey(name: 'date_rate') C2HeartRate? heartRate,
+      @JsonKey(name: 'rest_time') @DecimalIntConverter.tenths() double restTime,
+      @JsonKey(name: 'stroke_rate') int? strokeRate,
+      @JsonKey(name: 'heart_rate') C2HeartRate? heartRate,
       @JsonKey(name: 'workout') C2Workout? workout});
 
   $C2HeartRateCopyWith<$Res>? get heartRate;
@@ -263,11 +262,9 @@ abstract class _$$C2FullResultsImplCopyWith<$Res>
       @JsonKey(name: 'ranked') bool ranked,
       @JsonKey(name: 'comments') String? comments,
       @JsonKey(name: 'privacy') C2PrivacyLevel privacy,
-      @JsonKey(name: 'stroke_rate')
-      @DecimalIntConverter.tenths()
-      double restTime,
-      int? strokeRate,
-      @JsonKey(name: 'date_rate') C2HeartRate? heartRate,
+      @JsonKey(name: 'rest_time') @DecimalIntConverter.tenths() double restTime,
+      @JsonKey(name: 'stroke_rate') int? strokeRate,
+      @JsonKey(name: 'heart_rate') C2HeartRate? heartRate,
       @JsonKey(name: 'workout') C2Workout? workout});
 
   @override
@@ -409,11 +406,11 @@ class _$C2FullResultsImpl extends _C2FullResults {
       @JsonKey(name: 'ranked') this.ranked = false,
       @JsonKey(name: 'comments') this.comments,
       @JsonKey(name: 'privacy') this.privacy = C2PrivacyLevel.private,
-      @JsonKey(name: 'stroke_rate')
+      @JsonKey(name: 'rest_time')
       @DecimalIntConverter.tenths()
       required this.restTime,
-      this.strokeRate,
-      @JsonKey(name: 'date_rate') this.heartRate = null,
+      @JsonKey(name: 'stroke_rate') this.strokeRate,
+      @JsonKey(name: 'heart_rate') this.heartRate = null,
       @JsonKey(name: 'workout') this.workout = null})
       : super._();
 
@@ -469,13 +466,14 @@ class _$C2FullResultsImpl extends _C2FullResults {
   @JsonKey(name: 'privacy')
   final C2PrivacyLevel privacy;
   @override
-  @JsonKey(name: 'stroke_rate')
+  @JsonKey(name: 'rest_time')
   @DecimalIntConverter.tenths()
   final double restTime;
   @override
+  @JsonKey(name: 'stroke_rate')
   final int? strokeRate;
   @override
-  @JsonKey(name: 'date_rate')
+  @JsonKey(name: 'heart_rate')
   final C2HeartRate? heartRate;
   @override
   @JsonKey(name: 'workout')
@@ -581,11 +579,11 @@ abstract class _C2FullResults extends C2FullResults {
       @JsonKey(name: 'ranked') final bool ranked,
       @JsonKey(name: 'comments') final String? comments,
       @JsonKey(name: 'privacy') final C2PrivacyLevel privacy,
-      @JsonKey(name: 'stroke_rate')
+      @JsonKey(name: 'rest_time')
       @DecimalIntConverter.tenths()
       required final double restTime,
-      final int? strokeRate,
-      @JsonKey(name: 'date_rate') final C2HeartRate? heartRate,
+      @JsonKey(name: 'stroke_rate') final int? strokeRate,
+      @JsonKey(name: 'heart_rate') final C2HeartRate? heartRate,
       @JsonKey(name: 'workout')
       final C2Workout? workout}) = _$C2FullResultsImpl;
   _C2FullResults._() : super._();
@@ -642,13 +640,14 @@ abstract class _C2FullResults extends C2FullResults {
   @JsonKey(name: 'privacy')
   C2PrivacyLevel get privacy;
   @override
-  @JsonKey(name: 'stroke_rate')
+  @JsonKey(name: 'rest_time')
   @DecimalIntConverter.tenths()
   double get restTime;
   @override
+  @JsonKey(name: 'stroke_rate')
   int? get strokeRate;
   @override
-  @JsonKey(name: 'date_rate')
+  @JsonKey(name: 'heart_rate')
   C2HeartRate? get heartRate;
   @override
   @JsonKey(name: 'workout')

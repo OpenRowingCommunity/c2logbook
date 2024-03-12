@@ -31,9 +31,9 @@ class C2FullResults with _$C2FullResults {
     @JsonKey(name: 'ranked') @Default(false) bool ranked,
     @JsonKey(name: 'comments')String? comments,
     @JsonKey(name: 'privacy') @Default(C2PrivacyLevel.private) C2PrivacyLevel privacy,
-    @JsonKey(name: 'stroke_rate') @DecimalIntConverter.tenths() required double restTime,
-    int? strokeRate,
-    @JsonKey(name: 'date_rate') @Default(null) C2HeartRate? heartRate,
+    @JsonKey(name: 'rest_time') @DecimalIntConverter.tenths() required double restTime,
+    @JsonKey(name: 'stroke_rate') int? strokeRate,
+    @JsonKey(name: 'heart_rate') @Default(null) C2HeartRate? heartRate,
     @JsonKey(name: 'workout') @Default(null) C2Workout? workout,
   }) = _C2FullResults;
 
