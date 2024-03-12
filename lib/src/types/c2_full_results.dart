@@ -22,6 +22,7 @@ class C2FullResults with _$C2FullResults {
     @Default(0) int distance,
     @Default(C2ResultType.rower) C2ResultType type,
     @DecimalIntConverter.tenths() required double time,
+    @DecimalIntConverter.tenths() required double restTime,
     @Default(C2APIWorkoutType.JustRow)
     C2APIWorkoutType workoutType,
     @Default("c2logbook dart") String source,

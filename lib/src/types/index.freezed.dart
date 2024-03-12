@@ -31,6 +31,8 @@ mixin _$C2FullResults {
   C2ResultType get type => throw _privateConstructorUsedError;
   @DecimalIntConverter.tenths()
   double get time => throw _privateConstructorUsedError;
+  @DecimalIntConverter.tenths()
+  double get restTime => throw _privateConstructorUsedError;
   C2APIWorkoutType get workoutType => throw _privateConstructorUsedError;
   String get source => throw _privateConstructorUsedError;
   C2WeightClass get weightClass => throw _privateConstructorUsedError;
@@ -64,6 +66,7 @@ abstract class $C2FullResultsCopyWith<$Res> {
       int distance,
       C2ResultType type,
       @DecimalIntConverter.tenths() double time,
+      @DecimalIntConverter.tenths() double restTime,
       C2APIWorkoutType workoutType,
       String source,
       C2WeightClass weightClass,
@@ -100,6 +103,7 @@ class _$C2FullResultsCopyWithImpl<$Res, $Val extends C2FullResults>
     Object? distance = null,
     Object? type = null,
     Object? time = null,
+    Object? restTime = null,
     Object? workoutType = null,
     Object? source = null,
     Object? weightClass = null,
@@ -144,6 +148,10 @@ class _$C2FullResultsCopyWithImpl<$Res, $Val extends C2FullResults>
       time: null == time
           ? _value.time
           : time // ignore: cast_nullable_to_non_nullable
+              as double,
+      restTime: null == restTime
+          ? _value.restTime
+          : restTime // ignore: cast_nullable_to_non_nullable
               as double,
       workoutType: null == workoutType
           ? _value.workoutType
@@ -218,6 +226,7 @@ abstract class _$$C2FullResultsImplCopyWith<$Res>
       int distance,
       C2ResultType type,
       @DecimalIntConverter.tenths() double time,
+      @DecimalIntConverter.tenths() double restTime,
       C2APIWorkoutType workoutType,
       String source,
       C2WeightClass weightClass,
@@ -253,6 +262,7 @@ class __$$C2FullResultsImplCopyWithImpl<$Res>
     Object? distance = null,
     Object? type = null,
     Object? time = null,
+    Object? restTime = null,
     Object? workoutType = null,
     Object? source = null,
     Object? weightClass = null,
@@ -297,6 +307,10 @@ class __$$C2FullResultsImplCopyWithImpl<$Res>
       time: null == time
           ? _value.time
           : time // ignore: cast_nullable_to_non_nullable
+              as double,
+      restTime: null == restTime
+          ? _value.restTime
+          : restTime // ignore: cast_nullable_to_non_nullable
               as double,
       workoutType: null == workoutType
           ? _value.workoutType
@@ -358,6 +372,7 @@ class _$C2FullResultsImpl extends _C2FullResults {
       this.distance = 0,
       this.type = C2ResultType.rower,
       @DecimalIntConverter.tenths() required this.time,
+      @DecimalIntConverter.tenths() required this.restTime,
       this.workoutType = C2APIWorkoutType.JustRow,
       this.source = "c2logbook dart",
       this.weightClass = C2WeightClass.heavyweight,
@@ -399,6 +414,9 @@ class _$C2FullResultsImpl extends _C2FullResults {
   @override
   @DecimalIntConverter.tenths()
   final double time;
+  @override
+  @DecimalIntConverter.tenths()
+  final double restTime;
   @override
   @JsonKey()
   final C2APIWorkoutType workoutType;
@@ -445,7 +463,7 @@ class _$C2FullResultsImpl extends _C2FullResults {
 
   @override
   String toString() {
-    return 'C2FullResults(id: $id, userId: $userId, endDate: $endDate, dateUtc: $dateUtc, timezone: $timezone, distance: $distance, type: $type, time: $time, workoutType: $workoutType, source: $source, weightClass: $weightClass, strokeRate: $strokeRate, verified: $verified, ranked: $ranked, comments: $comments, privacy: $privacy, intervals: $intervals, splits: $splits, heartRate: $heartRate)';
+    return 'C2FullResults(id: $id, userId: $userId, endDate: $endDate, dateUtc: $dateUtc, timezone: $timezone, distance: $distance, type: $type, time: $time, restTime: $restTime, workoutType: $workoutType, source: $source, weightClass: $weightClass, strokeRate: $strokeRate, verified: $verified, ranked: $ranked, comments: $comments, privacy: $privacy, intervals: $intervals, splits: $splits, heartRate: $heartRate)';
   }
 
   @override
@@ -463,6 +481,8 @@ class _$C2FullResultsImpl extends _C2FullResults {
                 other.distance == distance) &&
             (identical(other.type, type) || other.type == type) &&
             (identical(other.time, time) || other.time == time) &&
+            (identical(other.restTime, restTime) ||
+                other.restTime == restTime) &&
             (identical(other.workoutType, workoutType) ||
                 other.workoutType == workoutType) &&
             (identical(other.source, source) || other.source == source) &&
@@ -495,6 +515,7 @@ class _$C2FullResultsImpl extends _C2FullResults {
         distance,
         type,
         time,
+        restTime,
         workoutType,
         source,
         weightClass,
@@ -532,6 +553,7 @@ abstract class _C2FullResults extends C2FullResults {
       final int distance,
       final C2ResultType type,
       @DecimalIntConverter.tenths() required final double time,
+      @DecimalIntConverter.tenths() required final double restTime,
       final C2APIWorkoutType workoutType,
       final String source,
       final C2WeightClass weightClass,
@@ -567,6 +589,9 @@ abstract class _C2FullResults extends C2FullResults {
   @override
   @DecimalIntConverter.tenths()
   double get time;
+  @override
+  @DecimalIntConverter.tenths()
+  double get restTime;
   @override
   C2APIWorkoutType get workoutType;
   @override

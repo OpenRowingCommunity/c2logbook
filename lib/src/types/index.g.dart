@@ -18,6 +18,8 @@ _$C2FullResultsImpl _$$C2FullResultsImplFromJson(Map<String, dynamic> json) =>
       type: $enumDecodeNullable(_$C2ResultTypeEnumMap, json['type']) ??
           C2ResultType.rower,
       time: const DecimalIntConverter.tenths().fromJson(json['time'] as int),
+      restTime:
+          const DecimalIntConverter.tenths().fromJson(json['restTime'] as int),
       workoutType:
           $enumDecodeNullable(_$C2APIWorkoutTypeEnumMap, json['workoutType']) ??
               C2APIWorkoutType.JustRow,
@@ -54,6 +56,7 @@ Map<String, dynamic> _$$C2FullResultsImplToJson(_$C2FullResultsImpl instance) =>
       'distance': instance.distance,
       'type': _$C2ResultTypeEnumMap[instance.type]!,
       'time': const DecimalIntConverter.tenths().toJson(instance.time),
+      'restTime': const DecimalIntConverter.tenths().toJson(instance.restTime),
       'workoutType': _$C2APIWorkoutTypeEnumMap[instance.workoutType]!,
       'source': instance.source,
       'weightClass': _$C2WeightClassEnumMap[instance.weightClass]!,
