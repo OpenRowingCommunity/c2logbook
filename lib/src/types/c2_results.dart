@@ -14,24 +14,24 @@ class C2Results with _$C2Results {
   C2Results._();
 
   factory C2Results({
-    @Default(0) int id,
-    @Default(0) int userId,
-    @TimestampConverter() required DateTime date,
-    @TimestampOrNullConverter() DateTime? dateUtc,
-    String? timezone,
-    @Default(0) int distance,
-    @Default(C2ResultType.rower) C2ResultType type,
-    @DecimalIntConverter.tenths() required double time,
-    @Default(C2APIWorkoutType.JustRow)
+    @JsonKey(name: 'id') @Default(0) int id,
+    @JsonKey(name: 'user_id') @Default(0) int userId,
+    @JsonKey(name: 'date') @TimestampConverter() required DateTime date,
+    @JsonKey(name: 'date_utc') @TimestampOrNullConverter() DateTime? dateUtc,
+    @JsonKey(name: 'timezone') String? timezone,
+    @JsonKey(name: 'distance') @Default(0) int distance,
+    @JsonKey(name: 'type') @Default(C2ResultType.rower) C2ResultType type,
+    @JsonKey(name: 'time') @DecimalIntConverter.tenths() required double time,
+    @JsonKey(name: 'workout_type') @Default(C2APIWorkoutType.JustRow)
     C2APIWorkoutType workoutType,
-    @Default("c2logbook dart") String source,
-    @Default(C2WeightClass.heavyweight)
+    @JsonKey(name: 'source') @Default("c2logbook dart") String source,
+    @JsonKey(name: 'weight_class') @Default(C2WeightClass.heavyweight)
     C2WeightClass weightClass,
-    @Default(null) int? strokeRate,
-    @Default(false) bool verified,
-    @Default(false) bool ranked,
-    @Default(null) String? comments,
-    @Default(C2PrivacyLevel.private) C2PrivacyLevel privacy,
+    @JsonKey(name: 'stroke_rate') @Default(null) int? strokeRate,
+    @JsonKey(name: 'verified') @Default(false) bool verified,
+    @JsonKey(name: 'ranked') @Default(false) bool ranked,
+    @JsonKey(name: 'comments') @Default(null) String? comments,
+    @JsonKey(name: 'privacy') @Default(C2PrivacyLevel.private) C2PrivacyLevel privacy,
   }) = _C2Results;
 
   factory C2Results.fromJson(Map<dynamic, dynamic> json) =>

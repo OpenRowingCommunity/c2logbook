@@ -29,7 +29,7 @@ class C2FullResults with _$C2FullResults {
     C2WeightClass weightClass,
     @JsonKey(name: 'verified') @Default(false) bool verified,
     @JsonKey(name: 'ranked') @Default(false) bool ranked,
-    @JsonKey(name: 'comments')String? comments,
+    @JsonKey(name: 'comments') String? comments,
     @JsonKey(name: 'privacy') @Default(C2PrivacyLevel.private) C2PrivacyLevel privacy,
     @JsonKey(name: 'rest_time') @DecimalIntConverter.tenths() double? restTime,
     @JsonKey(name: 'stroke_rate') int? strokeRate,

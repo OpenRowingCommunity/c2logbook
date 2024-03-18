@@ -162,23 +162,23 @@ Map<String, dynamic> _$$C2IntervalsImplToJson(_$C2IntervalsImpl instance) =>
 _$C2ResultsImpl _$$C2ResultsImplFromJson(Map<String, dynamic> json) =>
     _$C2ResultsImpl(
       id: json['id'] as int? ?? 0,
-      userId: json['userId'] as int? ?? 0,
+      userId: json['user_id'] as int? ?? 0,
       date: const TimestampConverter().fromJson(json['date'] as String),
-      dateUtc:
-          const TimestampOrNullConverter().fromJson(json['dateUtc'] as String?),
+      dateUtc: const TimestampOrNullConverter()
+          .fromJson(json['date_utc'] as String?),
       timezone: json['timezone'] as String?,
       distance: json['distance'] as int? ?? 0,
       type: $enumDecodeNullable(_$C2ResultTypeEnumMap, json['type']) ??
           C2ResultType.rower,
       time: const DecimalIntConverter.tenths().fromJson(json['time'] as int),
-      workoutType:
-          $enumDecodeNullable(_$C2APIWorkoutTypeEnumMap, json['workoutType']) ??
-              C2APIWorkoutType.JustRow,
+      workoutType: $enumDecodeNullable(
+              _$C2APIWorkoutTypeEnumMap, json['workout_type']) ??
+          C2APIWorkoutType.JustRow,
       source: json['source'] as String? ?? "c2logbook dart",
       weightClass:
-          $enumDecodeNullable(_$C2WeightClassEnumMap, json['weightClass']) ??
+          $enumDecodeNullable(_$C2WeightClassEnumMap, json['weight_class']) ??
               C2WeightClass.heavyweight,
-      strokeRate: json['strokeRate'] as int? ?? null,
+      strokeRate: json['stroke_rate'] as int? ?? null,
       verified: json['verified'] as bool? ?? false,
       ranked: json['ranked'] as bool? ?? false,
       comments: json['comments'] as String? ?? null,
@@ -189,17 +189,17 @@ _$C2ResultsImpl _$$C2ResultsImplFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$$C2ResultsImplToJson(_$C2ResultsImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'userId': instance.userId,
+      'user_id': instance.userId,
       'date': const TimestampConverter().toJson(instance.date),
-      'dateUtc': const TimestampOrNullConverter().toJson(instance.dateUtc),
+      'date_utc': const TimestampOrNullConverter().toJson(instance.dateUtc),
       'timezone': instance.timezone,
       'distance': instance.distance,
       'type': _$C2ResultTypeEnumMap[instance.type]!,
       'time': const DecimalIntConverter.tenths().toJson(instance.time),
-      'workoutType': _$C2APIWorkoutTypeEnumMap[instance.workoutType]!,
+      'workout_type': _$C2APIWorkoutTypeEnumMap[instance.workoutType]!,
       'source': instance.source,
-      'weightClass': _$C2WeightClassEnumMap[instance.weightClass]!,
-      'strokeRate': instance.strokeRate,
+      'weight_class': _$C2WeightClassEnumMap[instance.weightClass]!,
+      'stroke_rate': instance.strokeRate,
       'verified': instance.verified,
       'ranked': instance.ranked,
       'comments': instance.comments,

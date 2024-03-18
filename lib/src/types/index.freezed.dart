@@ -1224,24 +1224,40 @@ C2Results _$C2ResultsFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$C2Results {
+  @JsonKey(name: 'id')
   int get id => throw _privateConstructorUsedError;
+  @JsonKey(name: 'user_id')
   int get userId => throw _privateConstructorUsedError;
+  @JsonKey(name: 'date')
   @TimestampConverter()
   DateTime get date => throw _privateConstructorUsedError;
+  @JsonKey(name: 'date_utc')
   @TimestampOrNullConverter()
   DateTime? get dateUtc => throw _privateConstructorUsedError;
+  @JsonKey(name: 'timezone')
   String? get timezone => throw _privateConstructorUsedError;
+  @JsonKey(name: 'distance')
   int get distance => throw _privateConstructorUsedError;
+  @JsonKey(name: 'type')
   C2ResultType get type => throw _privateConstructorUsedError;
+  @JsonKey(name: 'time')
   @DecimalIntConverter.tenths()
   double get time => throw _privateConstructorUsedError;
+  @JsonKey(name: 'workout_type')
   C2APIWorkoutType get workoutType => throw _privateConstructorUsedError;
+  @JsonKey(name: 'source')
   String get source => throw _privateConstructorUsedError;
+  @JsonKey(name: 'weight_class')
   C2WeightClass get weightClass => throw _privateConstructorUsedError;
+  @JsonKey(name: 'stroke_rate')
   int? get strokeRate => throw _privateConstructorUsedError;
+  @JsonKey(name: 'verified')
   bool get verified => throw _privateConstructorUsedError;
+  @JsonKey(name: 'ranked')
   bool get ranked => throw _privateConstructorUsedError;
+  @JsonKey(name: 'comments')
   String? get comments => throw _privateConstructorUsedError;
+  @JsonKey(name: 'privacy')
   C2PrivacyLevel get privacy => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -1256,22 +1272,22 @@ abstract class $C2ResultsCopyWith<$Res> {
       _$C2ResultsCopyWithImpl<$Res, C2Results>;
   @useResult
   $Res call(
-      {int id,
-      int userId,
-      @TimestampConverter() DateTime date,
-      @TimestampOrNullConverter() DateTime? dateUtc,
-      String? timezone,
-      int distance,
-      C2ResultType type,
-      @DecimalIntConverter.tenths() double time,
-      C2APIWorkoutType workoutType,
-      String source,
-      C2WeightClass weightClass,
-      int? strokeRate,
-      bool verified,
-      bool ranked,
-      String? comments,
-      C2PrivacyLevel privacy});
+      {@JsonKey(name: 'id') int id,
+      @JsonKey(name: 'user_id') int userId,
+      @JsonKey(name: 'date') @TimestampConverter() DateTime date,
+      @JsonKey(name: 'date_utc') @TimestampOrNullConverter() DateTime? dateUtc,
+      @JsonKey(name: 'timezone') String? timezone,
+      @JsonKey(name: 'distance') int distance,
+      @JsonKey(name: 'type') C2ResultType type,
+      @JsonKey(name: 'time') @DecimalIntConverter.tenths() double time,
+      @JsonKey(name: 'workout_type') C2APIWorkoutType workoutType,
+      @JsonKey(name: 'source') String source,
+      @JsonKey(name: 'weight_class') C2WeightClass weightClass,
+      @JsonKey(name: 'stroke_rate') int? strokeRate,
+      @JsonKey(name: 'verified') bool verified,
+      @JsonKey(name: 'ranked') bool ranked,
+      @JsonKey(name: 'comments') String? comments,
+      @JsonKey(name: 'privacy') C2PrivacyLevel privacy});
 }
 
 /// @nodoc
@@ -1382,22 +1398,22 @@ abstract class _$$C2ResultsImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {int id,
-      int userId,
-      @TimestampConverter() DateTime date,
-      @TimestampOrNullConverter() DateTime? dateUtc,
-      String? timezone,
-      int distance,
-      C2ResultType type,
-      @DecimalIntConverter.tenths() double time,
-      C2APIWorkoutType workoutType,
-      String source,
-      C2WeightClass weightClass,
-      int? strokeRate,
-      bool verified,
-      bool ranked,
-      String? comments,
-      C2PrivacyLevel privacy});
+      {@JsonKey(name: 'id') int id,
+      @JsonKey(name: 'user_id') int userId,
+      @JsonKey(name: 'date') @TimestampConverter() DateTime date,
+      @JsonKey(name: 'date_utc') @TimestampOrNullConverter() DateTime? dateUtc,
+      @JsonKey(name: 'timezone') String? timezone,
+      @JsonKey(name: 'distance') int distance,
+      @JsonKey(name: 'type') C2ResultType type,
+      @JsonKey(name: 'time') @DecimalIntConverter.tenths() double time,
+      @JsonKey(name: 'workout_type') C2APIWorkoutType workoutType,
+      @JsonKey(name: 'source') String source,
+      @JsonKey(name: 'weight_class') C2WeightClass weightClass,
+      @JsonKey(name: 'stroke_rate') int? strokeRate,
+      @JsonKey(name: 'verified') bool verified,
+      @JsonKey(name: 'ranked') bool ranked,
+      @JsonKey(name: 'comments') String? comments,
+      @JsonKey(name: 'privacy') C2PrivacyLevel privacy});
 }
 
 /// @nodoc
@@ -1501,73 +1517,79 @@ class __$$C2ResultsImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$C2ResultsImpl extends _C2Results {
   _$C2ResultsImpl(
-      {this.id = 0,
-      this.userId = 0,
-      @TimestampConverter() required this.date,
-      @TimestampOrNullConverter() this.dateUtc,
-      this.timezone,
-      this.distance = 0,
-      this.type = C2ResultType.rower,
-      @DecimalIntConverter.tenths() required this.time,
+      {@JsonKey(name: 'id') this.id = 0,
+      @JsonKey(name: 'user_id') this.userId = 0,
+      @JsonKey(name: 'date') @TimestampConverter() required this.date,
+      @JsonKey(name: 'date_utc') @TimestampOrNullConverter() this.dateUtc,
+      @JsonKey(name: 'timezone') this.timezone,
+      @JsonKey(name: 'distance') this.distance = 0,
+      @JsonKey(name: 'type') this.type = C2ResultType.rower,
+      @JsonKey(name: 'time') @DecimalIntConverter.tenths() required this.time,
+      @JsonKey(name: 'workout_type')
       this.workoutType = C2APIWorkoutType.JustRow,
-      this.source = "c2logbook dart",
+      @JsonKey(name: 'source') this.source = "c2logbook dart",
+      @JsonKey(name: 'weight_class')
       this.weightClass = C2WeightClass.heavyweight,
-      this.strokeRate = null,
-      this.verified = false,
-      this.ranked = false,
-      this.comments = null,
-      this.privacy = C2PrivacyLevel.private})
+      @JsonKey(name: 'stroke_rate') this.strokeRate = null,
+      @JsonKey(name: 'verified') this.verified = false,
+      @JsonKey(name: 'ranked') this.ranked = false,
+      @JsonKey(name: 'comments') this.comments = null,
+      @JsonKey(name: 'privacy') this.privacy = C2PrivacyLevel.private})
       : super._();
 
   factory _$C2ResultsImpl.fromJson(Map<String, dynamic> json) =>
       _$$C2ResultsImplFromJson(json);
 
   @override
-  @JsonKey()
+  @JsonKey(name: 'id')
   final int id;
   @override
-  @JsonKey()
+  @JsonKey(name: 'user_id')
   final int userId;
   @override
+  @JsonKey(name: 'date')
   @TimestampConverter()
   final DateTime date;
   @override
+  @JsonKey(name: 'date_utc')
   @TimestampOrNullConverter()
   final DateTime? dateUtc;
   @override
+  @JsonKey(name: 'timezone')
   final String? timezone;
   @override
-  @JsonKey()
+  @JsonKey(name: 'distance')
   final int distance;
   @override
-  @JsonKey()
+  @JsonKey(name: 'type')
   final C2ResultType type;
   @override
+  @JsonKey(name: 'time')
   @DecimalIntConverter.tenths()
   final double time;
   @override
-  @JsonKey()
+  @JsonKey(name: 'workout_type')
   final C2APIWorkoutType workoutType;
   @override
-  @JsonKey()
+  @JsonKey(name: 'source')
   final String source;
   @override
-  @JsonKey()
+  @JsonKey(name: 'weight_class')
   final C2WeightClass weightClass;
   @override
-  @JsonKey()
+  @JsonKey(name: 'stroke_rate')
   final int? strokeRate;
   @override
-  @JsonKey()
+  @JsonKey(name: 'verified')
   final bool verified;
   @override
-  @JsonKey()
+  @JsonKey(name: 'ranked')
   final bool ranked;
   @override
-  @JsonKey()
+  @JsonKey(name: 'comments')
   final String? comments;
   @override
-  @JsonKey()
+  @JsonKey(name: 'privacy')
   final C2PrivacyLevel privacy;
 
   @override
@@ -1642,21 +1664,26 @@ class _$C2ResultsImpl extends _C2Results {
 
 abstract class _C2Results extends C2Results {
   factory _C2Results(
-      {final int id,
-      final int userId,
-      @TimestampConverter() required final DateTime date,
-      @TimestampOrNullConverter() final DateTime? dateUtc,
-      final String? timezone,
-      final int distance,
-      final C2ResultType type,
-      @DecimalIntConverter.tenths() required final double time,
-      final C2APIWorkoutType workoutType,
-      final String source,
-      final C2WeightClass weightClass,
-      final int? strokeRate,
-      final bool verified,
-      final bool ranked,
-      final String? comments,
+      {@JsonKey(name: 'id') final int id,
+      @JsonKey(name: 'user_id') final int userId,
+      @JsonKey(name: 'date') @TimestampConverter() required final DateTime date,
+      @JsonKey(name: 'date_utc')
+      @TimestampOrNullConverter()
+      final DateTime? dateUtc,
+      @JsonKey(name: 'timezone') final String? timezone,
+      @JsonKey(name: 'distance') final int distance,
+      @JsonKey(name: 'type') final C2ResultType type,
+      @JsonKey(name: 'time')
+      @DecimalIntConverter.tenths()
+      required final double time,
+      @JsonKey(name: 'workout_type') final C2APIWorkoutType workoutType,
+      @JsonKey(name: 'source') final String source,
+      @JsonKey(name: 'weight_class') final C2WeightClass weightClass,
+      @JsonKey(name: 'stroke_rate') final int? strokeRate,
+      @JsonKey(name: 'verified') final bool verified,
+      @JsonKey(name: 'ranked') final bool ranked,
+      @JsonKey(name: 'comments') final String? comments,
+      @JsonKey(name: 'privacy')
       final C2PrivacyLevel privacy}) = _$C2ResultsImpl;
   _C2Results._() : super._();
 
@@ -1664,39 +1691,55 @@ abstract class _C2Results extends C2Results {
       _$C2ResultsImpl.fromJson;
 
   @override
+  @JsonKey(name: 'id')
   int get id;
   @override
+  @JsonKey(name: 'user_id')
   int get userId;
   @override
+  @JsonKey(name: 'date')
   @TimestampConverter()
   DateTime get date;
   @override
+  @JsonKey(name: 'date_utc')
   @TimestampOrNullConverter()
   DateTime? get dateUtc;
   @override
+  @JsonKey(name: 'timezone')
   String? get timezone;
   @override
+  @JsonKey(name: 'distance')
   int get distance;
   @override
+  @JsonKey(name: 'type')
   C2ResultType get type;
   @override
+  @JsonKey(name: 'time')
   @DecimalIntConverter.tenths()
   double get time;
   @override
+  @JsonKey(name: 'workout_type')
   C2APIWorkoutType get workoutType;
   @override
+  @JsonKey(name: 'source')
   String get source;
   @override
+  @JsonKey(name: 'weight_class')
   C2WeightClass get weightClass;
   @override
+  @JsonKey(name: 'stroke_rate')
   int? get strokeRate;
   @override
+  @JsonKey(name: 'verified')
   bool get verified;
   @override
+  @JsonKey(name: 'ranked')
   bool get ranked;
   @override
+  @JsonKey(name: 'comments')
   String? get comments;
   @override
+  @JsonKey(name: 'privacy')
   C2PrivacyLevel get privacy;
   @override
   @JsonKey(ignore: true)
