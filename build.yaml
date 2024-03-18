@@ -1,0 +1,14 @@
+targets:
+  $default:
+    builders:
+      json_serializable:
+        generate_for:
+          - "**/types/**.dart"
+        options:
+          explicit_to_json: true
+      freezed:
+        generate_for:
+          - "**/types/**.dart"
+        options:
+          maybe_when: false
+          maybe_map: false
