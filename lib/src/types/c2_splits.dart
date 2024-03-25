@@ -4,7 +4,6 @@ part of 'index.dart';
 
 @freezed
 class C2Splits with _$C2Splits {
-
   C2Splits._();
 
   factory C2Splits({
