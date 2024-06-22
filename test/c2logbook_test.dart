@@ -51,6 +51,7 @@ void main() {
 
   group('Parsing Tests', () {
     test('Test Parsing minimal Result JSON', () {
+      // data manually created to exercise the parser
       final dynamic jsonData = json.decode("""{
       "id": 3,
       "user_id": 1,
@@ -70,6 +71,7 @@ void main() {
     });
 
     test('Test Parsing maximal Result JSON', () {
+      // data manually created to exercise the parser
       final dynamic jsonData = json.decode("""{
       "id": 3,
       "user_id": 1,
@@ -93,6 +95,7 @@ void main() {
     });
 
     test('Test Parsing User JSON', () {
+      // Data from: https://log.concept2.com/developers/documentation/#logbook-users-user-get
       final dynamic jsonData = json.decode("""{
     "id": 1,
     "username": "David Hart",
@@ -114,6 +117,7 @@ void main() {
   });
 
   test("Test parsing webhook JSON (minimal)", () {
+    // data from: https://log.concept2.com/developers/documentation/#webhook
     final dynamic webhookJson = json.decode("""{
         "data": {
           "type": "result-added",
