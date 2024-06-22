@@ -26,7 +26,7 @@ mixin _$C2FullResults {
   int get userId => throw _privateConstructorUsedError;
   @JsonKey(name: 'date')
   @TimestampConverter()
-  DateTime get date => throw _privateConstructorUsedError;
+  DateTime get endDate => throw _privateConstructorUsedError;
   @JsonKey(name: 'timezone')
   String? get timezone => throw _privateConstructorUsedError;
   @JsonKey(name: 'date_utc')
@@ -80,7 +80,7 @@ abstract class $C2FullResultsCopyWith<$Res> {
   $Res call(
       {@JsonKey(name: 'id') int id,
       @JsonKey(name: 'user_id') int userId,
-      @JsonKey(name: 'date') @TimestampConverter() DateTime date,
+      @JsonKey(name: 'date') @TimestampConverter() DateTime endDate,
       @JsonKey(name: 'timezone') String? timezone,
       @JsonKey(name: 'date_utc') @TimestampOrNullConverter() DateTime? dateUtc,
       @JsonKey(name: 'distance') int distance,
@@ -120,7 +120,7 @@ class _$C2FullResultsCopyWithImpl<$Res, $Val extends C2FullResults>
   $Res call({
     Object? id = null,
     Object? userId = null,
-    Object? date = null,
+    Object? endDate = null,
     Object? timezone = freezed,
     Object? dateUtc = freezed,
     Object? distance = null,
@@ -148,9 +148,9 @@ class _$C2FullResultsCopyWithImpl<$Res, $Val extends C2FullResults>
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
               as int,
-      date: null == date
-          ? _value.date
-          : date // ignore: cast_nullable_to_non_nullable
+      endDate: null == endDate
+          ? _value.endDate
+          : endDate // ignore: cast_nullable_to_non_nullable
               as DateTime,
       timezone: freezed == timezone
           ? _value.timezone
@@ -259,7 +259,7 @@ abstract class _$$C2FullResultsImplCopyWith<$Res>
   $Res call(
       {@JsonKey(name: 'id') int id,
       @JsonKey(name: 'user_id') int userId,
-      @JsonKey(name: 'date') @TimestampConverter() DateTime date,
+      @JsonKey(name: 'date') @TimestampConverter() DateTime endDate,
       @JsonKey(name: 'timezone') String? timezone,
       @JsonKey(name: 'date_utc') @TimestampOrNullConverter() DateTime? dateUtc,
       @JsonKey(name: 'distance') int distance,
@@ -299,7 +299,7 @@ class __$$C2FullResultsImplCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
     Object? userId = null,
-    Object? date = null,
+    Object? endDate = null,
     Object? timezone = freezed,
     Object? dateUtc = freezed,
     Object? distance = null,
@@ -327,9 +327,9 @@ class __$$C2FullResultsImplCopyWithImpl<$Res>
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
               as int,
-      date: null == date
-          ? _value.date
-          : date // ignore: cast_nullable_to_non_nullable
+      endDate: null == endDate
+          ? _value.endDate
+          : endDate // ignore: cast_nullable_to_non_nullable
               as DateTime,
       timezone: freezed == timezone
           ? _value.timezone
@@ -409,7 +409,7 @@ class _$C2FullResultsImpl extends _C2FullResults {
   _$C2FullResultsImpl(
       {@JsonKey(name: 'id') this.id = 0,
       @JsonKey(name: 'user_id') this.userId = 0,
-      @JsonKey(name: 'date') @TimestampConverter() required this.date,
+      @JsonKey(name: 'date') @TimestampConverter() required this.endDate,
       @JsonKey(name: 'timezone') this.timezone,
       @JsonKey(name: 'date_utc') @TimestampOrNullConverter() this.dateUtc,
       @JsonKey(name: 'distance') this.distance = 0,
@@ -443,7 +443,7 @@ class _$C2FullResultsImpl extends _C2FullResults {
   @override
   @JsonKey(name: 'date')
   @TimestampConverter()
-  final DateTime date;
+  final DateTime endDate;
   @override
   @JsonKey(name: 'timezone')
   final String? timezone;
@@ -501,7 +501,7 @@ class _$C2FullResultsImpl extends _C2FullResults {
 
   @override
   String toString() {
-    return 'C2FullResults(id: $id, userId: $userId, date: $date, timezone: $timezone, dateUtc: $dateUtc, distance: $distance, type: $type, time: $time, workoutType: $workoutType, source: $source, weightClass: $weightClass, verified: $verified, ranked: $ranked, comments: $comments, privacy: $privacy, restTime: $restTime, strokeRate: $strokeRate, heartRate: $heartRate, workout: $workout, restDistance: $restDistance)';
+    return 'C2FullResults(id: $id, userId: $userId, endDate: $endDate, timezone: $timezone, dateUtc: $dateUtc, distance: $distance, type: $type, time: $time, workoutType: $workoutType, source: $source, weightClass: $weightClass, verified: $verified, ranked: $ranked, comments: $comments, privacy: $privacy, restTime: $restTime, strokeRate: $strokeRate, heartRate: $heartRate, workout: $workout, restDistance: $restDistance)';
   }
 
   @override
@@ -511,7 +511,7 @@ class _$C2FullResultsImpl extends _C2FullResults {
             other is _$C2FullResultsImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.userId, userId) || other.userId == userId) &&
-            (identical(other.date, date) || other.date == date) &&
+            (identical(other.endDate, endDate) || other.endDate == endDate) &&
             (identical(other.timezone, timezone) ||
                 other.timezone == timezone) &&
             (identical(other.dateUtc, dateUtc) || other.dateUtc == dateUtc) &&
@@ -547,7 +547,7 @@ class _$C2FullResultsImpl extends _C2FullResults {
         runtimeType,
         id,
         userId,
-        date,
+        endDate,
         timezone,
         dateUtc,
         distance,
@@ -583,33 +583,35 @@ class _$C2FullResultsImpl extends _C2FullResults {
 
 abstract class _C2FullResults extends C2FullResults {
   factory _C2FullResults(
-      {@JsonKey(name: 'id') final int id,
-      @JsonKey(name: 'user_id') final int userId,
-      @JsonKey(name: 'date') @TimestampConverter() required final DateTime date,
-      @JsonKey(name: 'timezone') final String? timezone,
-      @JsonKey(name: 'date_utc')
-      @TimestampOrNullConverter()
-      final DateTime? dateUtc,
-      @JsonKey(name: 'distance') final int distance,
-      @JsonKey(name: 'type') final C2ResultType type,
-      @JsonKey(name: 'time')
-      @DecimalIntConverter.tenths()
-      required final double time,
-      @JsonKey(name: 'workout_type') final C2APIWorkoutType workoutType,
-      @JsonKey(name: 'source') final String source,
-      @JsonKey(name: 'weight_class') final C2WeightClass weightClass,
-      @JsonKey(name: 'verified') final bool verified,
-      @JsonKey(name: 'ranked') final bool ranked,
-      @JsonKey(name: 'comments') final String? comments,
-      @JsonKey(name: 'privacy') final C2PrivacyLevel privacy,
-      @JsonKey(name: 'rest_time')
-      @DecimalIntConverter.tenths()
-      final double? restTime,
-      @JsonKey(name: 'stroke_rate') final int? strokeRate,
-      @JsonKey(name: 'heart_rate') final C2HeartRate? heartRate,
-      @JsonKey(name: 'workout') final C2Workout? workout,
-      @JsonKey(name: 'rest_distance')
-      final double restDistance}) = _$C2FullResultsImpl;
+          {@JsonKey(name: 'id') final int id,
+          @JsonKey(name: 'user_id') final int userId,
+          @JsonKey(name: 'date')
+          @TimestampConverter()
+          required final DateTime endDate,
+          @JsonKey(name: 'timezone') final String? timezone,
+          @JsonKey(name: 'date_utc')
+          @TimestampOrNullConverter()
+          final DateTime? dateUtc,
+          @JsonKey(name: 'distance') final int distance,
+          @JsonKey(name: 'type') final C2ResultType type,
+          @JsonKey(name: 'time')
+          @DecimalIntConverter.tenths()
+          required final double time,
+          @JsonKey(name: 'workout_type') final C2APIWorkoutType workoutType,
+          @JsonKey(name: 'source') final String source,
+          @JsonKey(name: 'weight_class') final C2WeightClass weightClass,
+          @JsonKey(name: 'verified') final bool verified,
+          @JsonKey(name: 'ranked') final bool ranked,
+          @JsonKey(name: 'comments') final String? comments,
+          @JsonKey(name: 'privacy') final C2PrivacyLevel privacy,
+          @JsonKey(name: 'rest_time')
+          @DecimalIntConverter.tenths()
+          final double? restTime,
+          @JsonKey(name: 'stroke_rate') final int? strokeRate,
+          @JsonKey(name: 'heart_rate') final C2HeartRate? heartRate,
+          @JsonKey(name: 'workout') final C2Workout? workout,
+          @JsonKey(name: 'rest_distance') final double restDistance}) =
+      _$C2FullResultsImpl;
   _C2FullResults._() : super._();
 
   factory _C2FullResults.fromJson(Map<String, dynamic> json) =
@@ -624,7 +626,7 @@ abstract class _C2FullResults extends C2FullResults {
   @override
   @JsonKey(name: 'date')
   @TimestampConverter()
-  DateTime get date;
+  DateTime get endDate;
   @override
   @JsonKey(name: 'timezone')
   String? get timezone;

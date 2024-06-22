@@ -16,7 +16,7 @@ class C2FullResults with _$C2FullResults {
   factory C2FullResults({
     @JsonKey(name: 'id') @Default(0) int id,
     @JsonKey(name: 'user_id') @Default(0) int userId,
-    @JsonKey(name: 'date') @TimestampConverter() required DateTime date,
+    @JsonKey(name: 'date') @TimestampConverter() required DateTime endDate,
     @JsonKey(name: 'timezone') String? timezone,
     @JsonKey(name: 'date_utc') @TimestampOrNullConverter() DateTime? dateUtc,
     @JsonKey(name: 'distance') @Default(0) int distance,
