@@ -2044,18 +2044,26 @@ C2User _$C2UserFromJson(Map<String, dynamic> json) {
 mixin _$C2User {
   int get id => throw _privateConstructorUsedError;
   String get username => throw _privateConstructorUsedError;
+  @JsonKey(name: 'first_name')
   String get firstName => throw _privateConstructorUsedError;
+  @JsonKey(name: 'last_name')
   String get lastName => throw _privateConstructorUsedError;
   String get gender => throw _privateConstructorUsedError;
+  @JsonKey(name: 'dob')
   String get birthday => throw _privateConstructorUsedError;
   String get email => throw _privateConstructorUsedError;
   String get country => throw _privateConstructorUsedError;
+  @JsonKey(name: 'profile_image')
   String? get profileImage => throw _privateConstructorUsedError;
+  @JsonKey(name: 'age_restricted')
   bool get ageRestricted => throw _privateConstructorUsedError;
+  @JsonKey(name: 'email_permission')
   bool get emailPermission => throw _privateConstructorUsedError;
+  @JsonKey(name: 'max_heart_rate')
   int? get maxHeartRate => throw _privateConstructorUsedError;
   int? get weight => throw _privateConstructorUsedError;
   List<String> get roles => throw _privateConstructorUsedError;
+  @JsonKey(name: 'logbook_privacy')
   C2PrivacyLevel get logbookPrivacy => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -2071,19 +2079,19 @@ abstract class $C2UserCopyWith<$Res> {
   $Res call(
       {int id,
       String username,
-      String firstName,
-      String lastName,
+      @JsonKey(name: 'first_name') String firstName,
+      @JsonKey(name: 'last_name') String lastName,
       String gender,
-      String birthday,
+      @JsonKey(name: 'dob') String birthday,
       String email,
       String country,
-      String? profileImage,
-      bool ageRestricted,
-      bool emailPermission,
-      int? maxHeartRate,
+      @JsonKey(name: 'profile_image') String? profileImage,
+      @JsonKey(name: 'age_restricted') bool ageRestricted,
+      @JsonKey(name: 'email_permission') bool emailPermission,
+      @JsonKey(name: 'max_heart_rate') int? maxHeartRate,
       int? weight,
       List<String> roles,
-      C2PrivacyLevel logbookPrivacy});
+      @JsonKey(name: 'logbook_privacy') C2PrivacyLevel logbookPrivacy});
 }
 
 /// @nodoc
@@ -2190,19 +2198,19 @@ abstract class _$$C2UserImplCopyWith<$Res> implements $C2UserCopyWith<$Res> {
   $Res call(
       {int id,
       String username,
-      String firstName,
-      String lastName,
+      @JsonKey(name: 'first_name') String firstName,
+      @JsonKey(name: 'last_name') String lastName,
       String gender,
-      String birthday,
+      @JsonKey(name: 'dob') String birthday,
       String email,
       String country,
-      String? profileImage,
-      bool ageRestricted,
-      bool emailPermission,
-      int? maxHeartRate,
+      @JsonKey(name: 'profile_image') String? profileImage,
+      @JsonKey(name: 'age_restricted') bool ageRestricted,
+      @JsonKey(name: 'email_permission') bool emailPermission,
+      @JsonKey(name: 'max_heart_rate') int? maxHeartRate,
       int? weight,
       List<String> roles,
-      C2PrivacyLevel logbookPrivacy});
+      @JsonKey(name: 'logbook_privacy') C2PrivacyLevel logbookPrivacy});
 }
 
 /// @nodoc
@@ -2303,18 +2311,19 @@ class _$C2UserImpl implements _C2User {
   const _$C2UserImpl(
       {this.id = 0,
       this.username = '',
-      this.firstName = '',
-      this.lastName = '',
+      @JsonKey(name: 'first_name') this.firstName = '',
+      @JsonKey(name: 'last_name') this.lastName = '',
       this.gender = 'F',
-      this.birthday = '1970-01-01',
+      @JsonKey(name: 'dob') this.birthday = '1970-01-01',
       this.email = '',
       this.country = '',
-      this.profileImage,
-      this.ageRestricted = false,
-      this.emailPermission = false,
-      this.maxHeartRate,
+      @JsonKey(name: 'profile_image') this.profileImage,
+      @JsonKey(name: 'age_restricted') this.ageRestricted = false,
+      @JsonKey(name: 'email_permission') this.emailPermission = false,
+      @JsonKey(name: 'max_heart_rate') this.maxHeartRate,
       this.weight,
       final List<String> roles = const <String>[],
+      @JsonKey(name: 'logbook_privacy')
       this.logbookPrivacy = C2PrivacyLevel.private})
       : _roles = roles;
 
@@ -2328,16 +2337,16 @@ class _$C2UserImpl implements _C2User {
   @JsonKey()
   final String username;
   @override
-  @JsonKey()
+  @JsonKey(name: 'first_name')
   final String firstName;
   @override
-  @JsonKey()
+  @JsonKey(name: 'last_name')
   final String lastName;
   @override
   @JsonKey()
   final String gender;
   @override
-  @JsonKey()
+  @JsonKey(name: 'dob')
   final String birthday;
   @override
   @JsonKey()
@@ -2346,14 +2355,16 @@ class _$C2UserImpl implements _C2User {
   @JsonKey()
   final String country;
   @override
+  @JsonKey(name: 'profile_image')
   final String? profileImage;
   @override
-  @JsonKey()
+  @JsonKey(name: 'age_restricted')
   final bool ageRestricted;
   @override
-  @JsonKey()
+  @JsonKey(name: 'email_permission')
   final bool emailPermission;
   @override
+  @JsonKey(name: 'max_heart_rate')
   final int? maxHeartRate;
   @override
   final int? weight;
@@ -2367,7 +2378,7 @@ class _$C2UserImpl implements _C2User {
   }
 
   @override
-  @JsonKey()
+  @JsonKey(name: 'logbook_privacy')
   final C2PrivacyLevel logbookPrivacy;
 
   @override
@@ -2444,18 +2455,19 @@ abstract class _C2User implements C2User {
   const factory _C2User(
       {final int id,
       final String username,
-      final String firstName,
-      final String lastName,
+      @JsonKey(name: 'first_name') final String firstName,
+      @JsonKey(name: 'last_name') final String lastName,
       final String gender,
-      final String birthday,
+      @JsonKey(name: 'dob') final String birthday,
       final String email,
       final String country,
-      final String? profileImage,
-      final bool ageRestricted,
-      final bool emailPermission,
-      final int? maxHeartRate,
+      @JsonKey(name: 'profile_image') final String? profileImage,
+      @JsonKey(name: 'age_restricted') final bool ageRestricted,
+      @JsonKey(name: 'email_permission') final bool emailPermission,
+      @JsonKey(name: 'max_heart_rate') final int? maxHeartRate,
       final int? weight,
       final List<String> roles,
+      @JsonKey(name: 'logbook_privacy')
       final C2PrivacyLevel logbookPrivacy}) = _$C2UserImpl;
 
   factory _C2User.fromJson(Map<String, dynamic> json) = _$C2UserImpl.fromJson;
@@ -2465,30 +2477,38 @@ abstract class _C2User implements C2User {
   @override
   String get username;
   @override
+  @JsonKey(name: 'first_name')
   String get firstName;
   @override
+  @JsonKey(name: 'last_name')
   String get lastName;
   @override
   String get gender;
   @override
+  @JsonKey(name: 'dob')
   String get birthday;
   @override
   String get email;
   @override
   String get country;
   @override
+  @JsonKey(name: 'profile_image')
   String? get profileImage;
   @override
+  @JsonKey(name: 'age_restricted')
   bool get ageRestricted;
   @override
+  @JsonKey(name: 'email_permission')
   bool get emailPermission;
   @override
+  @JsonKey(name: 'max_heart_rate')
   int? get maxHeartRate;
   @override
   int? get weight;
   @override
   List<String> get roles;
   @override
+  @JsonKey(name: 'logbook_privacy')
   C2PrivacyLevel get logbookPrivacy;
   @override
   @JsonKey(ignore: true)
