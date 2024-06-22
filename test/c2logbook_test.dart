@@ -181,6 +181,129 @@ void main() {
     }""");
       expect(C2Webhook.parse(webhookJson), testResultsMin);
     });
+
+    test("Test parsing Result JSON (with workout and Heart rate)", () {
+      // anonymized sample data provided from a real-world usecase
+      final dynamic webhookJson = json.decode("""{
+      "id": 987654321,
+      "user_id": 123456789,
+      "date": "2024-03-06 18:13:00",
+      "timezone": "America/New_York",
+      "date_utc": "2024-03-06 23:13:00",
+      "distance": 9011,
+      "type": "bike",
+      "time": 11520,
+      "time_formatted": "19:12.0",
+      "workout_type": "JustRow",
+      "source": "ErgData iOS",
+      "weight_class": "H",
+      "verified": false,
+      "ranked": false,
+      "comments": null,
+      "privacy": "logged_in",
+      "stroke_data": true,
+      "calories_total": 278,
+      "drag_factor": 52,
+      "stroke_count": 1673,
+      "stroke_rate": 87,
+      "heart_rate": {
+        "min": 84,
+        "average": 122,
+        "max": 128,
+        "ending": 122
+      },
+      "workout": {
+        "splits": [
+          {
+            "time": 3000,
+            "distance": 2341,
+            "calories_total": 72,
+            "stroke_rate": 87,
+            "heart_rate": {
+              "min": 81,
+              "average": 114,
+              "max": 125,
+              "ending": 122
+            },
+            "type": "distance"
+          }
+        ],
+        "intervals": [
+          {
+            "type": "distance",
+            "time": 7045,
+            "distance": 3000,
+            "calories_total": 204,
+            "stroke_rate": 20,
+            "rest_time": 1800,
+            "heart_rate": {
+              "min": 71,
+              "average": 140,
+              "max": 160,
+              "ending": 148,
+              "rest": 157
+            },
+            "machine": "rower",
+            "rest_distance": 124
+          }
+        ]
+      },
+      "real_time": null,
+      "rest_distance": 887,
+      "rest_time": 9000
+    }""");
+      expect(
+          C2Results.fromJson(webhookJson),
+          C2Results(
+              id: 987654321,
+              userId: 123456789,
+              endDate: DateTime.parse("2024-03-06 18:13:00"),
+              dateUtc: DateTime.parse("2024-03-06 23:13:00"),
+              timezone: "America/New_York",
+              distance: 9011,
+              type: C2ResultType.bike,
+              time: 1152.0,
+              strokeRate: 87,
+              workoutType: C2APIWorkoutType.JustRow,
+              source: "ErgData iOS",
+              weightClass: C2WeightClass.heavyweight,
+              verified: false,
+              ranked: false,
+              comments: null,
+              privacy: C2PrivacyLevel.logged_in,
+              restDistance: 887,
+              restTime: 900.0,
+              // stroke_data True
+              //calories_total": 278,
+              // dragFactor: 52
+              // strokeCount
+              heartRate:
+                  C2HeartRate(min: 84, average: 122, max: 128, ending: 122),
+              workout: C2Workout(splits: <C2Splits>[
+                C2Splits(
+                    time: 300.0,
+                    distance: 2341,
+                    caloriesTotal: 72,
+                    strokeRate: 87,
+                    heartRate: C2HeartRate(
+                        min: 81, average: 114, max: 125, ending: 122),
+                    type: "distance")
+              ], intervals: <C2Intervals>[
+                C2Intervals(
+                    time: 704.5,
+                    restTime: 180.0,
+                    distance: 3000,
+                    caloriesTotal: 204,
+                    strokeRate: 20,
+                    heartRate: C2HeartRate(
+                        min: 71,
+                        average: 140,
+                        max: 160,
+                        ending: 148,
+                        rest: 157),
+                    restDistance: 124)
+              ])));
+    });
   });
 
   group('Equality Tests', () {
