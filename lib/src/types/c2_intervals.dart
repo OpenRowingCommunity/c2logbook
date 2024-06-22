@@ -16,6 +16,7 @@ class C2Intervals with _$C2Intervals {
     @JsonKey(name: 'calories_total') @Default(0) int caloriesTotal,
     @JsonKey(name: 'stroke_rate') @Default(0) int strokeRate,
     @JsonKey(name: 'heart_rate') @Default(null) C2HeartRate? heartRate,
+    @JsonKey(name: 'rest_distance') @Default(null) int? restDistance,
   }) = _C2Intervals;
 
   factory C2Intervals.fromJson(Map<dynamic, dynamic> json) =>

@@ -274,9 +274,9 @@ void main() {
               restDistance: 887,
               restTime: 900.0,
               // stroke_data True
-              //calories_total": 278,
-              // dragFactor: 52
-              // strokeCount
+              caloriesTotal: 278,
+              dragFactor: 52,
+              strokeCount: 1673,
               heartRate:
                   C2HeartRate(min: 84, average: 122, max: 128, ending: 122),
               workout: C2Workout(splits: <C2Splits>[

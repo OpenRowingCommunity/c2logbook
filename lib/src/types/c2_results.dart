@@ -31,6 +31,9 @@ class C2Results with _$C2Results {
     C2WeightClass weightClass,
     @JsonKey(name: 'stroke_rate') @Default(null) int? strokeRate,
     @JsonKey(name: 'heart_rate') @Default(null) C2HeartRate? heartRate,
+    @JsonKey(name: 'calories_total') @Default(0) int caloriesTotal,
+    @JsonKey(name: 'drag_factor') @Default(0) int dragFactor,
+    @JsonKey(name: 'stroke_count') @Default(0) int strokeCount,
     @JsonKey(name: 'workout') @Default(null) C2Workout? workout,
     // REQUIRED/FOR INTERVAL WORKOUTS ONLY
     @JsonKey(name: 'rest_distance') @Default(0.0) double restDistance,
