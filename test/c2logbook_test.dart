@@ -155,11 +155,10 @@ void main() {
 
       expect(C2User.fromJson(jsonData), testUser);
     });
-  });
 
-  test("Test parsing webhook JSON (minimal)", () {
-    // data from: https://log.concept2.com/developers/documentation/#webhook
-    final dynamic webhookJson = json.decode("""{
+    test("Test parsing webhook JSON (minimal)", () {
+      // data from: https://log.concept2.com/developers/documentation/#webhook
+      final dynamic webhookJson = json.decode("""{
         "data": {
           "type": "result-added",
           "result":
@@ -180,7 +179,8 @@ void main() {
             }
         }
     }""");
-    expect(C2Webhook.parse(webhookJson), testResultsMin);
+      expect(C2Webhook.parse(webhookJson), testResultsMin);
+    });
   });
 
   group('Equality Tests', () {
