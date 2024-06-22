@@ -30,6 +30,12 @@ class C2Results with _$C2Results {
     @Default(C2WeightClass.heavyweight)
     C2WeightClass weightClass,
     @JsonKey(name: 'stroke_rate') @Default(null) int? strokeRate,
+    @JsonKey(name: 'heart_rate') @Default(null) C2HeartRate? heartRate,
+    @JsonKey(name: 'workout') @Default(null) C2Workout? workout,
+    // REQUIRED/FOR INTERVAL WORKOUTS ONLY
+    @JsonKey(name: 'rest_distance') @Default(0.0) double restDistance,
+    @JsonKey(name: 'rest_time') @DecimalIntConverter.tenths() double? restTime,
+    // END REQUIRED/FOR INTERVAL WORKOUTS ONLY
     @JsonKey(name: 'verified') @Default(false) bool verified,
     @JsonKey(name: 'ranked') @Default(false) bool ranked,
     @JsonKey(name: 'comments') @Default(null) String? comments,

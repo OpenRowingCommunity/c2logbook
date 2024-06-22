@@ -14,679 +14,6 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
-C2FullResults _$C2FullResultsFromJson(Map<String, dynamic> json) {
-  return _C2FullResults.fromJson(json);
-}
-
-/// @nodoc
-mixin _$C2FullResults {
-  @JsonKey(name: 'id')
-  int get id => throw _privateConstructorUsedError;
-  @JsonKey(name: 'user_id')
-  int get userId => throw _privateConstructorUsedError;
-  @JsonKey(name: 'date')
-  @TimestampConverter()
-  DateTime get endDate => throw _privateConstructorUsedError;
-  @JsonKey(name: 'timezone')
-  String? get timezone => throw _privateConstructorUsedError;
-  @JsonKey(name: 'date_utc')
-  @TimestampOrNullConverter()
-  DateTime? get dateUtc => throw _privateConstructorUsedError;
-  @JsonKey(name: 'distance')
-  int get distance => throw _privateConstructorUsedError;
-  @JsonKey(name: 'type')
-  C2ResultType get type => throw _privateConstructorUsedError;
-  @JsonKey(name: 'time')
-  @DecimalIntConverter.tenths()
-  double get time => throw _privateConstructorUsedError;
-  @JsonKey(name: 'workout_type')
-  C2APIWorkoutType get workoutType => throw _privateConstructorUsedError;
-  @JsonKey(name: 'source')
-  String get source => throw _privateConstructorUsedError;
-  @JsonKey(name: 'weight_class')
-  C2WeightClass get weightClass => throw _privateConstructorUsedError;
-  @JsonKey(name: 'verified')
-  bool get verified => throw _privateConstructorUsedError;
-  @JsonKey(name: 'ranked')
-  bool get ranked => throw _privateConstructorUsedError;
-  @JsonKey(name: 'comments')
-  String? get comments => throw _privateConstructorUsedError;
-  @JsonKey(name: 'privacy')
-  C2PrivacyLevel get privacy => throw _privateConstructorUsedError;
-  @JsonKey(name: 'rest_time')
-  @DecimalIntConverter.tenths()
-  double? get restTime => throw _privateConstructorUsedError;
-  @JsonKey(name: 'stroke_rate')
-  int? get strokeRate => throw _privateConstructorUsedError;
-  @JsonKey(name: 'heart_rate')
-  C2HeartRate? get heartRate => throw _privateConstructorUsedError;
-  @JsonKey(name: 'workout')
-  C2Workout? get workout => throw _privateConstructorUsedError;
-  @JsonKey(name: 'rest_distance')
-  double get restDistance => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $C2FullResultsCopyWith<C2FullResults> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $C2FullResultsCopyWith<$Res> {
-  factory $C2FullResultsCopyWith(
-          C2FullResults value, $Res Function(C2FullResults) then) =
-      _$C2FullResultsCopyWithImpl<$Res, C2FullResults>;
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'id') int id,
-      @JsonKey(name: 'user_id') int userId,
-      @JsonKey(name: 'date') @TimestampConverter() DateTime endDate,
-      @JsonKey(name: 'timezone') String? timezone,
-      @JsonKey(name: 'date_utc') @TimestampOrNullConverter() DateTime? dateUtc,
-      @JsonKey(name: 'distance') int distance,
-      @JsonKey(name: 'type') C2ResultType type,
-      @JsonKey(name: 'time') @DecimalIntConverter.tenths() double time,
-      @JsonKey(name: 'workout_type') C2APIWorkoutType workoutType,
-      @JsonKey(name: 'source') String source,
-      @JsonKey(name: 'weight_class') C2WeightClass weightClass,
-      @JsonKey(name: 'verified') bool verified,
-      @JsonKey(name: 'ranked') bool ranked,
-      @JsonKey(name: 'comments') String? comments,
-      @JsonKey(name: 'privacy') C2PrivacyLevel privacy,
-      @JsonKey(name: 'rest_time')
-      @DecimalIntConverter.tenths()
-      double? restTime,
-      @JsonKey(name: 'stroke_rate') int? strokeRate,
-      @JsonKey(name: 'heart_rate') C2HeartRate? heartRate,
-      @JsonKey(name: 'workout') C2Workout? workout,
-      @JsonKey(name: 'rest_distance') double restDistance});
-
-  $C2HeartRateCopyWith<$Res>? get heartRate;
-  $C2WorkoutCopyWith<$Res>? get workout;
-}
-
-/// @nodoc
-class _$C2FullResultsCopyWithImpl<$Res, $Val extends C2FullResults>
-    implements $C2FullResultsCopyWith<$Res> {
-  _$C2FullResultsCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? userId = null,
-    Object? endDate = null,
-    Object? timezone = freezed,
-    Object? dateUtc = freezed,
-    Object? distance = null,
-    Object? type = null,
-    Object? time = null,
-    Object? workoutType = null,
-    Object? source = null,
-    Object? weightClass = null,
-    Object? verified = null,
-    Object? ranked = null,
-    Object? comments = freezed,
-    Object? privacy = null,
-    Object? restTime = freezed,
-    Object? strokeRate = freezed,
-    Object? heartRate = freezed,
-    Object? workout = freezed,
-    Object? restDistance = null,
-  }) {
-    return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as int,
-      userId: null == userId
-          ? _value.userId
-          : userId // ignore: cast_nullable_to_non_nullable
-              as int,
-      endDate: null == endDate
-          ? _value.endDate
-          : endDate // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      timezone: freezed == timezone
-          ? _value.timezone
-          : timezone // ignore: cast_nullable_to_non_nullable
-              as String?,
-      dateUtc: freezed == dateUtc
-          ? _value.dateUtc
-          : dateUtc // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      distance: null == distance
-          ? _value.distance
-          : distance // ignore: cast_nullable_to_non_nullable
-              as int,
-      type: null == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as C2ResultType,
-      time: null == time
-          ? _value.time
-          : time // ignore: cast_nullable_to_non_nullable
-              as double,
-      workoutType: null == workoutType
-          ? _value.workoutType
-          : workoutType // ignore: cast_nullable_to_non_nullable
-              as C2APIWorkoutType,
-      source: null == source
-          ? _value.source
-          : source // ignore: cast_nullable_to_non_nullable
-              as String,
-      weightClass: null == weightClass
-          ? _value.weightClass
-          : weightClass // ignore: cast_nullable_to_non_nullable
-              as C2WeightClass,
-      verified: null == verified
-          ? _value.verified
-          : verified // ignore: cast_nullable_to_non_nullable
-              as bool,
-      ranked: null == ranked
-          ? _value.ranked
-          : ranked // ignore: cast_nullable_to_non_nullable
-              as bool,
-      comments: freezed == comments
-          ? _value.comments
-          : comments // ignore: cast_nullable_to_non_nullable
-              as String?,
-      privacy: null == privacy
-          ? _value.privacy
-          : privacy // ignore: cast_nullable_to_non_nullable
-              as C2PrivacyLevel,
-      restTime: freezed == restTime
-          ? _value.restTime
-          : restTime // ignore: cast_nullable_to_non_nullable
-              as double?,
-      strokeRate: freezed == strokeRate
-          ? _value.strokeRate
-          : strokeRate // ignore: cast_nullable_to_non_nullable
-              as int?,
-      heartRate: freezed == heartRate
-          ? _value.heartRate
-          : heartRate // ignore: cast_nullable_to_non_nullable
-              as C2HeartRate?,
-      workout: freezed == workout
-          ? _value.workout
-          : workout // ignore: cast_nullable_to_non_nullable
-              as C2Workout?,
-      restDistance: null == restDistance
-          ? _value.restDistance
-          : restDistance // ignore: cast_nullable_to_non_nullable
-              as double,
-    ) as $Val);
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $C2HeartRateCopyWith<$Res>? get heartRate {
-    if (_value.heartRate == null) {
-      return null;
-    }
-
-    return $C2HeartRateCopyWith<$Res>(_value.heartRate!, (value) {
-      return _then(_value.copyWith(heartRate: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $C2WorkoutCopyWith<$Res>? get workout {
-    if (_value.workout == null) {
-      return null;
-    }
-
-    return $C2WorkoutCopyWith<$Res>(_value.workout!, (value) {
-      return _then(_value.copyWith(workout: value) as $Val);
-    });
-  }
-}
-
-/// @nodoc
-abstract class _$$C2FullResultsImplCopyWith<$Res>
-    implements $C2FullResultsCopyWith<$Res> {
-  factory _$$C2FullResultsImplCopyWith(
-          _$C2FullResultsImpl value, $Res Function(_$C2FullResultsImpl) then) =
-      __$$C2FullResultsImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'id') int id,
-      @JsonKey(name: 'user_id') int userId,
-      @JsonKey(name: 'date') @TimestampConverter() DateTime endDate,
-      @JsonKey(name: 'timezone') String? timezone,
-      @JsonKey(name: 'date_utc') @TimestampOrNullConverter() DateTime? dateUtc,
-      @JsonKey(name: 'distance') int distance,
-      @JsonKey(name: 'type') C2ResultType type,
-      @JsonKey(name: 'time') @DecimalIntConverter.tenths() double time,
-      @JsonKey(name: 'workout_type') C2APIWorkoutType workoutType,
-      @JsonKey(name: 'source') String source,
-      @JsonKey(name: 'weight_class') C2WeightClass weightClass,
-      @JsonKey(name: 'verified') bool verified,
-      @JsonKey(name: 'ranked') bool ranked,
-      @JsonKey(name: 'comments') String? comments,
-      @JsonKey(name: 'privacy') C2PrivacyLevel privacy,
-      @JsonKey(name: 'rest_time')
-      @DecimalIntConverter.tenths()
-      double? restTime,
-      @JsonKey(name: 'stroke_rate') int? strokeRate,
-      @JsonKey(name: 'heart_rate') C2HeartRate? heartRate,
-      @JsonKey(name: 'workout') C2Workout? workout,
-      @JsonKey(name: 'rest_distance') double restDistance});
-
-  @override
-  $C2HeartRateCopyWith<$Res>? get heartRate;
-  @override
-  $C2WorkoutCopyWith<$Res>? get workout;
-}
-
-/// @nodoc
-class __$$C2FullResultsImplCopyWithImpl<$Res>
-    extends _$C2FullResultsCopyWithImpl<$Res, _$C2FullResultsImpl>
-    implements _$$C2FullResultsImplCopyWith<$Res> {
-  __$$C2FullResultsImplCopyWithImpl(
-      _$C2FullResultsImpl _value, $Res Function(_$C2FullResultsImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? userId = null,
-    Object? endDate = null,
-    Object? timezone = freezed,
-    Object? dateUtc = freezed,
-    Object? distance = null,
-    Object? type = null,
-    Object? time = null,
-    Object? workoutType = null,
-    Object? source = null,
-    Object? weightClass = null,
-    Object? verified = null,
-    Object? ranked = null,
-    Object? comments = freezed,
-    Object? privacy = null,
-    Object? restTime = freezed,
-    Object? strokeRate = freezed,
-    Object? heartRate = freezed,
-    Object? workout = freezed,
-    Object? restDistance = null,
-  }) {
-    return _then(_$C2FullResultsImpl(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as int,
-      userId: null == userId
-          ? _value.userId
-          : userId // ignore: cast_nullable_to_non_nullable
-              as int,
-      endDate: null == endDate
-          ? _value.endDate
-          : endDate // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      timezone: freezed == timezone
-          ? _value.timezone
-          : timezone // ignore: cast_nullable_to_non_nullable
-              as String?,
-      dateUtc: freezed == dateUtc
-          ? _value.dateUtc
-          : dateUtc // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      distance: null == distance
-          ? _value.distance
-          : distance // ignore: cast_nullable_to_non_nullable
-              as int,
-      type: null == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as C2ResultType,
-      time: null == time
-          ? _value.time
-          : time // ignore: cast_nullable_to_non_nullable
-              as double,
-      workoutType: null == workoutType
-          ? _value.workoutType
-          : workoutType // ignore: cast_nullable_to_non_nullable
-              as C2APIWorkoutType,
-      source: null == source
-          ? _value.source
-          : source // ignore: cast_nullable_to_non_nullable
-              as String,
-      weightClass: null == weightClass
-          ? _value.weightClass
-          : weightClass // ignore: cast_nullable_to_non_nullable
-              as C2WeightClass,
-      verified: null == verified
-          ? _value.verified
-          : verified // ignore: cast_nullable_to_non_nullable
-              as bool,
-      ranked: null == ranked
-          ? _value.ranked
-          : ranked // ignore: cast_nullable_to_non_nullable
-              as bool,
-      comments: freezed == comments
-          ? _value.comments
-          : comments // ignore: cast_nullable_to_non_nullable
-              as String?,
-      privacy: null == privacy
-          ? _value.privacy
-          : privacy // ignore: cast_nullable_to_non_nullable
-              as C2PrivacyLevel,
-      restTime: freezed == restTime
-          ? _value.restTime
-          : restTime // ignore: cast_nullable_to_non_nullable
-              as double?,
-      strokeRate: freezed == strokeRate
-          ? _value.strokeRate
-          : strokeRate // ignore: cast_nullable_to_non_nullable
-              as int?,
-      heartRate: freezed == heartRate
-          ? _value.heartRate
-          : heartRate // ignore: cast_nullable_to_non_nullable
-              as C2HeartRate?,
-      workout: freezed == workout
-          ? _value.workout
-          : workout // ignore: cast_nullable_to_non_nullable
-              as C2Workout?,
-      restDistance: null == restDistance
-          ? _value.restDistance
-          : restDistance // ignore: cast_nullable_to_non_nullable
-              as double,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$C2FullResultsImpl extends _C2FullResults {
-  _$C2FullResultsImpl(
-      {@JsonKey(name: 'id') this.id = 0,
-      @JsonKey(name: 'user_id') this.userId = 0,
-      @JsonKey(name: 'date') @TimestampConverter() required this.endDate,
-      @JsonKey(name: 'timezone') this.timezone,
-      @JsonKey(name: 'date_utc') @TimestampOrNullConverter() this.dateUtc,
-      @JsonKey(name: 'distance') this.distance = 0,
-      @JsonKey(name: 'type') this.type = C2ResultType.rower,
-      @JsonKey(name: 'time') @DecimalIntConverter.tenths() required this.time,
-      @JsonKey(name: 'workout_type')
-      this.workoutType = C2APIWorkoutType.JustRow,
-      @JsonKey(name: 'source') this.source = "c2logbook dart",
-      @JsonKey(name: 'weight_class')
-      this.weightClass = C2WeightClass.heavyweight,
-      @JsonKey(name: 'verified') this.verified = false,
-      @JsonKey(name: 'ranked') this.ranked = false,
-      @JsonKey(name: 'comments') this.comments,
-      @JsonKey(name: 'privacy') this.privacy = C2PrivacyLevel.private,
-      @JsonKey(name: 'rest_time') @DecimalIntConverter.tenths() this.restTime,
-      @JsonKey(name: 'stroke_rate') this.strokeRate,
-      @JsonKey(name: 'heart_rate') this.heartRate = null,
-      @JsonKey(name: 'workout') this.workout = null,
-      @JsonKey(name: 'rest_distance') this.restDistance = 0.0})
-      : super._();
-
-  factory _$C2FullResultsImpl.fromJson(Map<String, dynamic> json) =>
-      _$$C2FullResultsImplFromJson(json);
-
-  @override
-  @JsonKey(name: 'id')
-  final int id;
-  @override
-  @JsonKey(name: 'user_id')
-  final int userId;
-  @override
-  @JsonKey(name: 'date')
-  @TimestampConverter()
-  final DateTime endDate;
-  @override
-  @JsonKey(name: 'timezone')
-  final String? timezone;
-  @override
-  @JsonKey(name: 'date_utc')
-  @TimestampOrNullConverter()
-  final DateTime? dateUtc;
-  @override
-  @JsonKey(name: 'distance')
-  final int distance;
-  @override
-  @JsonKey(name: 'type')
-  final C2ResultType type;
-  @override
-  @JsonKey(name: 'time')
-  @DecimalIntConverter.tenths()
-  final double time;
-  @override
-  @JsonKey(name: 'workout_type')
-  final C2APIWorkoutType workoutType;
-  @override
-  @JsonKey(name: 'source')
-  final String source;
-  @override
-  @JsonKey(name: 'weight_class')
-  final C2WeightClass weightClass;
-  @override
-  @JsonKey(name: 'verified')
-  final bool verified;
-  @override
-  @JsonKey(name: 'ranked')
-  final bool ranked;
-  @override
-  @JsonKey(name: 'comments')
-  final String? comments;
-  @override
-  @JsonKey(name: 'privacy')
-  final C2PrivacyLevel privacy;
-  @override
-  @JsonKey(name: 'rest_time')
-  @DecimalIntConverter.tenths()
-  final double? restTime;
-  @override
-  @JsonKey(name: 'stroke_rate')
-  final int? strokeRate;
-  @override
-  @JsonKey(name: 'heart_rate')
-  final C2HeartRate? heartRate;
-  @override
-  @JsonKey(name: 'workout')
-  final C2Workout? workout;
-  @override
-  @JsonKey(name: 'rest_distance')
-  final double restDistance;
-
-  @override
-  String toString() {
-    return 'C2FullResults(id: $id, userId: $userId, endDate: $endDate, timezone: $timezone, dateUtc: $dateUtc, distance: $distance, type: $type, time: $time, workoutType: $workoutType, source: $source, weightClass: $weightClass, verified: $verified, ranked: $ranked, comments: $comments, privacy: $privacy, restTime: $restTime, strokeRate: $strokeRate, heartRate: $heartRate, workout: $workout, restDistance: $restDistance)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$C2FullResultsImpl &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.userId, userId) || other.userId == userId) &&
-            (identical(other.endDate, endDate) || other.endDate == endDate) &&
-            (identical(other.timezone, timezone) ||
-                other.timezone == timezone) &&
-            (identical(other.dateUtc, dateUtc) || other.dateUtc == dateUtc) &&
-            (identical(other.distance, distance) ||
-                other.distance == distance) &&
-            (identical(other.type, type) || other.type == type) &&
-            (identical(other.time, time) || other.time == time) &&
-            (identical(other.workoutType, workoutType) ||
-                other.workoutType == workoutType) &&
-            (identical(other.source, source) || other.source == source) &&
-            (identical(other.weightClass, weightClass) ||
-                other.weightClass == weightClass) &&
-            (identical(other.verified, verified) ||
-                other.verified == verified) &&
-            (identical(other.ranked, ranked) || other.ranked == ranked) &&
-            (identical(other.comments, comments) ||
-                other.comments == comments) &&
-            (identical(other.privacy, privacy) || other.privacy == privacy) &&
-            (identical(other.restTime, restTime) ||
-                other.restTime == restTime) &&
-            (identical(other.strokeRate, strokeRate) ||
-                other.strokeRate == strokeRate) &&
-            (identical(other.heartRate, heartRate) ||
-                other.heartRate == heartRate) &&
-            (identical(other.workout, workout) || other.workout == workout) &&
-            (identical(other.restDistance, restDistance) ||
-                other.restDistance == restDistance));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hashAll([
-        runtimeType,
-        id,
-        userId,
-        endDate,
-        timezone,
-        dateUtc,
-        distance,
-        type,
-        time,
-        workoutType,
-        source,
-        weightClass,
-        verified,
-        ranked,
-        comments,
-        privacy,
-        restTime,
-        strokeRate,
-        heartRate,
-        workout,
-        restDistance
-      ]);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$C2FullResultsImplCopyWith<_$C2FullResultsImpl> get copyWith =>
-      __$$C2FullResultsImplCopyWithImpl<_$C2FullResultsImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$C2FullResultsImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _C2FullResults extends C2FullResults {
-  factory _C2FullResults(
-          {@JsonKey(name: 'id') final int id,
-          @JsonKey(name: 'user_id') final int userId,
-          @JsonKey(name: 'date')
-          @TimestampConverter()
-          required final DateTime endDate,
-          @JsonKey(name: 'timezone') final String? timezone,
-          @JsonKey(name: 'date_utc')
-          @TimestampOrNullConverter()
-          final DateTime? dateUtc,
-          @JsonKey(name: 'distance') final int distance,
-          @JsonKey(name: 'type') final C2ResultType type,
-          @JsonKey(name: 'time')
-          @DecimalIntConverter.tenths()
-          required final double time,
-          @JsonKey(name: 'workout_type') final C2APIWorkoutType workoutType,
-          @JsonKey(name: 'source') final String source,
-          @JsonKey(name: 'weight_class') final C2WeightClass weightClass,
-          @JsonKey(name: 'verified') final bool verified,
-          @JsonKey(name: 'ranked') final bool ranked,
-          @JsonKey(name: 'comments') final String? comments,
-          @JsonKey(name: 'privacy') final C2PrivacyLevel privacy,
-          @JsonKey(name: 'rest_time')
-          @DecimalIntConverter.tenths()
-          final double? restTime,
-          @JsonKey(name: 'stroke_rate') final int? strokeRate,
-          @JsonKey(name: 'heart_rate') final C2HeartRate? heartRate,
-          @JsonKey(name: 'workout') final C2Workout? workout,
-          @JsonKey(name: 'rest_distance') final double restDistance}) =
-      _$C2FullResultsImpl;
-  _C2FullResults._() : super._();
-
-  factory _C2FullResults.fromJson(Map<String, dynamic> json) =
-      _$C2FullResultsImpl.fromJson;
-
-  @override
-  @JsonKey(name: 'id')
-  int get id;
-  @override
-  @JsonKey(name: 'user_id')
-  int get userId;
-  @override
-  @JsonKey(name: 'date')
-  @TimestampConverter()
-  DateTime get endDate;
-  @override
-  @JsonKey(name: 'timezone')
-  String? get timezone;
-  @override
-  @JsonKey(name: 'date_utc')
-  @TimestampOrNullConverter()
-  DateTime? get dateUtc;
-  @override
-  @JsonKey(name: 'distance')
-  int get distance;
-  @override
-  @JsonKey(name: 'type')
-  C2ResultType get type;
-  @override
-  @JsonKey(name: 'time')
-  @DecimalIntConverter.tenths()
-  double get time;
-  @override
-  @JsonKey(name: 'workout_type')
-  C2APIWorkoutType get workoutType;
-  @override
-  @JsonKey(name: 'source')
-  String get source;
-  @override
-  @JsonKey(name: 'weight_class')
-  C2WeightClass get weightClass;
-  @override
-  @JsonKey(name: 'verified')
-  bool get verified;
-  @override
-  @JsonKey(name: 'ranked')
-  bool get ranked;
-  @override
-  @JsonKey(name: 'comments')
-  String? get comments;
-  @override
-  @JsonKey(name: 'privacy')
-  C2PrivacyLevel get privacy;
-  @override
-  @JsonKey(name: 'rest_time')
-  @DecimalIntConverter.tenths()
-  double? get restTime;
-  @override
-  @JsonKey(name: 'stroke_rate')
-  int? get strokeRate;
-  @override
-  @JsonKey(name: 'heart_rate')
-  C2HeartRate? get heartRate;
-  @override
-  @JsonKey(name: 'workout')
-  C2Workout? get workout;
-  @override
-  @JsonKey(name: 'rest_distance')
-  double get restDistance;
-  @override
-  @JsonKey(ignore: true)
-  _$$C2FullResultsImplCopyWith<_$C2FullResultsImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
 C2HeartRate _$C2HeartRateFromJson(Map<String, dynamic> json) {
   return _C2HeartRate.fromJson(json);
 }
@@ -1253,6 +580,24 @@ mixin _$C2Results {
   C2WeightClass get weightClass => throw _privateConstructorUsedError;
   @JsonKey(name: 'stroke_rate')
   int? get strokeRate => throw _privateConstructorUsedError;
+  @JsonKey(name: 'heart_rate')
+  C2HeartRate? get heartRate =>
+      throw _privateConstructorUsedError; //object of strings containing the following optional values:, average, min, max, ending, recovery
+// stroke_count
+// calories_total
+// drag_factor
+// verification_code
+// stroke_data
+// metadata
+  @JsonKey(name: 'workout')
+  C2Workout? get workout =>
+      throw _privateConstructorUsedError; // REQUIRED/FOR INTERVAL WORKOUTS ONLY
+  @JsonKey(name: 'rest_distance')
+  double get restDistance => throw _privateConstructorUsedError;
+  @JsonKey(name: 'rest_time')
+  @DecimalIntConverter.tenths()
+  double? get restTime =>
+      throw _privateConstructorUsedError; // END REQUIRED/FOR INTERVAL WORKOUTS ONLY
   @JsonKey(name: 'verified')
   bool get verified => throw _privateConstructorUsedError;
   @JsonKey(name: 'ranked')
@@ -1286,10 +631,19 @@ abstract class $C2ResultsCopyWith<$Res> {
       @JsonKey(name: 'source') String source,
       @JsonKey(name: 'weight_class') C2WeightClass weightClass,
       @JsonKey(name: 'stroke_rate') int? strokeRate,
+      @JsonKey(name: 'heart_rate') C2HeartRate? heartRate,
+      @JsonKey(name: 'workout') C2Workout? workout,
+      @JsonKey(name: 'rest_distance') double restDistance,
+      @JsonKey(name: 'rest_time')
+      @DecimalIntConverter.tenths()
+      double? restTime,
       @JsonKey(name: 'verified') bool verified,
       @JsonKey(name: 'ranked') bool ranked,
       @JsonKey(name: 'comments') String? comments,
       @JsonKey(name: 'privacy') C2PrivacyLevel privacy});
+
+  $C2HeartRateCopyWith<$Res>? get heartRate;
+  $C2WorkoutCopyWith<$Res>? get workout;
 }
 
 /// @nodoc
@@ -1317,6 +671,10 @@ class _$C2ResultsCopyWithImpl<$Res, $Val extends C2Results>
     Object? source = null,
     Object? weightClass = null,
     Object? strokeRate = freezed,
+    Object? heartRate = freezed,
+    Object? workout = freezed,
+    Object? restDistance = null,
+    Object? restTime = freezed,
     Object? verified = null,
     Object? ranked = null,
     Object? comments = freezed,
@@ -1371,6 +729,22 @@ class _$C2ResultsCopyWithImpl<$Res, $Val extends C2Results>
           ? _value.strokeRate
           : strokeRate // ignore: cast_nullable_to_non_nullable
               as int?,
+      heartRate: freezed == heartRate
+          ? _value.heartRate
+          : heartRate // ignore: cast_nullable_to_non_nullable
+              as C2HeartRate?,
+      workout: freezed == workout
+          ? _value.workout
+          : workout // ignore: cast_nullable_to_non_nullable
+              as C2Workout?,
+      restDistance: null == restDistance
+          ? _value.restDistance
+          : restDistance // ignore: cast_nullable_to_non_nullable
+              as double,
+      restTime: freezed == restTime
+          ? _value.restTime
+          : restTime // ignore: cast_nullable_to_non_nullable
+              as double?,
       verified: null == verified
           ? _value.verified
           : verified // ignore: cast_nullable_to_non_nullable
@@ -1388,6 +762,30 @@ class _$C2ResultsCopyWithImpl<$Res, $Val extends C2Results>
           : privacy // ignore: cast_nullable_to_non_nullable
               as C2PrivacyLevel,
     ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $C2HeartRateCopyWith<$Res>? get heartRate {
+    if (_value.heartRate == null) {
+      return null;
+    }
+
+    return $C2HeartRateCopyWith<$Res>(_value.heartRate!, (value) {
+      return _then(_value.copyWith(heartRate: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $C2WorkoutCopyWith<$Res>? get workout {
+    if (_value.workout == null) {
+      return null;
+    }
+
+    return $C2WorkoutCopyWith<$Res>(_value.workout!, (value) {
+      return _then(_value.copyWith(workout: value) as $Val);
+    });
   }
 }
 
@@ -1412,10 +810,21 @@ abstract class _$$C2ResultsImplCopyWith<$Res>
       @JsonKey(name: 'source') String source,
       @JsonKey(name: 'weight_class') C2WeightClass weightClass,
       @JsonKey(name: 'stroke_rate') int? strokeRate,
+      @JsonKey(name: 'heart_rate') C2HeartRate? heartRate,
+      @JsonKey(name: 'workout') C2Workout? workout,
+      @JsonKey(name: 'rest_distance') double restDistance,
+      @JsonKey(name: 'rest_time')
+      @DecimalIntConverter.tenths()
+      double? restTime,
       @JsonKey(name: 'verified') bool verified,
       @JsonKey(name: 'ranked') bool ranked,
       @JsonKey(name: 'comments') String? comments,
       @JsonKey(name: 'privacy') C2PrivacyLevel privacy});
+
+  @override
+  $C2HeartRateCopyWith<$Res>? get heartRate;
+  @override
+  $C2WorkoutCopyWith<$Res>? get workout;
 }
 
 /// @nodoc
@@ -1441,6 +850,10 @@ class __$$C2ResultsImplCopyWithImpl<$Res>
     Object? source = null,
     Object? weightClass = null,
     Object? strokeRate = freezed,
+    Object? heartRate = freezed,
+    Object? workout = freezed,
+    Object? restDistance = null,
+    Object? restTime = freezed,
     Object? verified = null,
     Object? ranked = null,
     Object? comments = freezed,
@@ -1495,6 +908,22 @@ class __$$C2ResultsImplCopyWithImpl<$Res>
           ? _value.strokeRate
           : strokeRate // ignore: cast_nullable_to_non_nullable
               as int?,
+      heartRate: freezed == heartRate
+          ? _value.heartRate
+          : heartRate // ignore: cast_nullable_to_non_nullable
+              as C2HeartRate?,
+      workout: freezed == workout
+          ? _value.workout
+          : workout // ignore: cast_nullable_to_non_nullable
+              as C2Workout?,
+      restDistance: null == restDistance
+          ? _value.restDistance
+          : restDistance // ignore: cast_nullable_to_non_nullable
+              as double,
+      restTime: freezed == restTime
+          ? _value.restTime
+          : restTime // ignore: cast_nullable_to_non_nullable
+              as double?,
       verified: null == verified
           ? _value.verified
           : verified // ignore: cast_nullable_to_non_nullable
@@ -1533,6 +962,10 @@ class _$C2ResultsImpl extends _C2Results {
       @JsonKey(name: 'weight_class')
       this.weightClass = C2WeightClass.heavyweight,
       @JsonKey(name: 'stroke_rate') this.strokeRate = null,
+      @JsonKey(name: 'heart_rate') this.heartRate = null,
+      @JsonKey(name: 'workout') this.workout = null,
+      @JsonKey(name: 'rest_distance') this.restDistance = 0.0,
+      @JsonKey(name: 'rest_time') @DecimalIntConverter.tenths() this.restTime,
       @JsonKey(name: 'verified') this.verified = false,
       @JsonKey(name: 'ranked') this.ranked = false,
       @JsonKey(name: 'comments') this.comments = null,
@@ -1582,6 +1015,28 @@ class _$C2ResultsImpl extends _C2Results {
   @JsonKey(name: 'stroke_rate')
   final int? strokeRate;
   @override
+  @JsonKey(name: 'heart_rate')
+  final C2HeartRate? heartRate;
+//object of strings containing the following optional values:, average, min, max, ending, recovery
+// stroke_count
+// calories_total
+// drag_factor
+// verification_code
+// stroke_data
+// metadata
+  @override
+  @JsonKey(name: 'workout')
+  final C2Workout? workout;
+// REQUIRED/FOR INTERVAL WORKOUTS ONLY
+  @override
+  @JsonKey(name: 'rest_distance')
+  final double restDistance;
+  @override
+  @JsonKey(name: 'rest_time')
+  @DecimalIntConverter.tenths()
+  final double? restTime;
+// END REQUIRED/FOR INTERVAL WORKOUTS ONLY
+  @override
   @JsonKey(name: 'verified')
   final bool verified;
   @override
@@ -1596,7 +1051,7 @@ class _$C2ResultsImpl extends _C2Results {
 
   @override
   String toString() {
-    return 'C2Results(id: $id, userId: $userId, endDate: $endDate, dateUtc: $dateUtc, timezone: $timezone, distance: $distance, type: $type, time: $time, workoutType: $workoutType, source: $source, weightClass: $weightClass, strokeRate: $strokeRate, verified: $verified, ranked: $ranked, comments: $comments, privacy: $privacy)';
+    return 'C2Results(id: $id, userId: $userId, endDate: $endDate, dateUtc: $dateUtc, timezone: $timezone, distance: $distance, type: $type, time: $time, workoutType: $workoutType, source: $source, weightClass: $weightClass, strokeRate: $strokeRate, heartRate: $heartRate, workout: $workout, restDistance: $restDistance, restTime: $restTime, verified: $verified, ranked: $ranked, comments: $comments, privacy: $privacy)';
   }
 
   @override
@@ -1621,6 +1076,13 @@ class _$C2ResultsImpl extends _C2Results {
                 other.weightClass == weightClass) &&
             (identical(other.strokeRate, strokeRate) ||
                 other.strokeRate == strokeRate) &&
+            (identical(other.heartRate, heartRate) ||
+                other.heartRate == heartRate) &&
+            (identical(other.workout, workout) || other.workout == workout) &&
+            (identical(other.restDistance, restDistance) ||
+                other.restDistance == restDistance) &&
+            (identical(other.restTime, restTime) ||
+                other.restTime == restTime) &&
             (identical(other.verified, verified) ||
                 other.verified == verified) &&
             (identical(other.ranked, ranked) || other.ranked == ranked) &&
@@ -1631,24 +1093,29 @@ class _$C2ResultsImpl extends _C2Results {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      id,
-      userId,
-      endDate,
-      dateUtc,
-      timezone,
-      distance,
-      type,
-      time,
-      workoutType,
-      source,
-      weightClass,
-      strokeRate,
-      verified,
-      ranked,
-      comments,
-      privacy);
+  int get hashCode => Object.hashAll([
+        runtimeType,
+        id,
+        userId,
+        endDate,
+        dateUtc,
+        timezone,
+        distance,
+        type,
+        time,
+        workoutType,
+        source,
+        weightClass,
+        strokeRate,
+        heartRate,
+        workout,
+        restDistance,
+        restTime,
+        verified,
+        ranked,
+        comments,
+        privacy
+      ]);
 
   @JsonKey(ignore: true)
   @override
@@ -1684,6 +1151,12 @@ abstract class _C2Results extends C2Results {
           @JsonKey(name: 'source') final String source,
           @JsonKey(name: 'weight_class') final C2WeightClass weightClass,
           @JsonKey(name: 'stroke_rate') final int? strokeRate,
+          @JsonKey(name: 'heart_rate') final C2HeartRate? heartRate,
+          @JsonKey(name: 'workout') final C2Workout? workout,
+          @JsonKey(name: 'rest_distance') final double restDistance,
+          @JsonKey(name: 'rest_time')
+          @DecimalIntConverter.tenths()
+          final double? restTime,
           @JsonKey(name: 'verified') final bool verified,
           @JsonKey(name: 'ranked') final bool ranked,
           @JsonKey(name: 'comments') final String? comments,
@@ -1734,6 +1207,25 @@ abstract class _C2Results extends C2Results {
   @JsonKey(name: 'stroke_rate')
   int? get strokeRate;
   @override
+  @JsonKey(name: 'heart_rate')
+  C2HeartRate? get heartRate;
+  @override //object of strings containing the following optional values:, average, min, max, ending, recovery
+// stroke_count
+// calories_total
+// drag_factor
+// verification_code
+// stroke_data
+// metadata
+  @JsonKey(name: 'workout')
+  C2Workout? get workout;
+  @override // REQUIRED/FOR INTERVAL WORKOUTS ONLY
+  @JsonKey(name: 'rest_distance')
+  double get restDistance;
+  @override
+  @JsonKey(name: 'rest_time')
+  @DecimalIntConverter.tenths()
+  double? get restTime;
+  @override // END REQUIRED/FOR INTERVAL WORKOUTS ONLY
   @JsonKey(name: 'verified')
   bool get verified;
   @override
