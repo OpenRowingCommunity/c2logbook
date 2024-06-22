@@ -163,7 +163,7 @@ _$C2ResultsImpl _$$C2ResultsImplFromJson(Map<String, dynamic> json) =>
     _$C2ResultsImpl(
       id: json['id'] as int? ?? 0,
       userId: json['user_id'] as int? ?? 0,
-      date: const TimestampConverter().fromJson(json['date'] as String),
+      endDate: const TimestampConverter().fromJson(json['date'] as String),
       dateUtc: const TimestampOrNullConverter()
           .fromJson(json['date_utc'] as String?),
       timezone: json['timezone'] as String?,
@@ -190,7 +190,7 @@ Map<String, dynamic> _$$C2ResultsImplToJson(_$C2ResultsImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'user_id': instance.userId,
-      'date': const TimestampConverter().toJson(instance.date),
+      'date': const TimestampConverter().toJson(instance.endDate),
       'date_utc': const TimestampOrNullConverter().toJson(instance.dateUtc),
       'timezone': instance.timezone,
       'distance': instance.distance,

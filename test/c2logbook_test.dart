@@ -23,7 +23,7 @@ void main() {
   final C2Results testResultsMin = C2Results(
       id: 3,
       userId: 1,
-      date: DateTime.parse("2013-06-21 00:00:00"),
+      endDate: DateTime.parse("2013-06-21 00:00:00"),
       distance: 23000,
       type: C2ResultType.rower,
       time: 15235.0,
@@ -36,7 +36,7 @@ void main() {
   final C2Results testResultsMax = C2Results(
       id: 3,
       userId: 1,
-      date: DateTime.parse("2013-06-21 00:00:00"),
+      endDate: DateTime.parse("2013-06-21 00:00:00"),
       dateUtc: DateTime.parse("2013-06-21 05:00:00Z"),
       timezone: "US/Eastern",
       distance: 23000,
@@ -166,7 +166,7 @@ void main() {
           C2Results(
               id: 3,
               userId: 1,
-              date: DateTime.parse("2013-06-21 00:00:00"),
+              endDate: DateTime.parse("2013-06-21 00:00:00"),
               dateUtc: DateTime.parse("2013-06-21 05:00:00Z"),
               timezone: "US/Eastern",
               distance: 23000,
