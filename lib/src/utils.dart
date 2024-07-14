@@ -1,6 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-//https://stackoverflow.com/a/69749532
+/// A JSON Conversion class responsible for parsing mandatory timestamp values in a way thats null safe
+/// Created based on advice from https://stackoverflow.com/a/69749532
 class TimestampConverter implements JsonConverter<DateTime, String> {
   const TimestampConverter();
 
@@ -13,7 +14,8 @@ class TimestampConverter implements JsonConverter<DateTime, String> {
   String toJson(DateTime date) => date.toIso8601String();
 }
 
-//https://stackoverflow.com/a/69749532
+/// A JSON Conversion class responsible for parsing optional timestamp values in a way thats null safe
+/// Created based on advice from https://stackoverflow.com/a/69749532
 class TimestampOrNullConverter implements JsonConverter<DateTime?, String?> {
   const TimestampOrNullConverter();
 
@@ -30,8 +32,8 @@ class TimestampOrNullConverter implements JsonConverter<DateTime?, String?> {
       date == null ? null : date.toIso8601String();
 }
 
-/// Responsible for decimal place adjustments
-/// for example, if  a number is stored in JSON as a whole number representing time in tenths of a second, this helps convert it to a number of seconds
+/// A JSON Conversion class responsible for decimal place adjustments
+/// for example, if  a number is stored in JSON as a whole number representing time in tenths of a second, this convenience converter helps convert it to a whole number of seconds as part of the JSON parsing, rather than a manual step that needs to be remembered
 class DecimalIntConverter implements JsonConverter<double, int> {
   final int places;
   final int base;
@@ -40,6 +42,7 @@ class DecimalIntConverter implements JsonConverter<double, int> {
   const DecimalIntConverter.tenths() : this(places: -1);
 
   ///[places] how many places to shift the number. Positive is multiplication, negative is division
+  ///[base] the base of the number system to use. Defaults to base 10.
   const DecimalIntConverter({this.places = 0, this.base = 10});
 
   @override
