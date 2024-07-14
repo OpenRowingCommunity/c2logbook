@@ -1,6 +1,7 @@
 part of 'index.dart';
 
-@Deprecated('This class will soon be removed in favor of [C2Webhook]')
+@Deprecated(
+    'This class will soon be removed. Please use methods on [C2Logbook] or manually pick out the `data` key from the Concept2 API response and feed it into [C2Results.fromJson] yourself')
 class C2DetailedResult {
   /// Parse the data from incoming webhooks from the Concept2 API.
   ///
