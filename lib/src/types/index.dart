@@ -1,6 +1,8 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import '../utils.dart';
 
+part 'c2_detailed_result.dart';
+part 'c2_full_results.dart';
 part 'c2_heart_rate.dart';
 part 'c2_intervals.dart';
 part 'c2_results.dart';
