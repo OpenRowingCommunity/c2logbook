@@ -124,6 +124,7 @@ _$C2HeartRateImpl _$$C2HeartRateImplFromJson(Map<String, dynamic> json) =>
       average: json['average'] as int? ?? 0,
       max: json['max'] as int? ?? 0,
       ending: json['ending'] as int? ?? 0,
+      rest: json['rest'] as int? ?? 0,
     );
 
 Map<String, dynamic> _$$C2HeartRateImplToJson(_$C2HeartRateImpl instance) =>
@@ -132,6 +133,7 @@ Map<String, dynamic> _$$C2HeartRateImplToJson(_$C2HeartRateImpl instance) =>
       'average': instance.average,
       'max': instance.max,
       'ending': instance.ending,
+      'rest': instance.rest,
     };
 
 _$C2IntervalsImpl _$$C2IntervalsImplFromJson(Map<String, dynamic> json) =>
@@ -146,6 +148,7 @@ _$C2IntervalsImpl _$$C2IntervalsImplFromJson(Map<String, dynamic> json) =>
       heartRate: json['heart_rate'] == null
           ? null
           : C2HeartRate.fromJson(json['heart_rate'] as Map<String, dynamic>),
+      restDistance: json['rest_distance'] as int? ?? null,
     );
 
 Map<String, dynamic> _$$C2IntervalsImplToJson(_$C2IntervalsImpl instance) =>
@@ -157,6 +160,7 @@ Map<String, dynamic> _$$C2IntervalsImplToJson(_$C2IntervalsImpl instance) =>
       'calories_total': instance.caloriesTotal,
       'stroke_rate': instance.strokeRate,
       'heart_rate': instance.heartRate?.toJson(),
+      'rest_distance': instance.restDistance,
     };
 
 _$C2ResultsImpl _$$C2ResultsImplFromJson(Map<String, dynamic> json) =>
@@ -182,6 +186,9 @@ _$C2ResultsImpl _$$C2ResultsImplFromJson(Map<String, dynamic> json) =>
       heartRate: json['heart_rate'] == null
           ? null
           : C2HeartRate.fromJson(json['heart_rate'] as Map<String, dynamic>),
+      caloriesTotal: json['calories_total'] as int? ?? 0,
+      dragFactor: json['drag_factor'] as int? ?? 0,
+      strokeCount: json['stroke_count'] as int? ?? 0,
       workout: json['workout'] == null
           ? null
           : C2Workout.fromJson(json['workout'] as Map<String, dynamic>),
@@ -210,6 +217,9 @@ Map<String, dynamic> _$$C2ResultsImplToJson(_$C2ResultsImpl instance) =>
       'weight_class': _$C2WeightClassEnumMap[instance.weightClass]!,
       'stroke_rate': instance.strokeRate,
       'heart_rate': instance.heartRate?.toJson(),
+      'calories_total': instance.caloriesTotal,
+      'drag_factor': instance.dragFactor,
+      'stroke_count': instance.strokeCount,
       'workout': instance.workout?.toJson(),
       'rest_distance': instance.restDistance,
       'rest_time': _$JsonConverterToJson<int, double>(

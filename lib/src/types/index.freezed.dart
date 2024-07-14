@@ -699,6 +699,8 @@ mixin _$C2HeartRate {
   int get max => throw _privateConstructorUsedError;
   @JsonKey(name: 'ending')
   int get ending => throw _privateConstructorUsedError;
+  @JsonKey(name: 'rest')
+  int get rest => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -716,7 +718,8 @@ abstract class $C2HeartRateCopyWith<$Res> {
       {@JsonKey(name: 'min') int min,
       @JsonKey(name: 'average') int average,
       @JsonKey(name: 'max') int max,
-      @JsonKey(name: 'ending') int ending});
+      @JsonKey(name: 'ending') int ending,
+      @JsonKey(name: 'rest') int rest});
 }
 
 /// @nodoc
@@ -736,6 +739,7 @@ class _$C2HeartRateCopyWithImpl<$Res, $Val extends C2HeartRate>
     Object? average = null,
     Object? max = null,
     Object? ending = null,
+    Object? rest = null,
   }) {
     return _then(_value.copyWith(
       min: null == min
@@ -754,6 +758,10 @@ class _$C2HeartRateCopyWithImpl<$Res, $Val extends C2HeartRate>
           ? _value.ending
           : ending // ignore: cast_nullable_to_non_nullable
               as int,
+      rest: null == rest
+          ? _value.rest
+          : rest // ignore: cast_nullable_to_non_nullable
+              as int,
     ) as $Val);
   }
 }
@@ -770,7 +778,8 @@ abstract class _$$C2HeartRateImplCopyWith<$Res>
       {@JsonKey(name: 'min') int min,
       @JsonKey(name: 'average') int average,
       @JsonKey(name: 'max') int max,
-      @JsonKey(name: 'ending') int ending});
+      @JsonKey(name: 'ending') int ending,
+      @JsonKey(name: 'rest') int rest});
 }
 
 /// @nodoc
@@ -788,6 +797,7 @@ class __$$C2HeartRateImplCopyWithImpl<$Res>
     Object? average = null,
     Object? max = null,
     Object? ending = null,
+    Object? rest = null,
   }) {
     return _then(_$C2HeartRateImpl(
       min: null == min
@@ -806,6 +816,10 @@ class __$$C2HeartRateImplCopyWithImpl<$Res>
           ? _value.ending
           : ending // ignore: cast_nullable_to_non_nullable
               as int,
+      rest: null == rest
+          ? _value.rest
+          : rest // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -817,7 +831,8 @@ class _$C2HeartRateImpl extends _C2HeartRate {
       {@JsonKey(name: 'min') this.min = 0,
       @JsonKey(name: 'average') this.average = 0,
       @JsonKey(name: 'max') this.max = 0,
-      @JsonKey(name: 'ending') this.ending = 0})
+      @JsonKey(name: 'ending') this.ending = 0,
+      @JsonKey(name: 'rest') this.rest = 0})
       : super._();
 
   factory _$C2HeartRateImpl.fromJson(Map<String, dynamic> json) =>
@@ -835,10 +850,13 @@ class _$C2HeartRateImpl extends _C2HeartRate {
   @override
   @JsonKey(name: 'ending')
   final int ending;
+  @override
+  @JsonKey(name: 'rest')
+  final int rest;
 
   @override
   String toString() {
-    return 'C2HeartRate(min: $min, average: $average, max: $max, ending: $ending)';
+    return 'C2HeartRate(min: $min, average: $average, max: $max, ending: $ending, rest: $rest)';
   }
 
   @override
@@ -849,12 +867,13 @@ class _$C2HeartRateImpl extends _C2HeartRate {
             (identical(other.min, min) || other.min == min) &&
             (identical(other.average, average) || other.average == average) &&
             (identical(other.max, max) || other.max == max) &&
-            (identical(other.ending, ending) || other.ending == ending));
+            (identical(other.ending, ending) || other.ending == ending) &&
+            (identical(other.rest, rest) || other.rest == rest));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, min, average, max, ending);
+  int get hashCode => Object.hash(runtimeType, min, average, max, ending, rest);
 
   @JsonKey(ignore: true)
   @override
@@ -875,7 +894,8 @@ abstract class _C2HeartRate extends C2HeartRate {
       {@JsonKey(name: 'min') final int min,
       @JsonKey(name: 'average') final int average,
       @JsonKey(name: 'max') final int max,
-      @JsonKey(name: 'ending') final int ending}) = _$C2HeartRateImpl;
+      @JsonKey(name: 'ending') final int ending,
+      @JsonKey(name: 'rest') final int rest}) = _$C2HeartRateImpl;
   _C2HeartRate._() : super._();
 
   factory _C2HeartRate.fromJson(Map<String, dynamic> json) =
@@ -893,6 +913,9 @@ abstract class _C2HeartRate extends C2HeartRate {
   @override
   @JsonKey(name: 'ending')
   int get ending;
+  @override
+  @JsonKey(name: 'rest')
+  int get rest;
   @override
   @JsonKey(ignore: true)
   _$$C2HeartRateImplCopyWith<_$C2HeartRateImpl> get copyWith =>
@@ -921,6 +944,8 @@ mixin _$C2Intervals {
   int get strokeRate => throw _privateConstructorUsedError;
   @JsonKey(name: 'heart_rate')
   C2HeartRate? get heartRate => throw _privateConstructorUsedError;
+  @JsonKey(name: 'rest_distance')
+  int? get restDistance => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -941,7 +966,8 @@ abstract class $C2IntervalsCopyWith<$Res> {
       @JsonKey(name: 'distance') double distance,
       @JsonKey(name: 'calories_total') int caloriesTotal,
       @JsonKey(name: 'stroke_rate') int strokeRate,
-      @JsonKey(name: 'heart_rate') C2HeartRate? heartRate});
+      @JsonKey(name: 'heart_rate') C2HeartRate? heartRate,
+      @JsonKey(name: 'rest_distance') int? restDistance});
 
   $C2HeartRateCopyWith<$Res>? get heartRate;
 }
@@ -966,6 +992,7 @@ class _$C2IntervalsCopyWithImpl<$Res, $Val extends C2Intervals>
     Object? caloriesTotal = null,
     Object? strokeRate = null,
     Object? heartRate = freezed,
+    Object? restDistance = freezed,
   }) {
     return _then(_value.copyWith(
       type: freezed == type
@@ -996,6 +1023,10 @@ class _$C2IntervalsCopyWithImpl<$Res, $Val extends C2Intervals>
           ? _value.heartRate
           : heartRate // ignore: cast_nullable_to_non_nullable
               as C2HeartRate?,
+      restDistance: freezed == restDistance
+          ? _value.restDistance
+          : restDistance // ignore: cast_nullable_to_non_nullable
+              as int?,
     ) as $Val);
   }
 
@@ -1027,7 +1058,8 @@ abstract class _$$C2IntervalsImplCopyWith<$Res>
       @JsonKey(name: 'distance') double distance,
       @JsonKey(name: 'calories_total') int caloriesTotal,
       @JsonKey(name: 'stroke_rate') int strokeRate,
-      @JsonKey(name: 'heart_rate') C2HeartRate? heartRate});
+      @JsonKey(name: 'heart_rate') C2HeartRate? heartRate,
+      @JsonKey(name: 'rest_distance') int? restDistance});
 
   @override
   $C2HeartRateCopyWith<$Res>? get heartRate;
@@ -1051,6 +1083,7 @@ class __$$C2IntervalsImplCopyWithImpl<$Res>
     Object? caloriesTotal = null,
     Object? strokeRate = null,
     Object? heartRate = freezed,
+    Object? restDistance = freezed,
   }) {
     return _then(_$C2IntervalsImpl(
       type: freezed == type
@@ -1081,6 +1114,10 @@ class __$$C2IntervalsImplCopyWithImpl<$Res>
           ? _value.heartRate
           : heartRate // ignore: cast_nullable_to_non_nullable
               as C2HeartRate?,
+      restDistance: freezed == restDistance
+          ? _value.restDistance
+          : restDistance // ignore: cast_nullable_to_non_nullable
+              as int?,
     ));
   }
 }
@@ -1097,7 +1134,8 @@ class _$C2IntervalsImpl extends _C2Intervals {
       @JsonKey(name: 'distance') this.distance = 0.0,
       @JsonKey(name: 'calories_total') this.caloriesTotal = 0,
       @JsonKey(name: 'stroke_rate') this.strokeRate = 0,
-      @JsonKey(name: 'heart_rate') this.heartRate = null})
+      @JsonKey(name: 'heart_rate') this.heartRate = null,
+      @JsonKey(name: 'rest_distance') this.restDistance = null})
       : super._();
 
   factory _$C2IntervalsImpl.fromJson(Map<String, dynamic> json) =>
@@ -1126,10 +1164,13 @@ class _$C2IntervalsImpl extends _C2Intervals {
   @override
   @JsonKey(name: 'heart_rate')
   final C2HeartRate? heartRate;
+  @override
+  @JsonKey(name: 'rest_distance')
+  final int? restDistance;
 
   @override
   String toString() {
-    return 'C2Intervals(type: $type, time: $time, restTime: $restTime, distance: $distance, caloriesTotal: $caloriesTotal, strokeRate: $strokeRate, heartRate: $heartRate)';
+    return 'C2Intervals(type: $type, time: $time, restTime: $restTime, distance: $distance, caloriesTotal: $caloriesTotal, strokeRate: $strokeRate, heartRate: $heartRate, restDistance: $restDistance)';
   }
 
   @override
@@ -1148,13 +1189,15 @@ class _$C2IntervalsImpl extends _C2Intervals {
             (identical(other.strokeRate, strokeRate) ||
                 other.strokeRate == strokeRate) &&
             (identical(other.heartRate, heartRate) ||
-                other.heartRate == heartRate));
+                other.heartRate == heartRate) &&
+            (identical(other.restDistance, restDistance) ||
+                other.restDistance == restDistance));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, type, time, restTime, distance,
-      caloriesTotal, strokeRate, heartRate);
+      caloriesTotal, strokeRate, heartRate, restDistance);
 
   @JsonKey(ignore: true)
   @override
@@ -1182,7 +1225,8 @@ abstract class _C2Intervals extends C2Intervals {
           @JsonKey(name: 'distance') final double distance,
           @JsonKey(name: 'calories_total') final int caloriesTotal,
           @JsonKey(name: 'stroke_rate') final int strokeRate,
-          @JsonKey(name: 'heart_rate') final C2HeartRate? heartRate}) =
+          @JsonKey(name: 'heart_rate') final C2HeartRate? heartRate,
+          @JsonKey(name: 'rest_distance') final int? restDistance}) =
       _$C2IntervalsImpl;
   _C2Intervals._() : super._();
 
@@ -1212,6 +1256,9 @@ abstract class _C2Intervals extends C2Intervals {
   @override
   @JsonKey(name: 'heart_rate')
   C2HeartRate? get heartRate;
+  @override
+  @JsonKey(name: 'rest_distance')
+  int? get restDistance;
   @override
   @JsonKey(ignore: true)
   _$$C2IntervalsImplCopyWith<_$C2IntervalsImpl> get copyWith =>
@@ -1253,6 +1300,12 @@ mixin _$C2Results {
   int? get strokeRate => throw _privateConstructorUsedError;
   @JsonKey(name: 'heart_rate')
   C2HeartRate? get heartRate => throw _privateConstructorUsedError;
+  @JsonKey(name: 'calories_total')
+  int get caloriesTotal => throw _privateConstructorUsedError;
+  @JsonKey(name: 'drag_factor')
+  int get dragFactor => throw _privateConstructorUsedError;
+  @JsonKey(name: 'stroke_count')
+  int get strokeCount => throw _privateConstructorUsedError;
   @JsonKey(name: 'workout')
   C2Workout? get workout =>
       throw _privateConstructorUsedError; // REQUIRED/FOR INTERVAL WORKOUTS ONLY
@@ -1296,6 +1349,9 @@ abstract class $C2ResultsCopyWith<$Res> {
       @JsonKey(name: 'weight_class') C2WeightClass weightClass,
       @JsonKey(name: 'stroke_rate') int? strokeRate,
       @JsonKey(name: 'heart_rate') C2HeartRate? heartRate,
+      @JsonKey(name: 'calories_total') int caloriesTotal,
+      @JsonKey(name: 'drag_factor') int dragFactor,
+      @JsonKey(name: 'stroke_count') int strokeCount,
       @JsonKey(name: 'workout') C2Workout? workout,
       @JsonKey(name: 'rest_distance') double restDistance,
       @JsonKey(name: 'rest_time')
@@ -1336,6 +1392,9 @@ class _$C2ResultsCopyWithImpl<$Res, $Val extends C2Results>
     Object? weightClass = null,
     Object? strokeRate = freezed,
     Object? heartRate = freezed,
+    Object? caloriesTotal = null,
+    Object? dragFactor = null,
+    Object? strokeCount = null,
     Object? workout = freezed,
     Object? restDistance = null,
     Object? restTime = freezed,
@@ -1397,6 +1456,18 @@ class _$C2ResultsCopyWithImpl<$Res, $Val extends C2Results>
           ? _value.heartRate
           : heartRate // ignore: cast_nullable_to_non_nullable
               as C2HeartRate?,
+      caloriesTotal: null == caloriesTotal
+          ? _value.caloriesTotal
+          : caloriesTotal // ignore: cast_nullable_to_non_nullable
+              as int,
+      dragFactor: null == dragFactor
+          ? _value.dragFactor
+          : dragFactor // ignore: cast_nullable_to_non_nullable
+              as int,
+      strokeCount: null == strokeCount
+          ? _value.strokeCount
+          : strokeCount // ignore: cast_nullable_to_non_nullable
+              as int,
       workout: freezed == workout
           ? _value.workout
           : workout // ignore: cast_nullable_to_non_nullable
@@ -1475,6 +1546,9 @@ abstract class _$$C2ResultsImplCopyWith<$Res>
       @JsonKey(name: 'weight_class') C2WeightClass weightClass,
       @JsonKey(name: 'stroke_rate') int? strokeRate,
       @JsonKey(name: 'heart_rate') C2HeartRate? heartRate,
+      @JsonKey(name: 'calories_total') int caloriesTotal,
+      @JsonKey(name: 'drag_factor') int dragFactor,
+      @JsonKey(name: 'stroke_count') int strokeCount,
       @JsonKey(name: 'workout') C2Workout? workout,
       @JsonKey(name: 'rest_distance') double restDistance,
       @JsonKey(name: 'rest_time')
@@ -1515,6 +1589,9 @@ class __$$C2ResultsImplCopyWithImpl<$Res>
     Object? weightClass = null,
     Object? strokeRate = freezed,
     Object? heartRate = freezed,
+    Object? caloriesTotal = null,
+    Object? dragFactor = null,
+    Object? strokeCount = null,
     Object? workout = freezed,
     Object? restDistance = null,
     Object? restTime = freezed,
@@ -1576,6 +1653,18 @@ class __$$C2ResultsImplCopyWithImpl<$Res>
           ? _value.heartRate
           : heartRate // ignore: cast_nullable_to_non_nullable
               as C2HeartRate?,
+      caloriesTotal: null == caloriesTotal
+          ? _value.caloriesTotal
+          : caloriesTotal // ignore: cast_nullable_to_non_nullable
+              as int,
+      dragFactor: null == dragFactor
+          ? _value.dragFactor
+          : dragFactor // ignore: cast_nullable_to_non_nullable
+              as int,
+      strokeCount: null == strokeCount
+          ? _value.strokeCount
+          : strokeCount // ignore: cast_nullable_to_non_nullable
+              as int,
       workout: freezed == workout
           ? _value.workout
           : workout // ignore: cast_nullable_to_non_nullable
@@ -1627,6 +1716,9 @@ class _$C2ResultsImpl extends _C2Results {
       this.weightClass = C2WeightClass.heavyweight,
       @JsonKey(name: 'stroke_rate') this.strokeRate = null,
       @JsonKey(name: 'heart_rate') this.heartRate = null,
+      @JsonKey(name: 'calories_total') this.caloriesTotal = 0,
+      @JsonKey(name: 'drag_factor') this.dragFactor = 0,
+      @JsonKey(name: 'stroke_count') this.strokeCount = 0,
       @JsonKey(name: 'workout') this.workout = null,
       @JsonKey(name: 'rest_distance') this.restDistance = 0.0,
       @JsonKey(name: 'rest_time') @DecimalIntConverter.tenths() this.restTime,
@@ -1682,6 +1774,15 @@ class _$C2ResultsImpl extends _C2Results {
   @JsonKey(name: 'heart_rate')
   final C2HeartRate? heartRate;
   @override
+  @JsonKey(name: 'calories_total')
+  final int caloriesTotal;
+  @override
+  @JsonKey(name: 'drag_factor')
+  final int dragFactor;
+  @override
+  @JsonKey(name: 'stroke_count')
+  final int strokeCount;
+  @override
   @JsonKey(name: 'workout')
   final C2Workout? workout;
 // REQUIRED/FOR INTERVAL WORKOUTS ONLY
@@ -1708,7 +1809,7 @@ class _$C2ResultsImpl extends _C2Results {
 
   @override
   String toString() {
-    return 'C2Results(id: $id, userId: $userId, endDate: $endDate, dateUtc: $dateUtc, timezone: $timezone, distance: $distance, type: $type, time: $time, workoutType: $workoutType, source: $source, weightClass: $weightClass, strokeRate: $strokeRate, heartRate: $heartRate, workout: $workout, restDistance: $restDistance, restTime: $restTime, verified: $verified, ranked: $ranked, comments: $comments, privacy: $privacy)';
+    return 'C2Results(id: $id, userId: $userId, endDate: $endDate, dateUtc: $dateUtc, timezone: $timezone, distance: $distance, type: $type, time: $time, workoutType: $workoutType, source: $source, weightClass: $weightClass, strokeRate: $strokeRate, heartRate: $heartRate, caloriesTotal: $caloriesTotal, dragFactor: $dragFactor, strokeCount: $strokeCount, workout: $workout, restDistance: $restDistance, restTime: $restTime, verified: $verified, ranked: $ranked, comments: $comments, privacy: $privacy)';
   }
 
   @override
@@ -1735,6 +1836,12 @@ class _$C2ResultsImpl extends _C2Results {
                 other.strokeRate == strokeRate) &&
             (identical(other.heartRate, heartRate) ||
                 other.heartRate == heartRate) &&
+            (identical(other.caloriesTotal, caloriesTotal) ||
+                other.caloriesTotal == caloriesTotal) &&
+            (identical(other.dragFactor, dragFactor) ||
+                other.dragFactor == dragFactor) &&
+            (identical(other.strokeCount, strokeCount) ||
+                other.strokeCount == strokeCount) &&
             (identical(other.workout, workout) || other.workout == workout) &&
             (identical(other.restDistance, restDistance) ||
                 other.restDistance == restDistance) &&
@@ -1765,6 +1872,9 @@ class _$C2ResultsImpl extends _C2Results {
         weightClass,
         strokeRate,
         heartRate,
+        caloriesTotal,
+        dragFactor,
+        strokeCount,
         workout,
         restDistance,
         restTime,
@@ -1809,6 +1919,9 @@ abstract class _C2Results extends C2Results {
           @JsonKey(name: 'weight_class') final C2WeightClass weightClass,
           @JsonKey(name: 'stroke_rate') final int? strokeRate,
           @JsonKey(name: 'heart_rate') final C2HeartRate? heartRate,
+          @JsonKey(name: 'calories_total') final int caloriesTotal,
+          @JsonKey(name: 'drag_factor') final int dragFactor,
+          @JsonKey(name: 'stroke_count') final int strokeCount,
           @JsonKey(name: 'workout') final C2Workout? workout,
           @JsonKey(name: 'rest_distance') final double restDistance,
           @JsonKey(name: 'rest_time')
@@ -1866,6 +1979,15 @@ abstract class _C2Results extends C2Results {
   @override
   @JsonKey(name: 'heart_rate')
   C2HeartRate? get heartRate;
+  @override
+  @JsonKey(name: 'calories_total')
+  int get caloriesTotal;
+  @override
+  @JsonKey(name: 'drag_factor')
+  int get dragFactor;
+  @override
+  @JsonKey(name: 'stroke_count')
+  int get strokeCount;
   @override
   @JsonKey(name: 'workout')
   C2Workout? get workout;
