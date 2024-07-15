@@ -1,6 +1,5 @@
-/// Support for doing something awesome.
-///
-/// More dartdocs go here.
+/// A Dart wrapper for the Concept2 Logbook API
+/// API Docs available at https://log.concept2.com/developers/documentation/
 library;
 
 export 'src/c2logbook_base.dart';
