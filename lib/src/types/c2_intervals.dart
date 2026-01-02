@@ -8,7 +8,7 @@ class C2Intervals with _$C2Intervals {
   C2Intervals._();
 
   factory C2Intervals({
-    @JsonKey(name: 'id') @Default("time") String type,
+    @JsonKey(name: 'type') @Default("time") String type,
     @JsonKey(name: 'time') @DecimalIntConverter.tenths() required double time,
     @JsonKey(name: 'rest_time') @DecimalIntConverter.tenths() required double restTime,
     @JsonKey(name: 'distance') @Default(0) int distance,
