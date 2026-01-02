@@ -1,4 +1,4 @@
-import 'package:c2logbook/c2logbook.dart';
+part of 'index.dart';
 
 class C2Webhook {
   /// Parse the data from incoming webhooks from the Concept2 API.

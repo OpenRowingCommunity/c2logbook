@@ -1,10 +1,6 @@
 // ignore_for_file: invalid_annotation_target
 
-import 'package:c2logbook/src/types/c2_types.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
-
-part 'c2_user.freezed.dart';
-part 'c2_user.g.dart';
+part of 'index.dart';
 
 @freezed
 class C2User with _$C2User {

@@ -1,12 +1,6 @@
 // ignore_for_file: invalid_annotation_target
 
-import 'c2_types.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
-
-import '../utils.dart';
-
-part 'c2_results.freezed.dart';
-part 'c2_results.g.dart';
+part of 'index.dart';
 
 @freezed
 class C2Results with _$C2Results {
