@@ -99,6 +99,28 @@ dart run build_runner build
 flutter test
 ```
 
+## Note about different import methods
+
+This project uses the `freezed` package to generate most of the code (such as `toJSON()` methods) for most or all of the various types that it wraps from the concept2 API. This code is generated based on the sources that exist in this repo and are not checked into the repository for the same reason you would not want to check in a compiled binary of your app (all the source code is already there, itll just clutter the repo and require updating).
+
+This may affect you in different ways depending on how you import this library:
+
+From the maintainer of `freezed` in a [discussion post](https://github.com/rrousselGit/freezed/discussions/1086#discussioncomment-9386400):
+
+> You don't need to [check in the generated files]. That's up to you.
+> 
+> On the other hand, if you want to publish a package, the generated files need to be published too. As such:
+> 
+>    If you're using pub.dev to install your package, you need to publish those generated files.
+>    If you're using a path dependency, then it's fine if the files are gitignored as long as they are present.
+>    If you're using a git dependency, you'll have to commit those files got pub get to obtain them.
+
+Because `c2logbook` is a library, we will publish these generated files as part of the process for uploading new builds to pub.dev via an intermediate generation step in the official build pipeline. These generated files wont be checked into the repository though.
+
+This means:
+- if you are using this library via a path dependency, you will need to run this generation step yourself
+- if you are using this library as a git dependency, it is recommended to create a fork of the repository under your own account so that you can add a new commit containing the files from this generation step. This will allow `pub get` to see the files
+
 ## Additional information
 
 This package is still in a relatively early stage of development. Things might break. I'll do my best to fix these issues and add new features in a timely manner. Please file a Github Issue if you find any bugs, or start a discussion if you have feature requests or want to ask questions.
