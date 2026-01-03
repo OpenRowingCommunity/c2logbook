@@ -28,3 +28,5 @@ build_runner/lib/src/server/build_updates_client/hot_reload_client.dart.js.tar.g
 # see: https://github.com/rrousselGit/freezed/issues/631
 # *.g.dart
 # *.freezed.dart
+
+.fvm/
