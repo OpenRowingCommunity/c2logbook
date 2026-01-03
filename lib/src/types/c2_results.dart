@@ -2,6 +2,11 @@
 
 part of 'index.dart';
 
+/**
+ * A more limited set of result data returned by:
+ *  - Concept2's API for getting a list of results
+ *  - Webhook data for type "result-added"
+ */
 @freezed
 class C2Results with _$C2Results {
   //TODO: figure out how to get this into JSON as time_formatted

@@ -2,6 +2,10 @@
 
 part of 'index.dart';
 
+/**
+ * retrieved from a GET call on C2's API for a specific Result by-ID.
+ * This will retrieve all fields of the workout.
+ */
 @freezed
 class C2FullResults with _$C2FullResults {
   //TODO: figure out how to get this into JSON as time_formatted
