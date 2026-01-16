@@ -51,7 +51,7 @@ void main() {
 
   group('Parsing Tests', () {
     test('Test Parsing minimal Result JSON', () {
-      final jsonData = json.decode("""{
+      final dynamic jsonData = json.decode("""{
       "id": 3,
       "user_id": 1,
       "date": "2013-06-21 00:00:00",
@@ -70,7 +70,7 @@ void main() {
     });
 
     test('Test Parsing maximal Result JSON', () {
-      final jsonData = json.decode("""{
+      final dynamic jsonData = json.decode("""{
       "id": 3,
       "user_id": 1,
       "date": "2013-06-21 00:00:00",
@@ -93,7 +93,7 @@ void main() {
     });
 
     test('Test Parsing User JSON', () {
-      final jsonData = json.decode("""{
+      final dynamic jsonData = json.decode("""{
     "id": 1,
     "username": "David Hart",
     "first_name": "David",
@@ -114,7 +114,7 @@ void main() {
   });
 
   test("Test parsing webhook JSON (minimal)", () {
-    final webhookJson = json.decode("""{
+    final dynamic webhookJson = json.decode("""{
         "data": {
           "type": "result-added",
           "result":
