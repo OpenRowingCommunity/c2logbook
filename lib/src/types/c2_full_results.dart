@@ -39,6 +39,7 @@ class C2FullResults with _$C2FullResults {
     @JsonKey(name: 'stroke_rate') int? strokeRate,
     @JsonKey(name: 'heart_rate') @Default(null) C2HeartRate? heartRate,
     @JsonKey(name: 'workout') @Default(null) C2Workout? workout,
+    @JsonKey(name: 'rest_distance') @Default(0) double restDistance,
   }) = _C2FullResults;
 
   factory C2FullResults.fromJson(Map<dynamic, dynamic> json) =>
