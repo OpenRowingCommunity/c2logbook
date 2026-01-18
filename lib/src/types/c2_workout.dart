@@ -2,6 +2,7 @@
 
 part of 'index.dart';
 
+/// Represents a workout from the Concept2 REST API
 @freezed
 class C2Workout with _$C2Workout {
 

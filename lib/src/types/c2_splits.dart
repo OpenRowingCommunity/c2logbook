@@ -2,6 +2,7 @@
 
 part of 'index.dart';
 
+/// Responsible for parsing splits result data from Concept2 REST API responses
 @freezed
 class C2Splits with _$C2Splits {
   C2Splits._();

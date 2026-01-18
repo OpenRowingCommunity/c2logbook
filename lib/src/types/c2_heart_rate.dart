@@ -2,6 +2,7 @@
 
 part of 'index.dart';
 
+/// Responsible for parsing heart rate data from the Concept2 REST API
 @freezed
 class C2HeartRate with _$C2HeartRate {
   C2HeartRate._();

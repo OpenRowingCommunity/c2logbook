@@ -2,6 +2,7 @@
 
 part of 'index.dart';
 
+/// Responsible for parsing intervals result data from Concept2 REST API responses
 @freezed
 class C2Intervals with _$C2Intervals {
   C2Intervals._();
