@@ -51,7 +51,8 @@ void main() {
 
   group('Parsing Tests', () {
     test('Test Parsing minimal Result JSON', () {
-      final jsonData = json.decode("""{
+      // data manually created to exercise the parser
+      final dynamic jsonData = json.decode("""{
       "id": 3,
       "user_id": 1,
       "date": "2013-06-21 00:00:00",
@@ -70,7 +71,8 @@ void main() {
     });
 
     test('Test Parsing maximal Result JSON', () {
-      final jsonData = json.decode("""{
+      // data manually created to exercise the parser
+      final dynamic jsonData = json.decode("""{
       "id": 3,
       "user_id": 1,
       "date": "2013-06-21 00:00:00",
@@ -92,8 +94,50 @@ void main() {
       expect(C2Results.fromJson(jsonData), testResultsMax);
     });
 
+    test('Test Parsing Result JSON from Concept2 example', () {
+      // data from: https://log.concept2.com/developers/documentation/#logbook-users-results-get
+      final dynamic jsonData = json.decode("""{
+    "id": 3,
+    "user_id": 1,
+    "date": "2013-06-21 00:00:00",
+    "timezone": null,
+    "date_utc": null,
+    "distance": 23000,
+    "type": "rower",
+    "time": 152350,
+    "time_formatted": "4:13:55.0",
+    "workout_type": "unknown",
+    "source": "Web",
+    "weight_class": "H",
+    "verified": false,
+    "ranked": false,
+    "comments": null,
+    "privacy": "partners"
+  }""");
+      expect(
+          C2Results.fromJson(jsonData),
+          C2Results(
+              id: 3,
+              userId: 1,
+              endDate: DateTime.parse("2013-06-21 00:00:00"),
+              dateUtc: null,
+              timezone: null,
+              distance: 23000,
+              type: C2ResultType.rower,
+              time: 15235.0,
+              strokeRate: null,
+              workoutType: C2APIWorkoutType.unknown,
+              source: "Web",
+              weightClass: C2WeightClass.heavyweight,
+              verified: false,
+              ranked: false,
+              comments: null,
+              privacy: C2PrivacyLevel.partners));
+    });
+
     test('Test Parsing User JSON', () {
-      final jsonData = json.decode("""{
+      // Data from: https://log.concept2.com/developers/documentation/#logbook-users-user-get
+      final dynamic jsonData = json.decode("""{
     "id": 1,
     "username": "David Hart",
     "first_name": "David",
@@ -111,10 +155,10 @@ void main() {
 
       expect(C2User.fromJson(jsonData), testUser);
     });
-  });
 
-  test("Test parsing webhook JSON (minimal)", () {
-    final webhookJson = json.decode("""{
+    test("Test parsing webhook JSON (minimal)", () {
+      // data from: https://log.concept2.com/developers/documentation/#webhook
+      final dynamic webhookJson = json.decode("""{
         "data": {
           "type": "result-added",
           "result":
@@ -135,7 +179,8 @@ void main() {
             }
         }
     }""");
-    expect(C2Webhook.parse(webhookJson), testResultsMin);
+      expect(C2Webhook.parse(webhookJson), testResultsMin);
+    });
   });
 
   group('Equality Tests', () {
