@@ -4,13 +4,14 @@ part of 'index.dart';
 
 @freezed
 class C2Intervals with _$C2Intervals {
-
   C2Intervals._();
 
   factory C2Intervals({
     @JsonKey(name: 'type') @Default("time") String type,
     @JsonKey(name: 'time') @DecimalIntConverter.tenths() required double time,
-    @JsonKey(name: 'rest_time') @DecimalIntConverter.tenths() required double restTime,
+    @JsonKey(name: 'rest_time')
+    @DecimalIntConverter.tenths()
+    required double restTime,
     @JsonKey(name: 'distance') @Default(0) int distance,
     @JsonKey(name: 'calories_total') @Default(0) int caloriesTotal,
     @JsonKey(name: 'stroke_rate') @Default(0) int strokeRate,

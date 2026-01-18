@@ -4,7 +4,6 @@ part of 'index.dart';
 
 @freezed
 class C2HeartRate with _$C2HeartRate {
-
   C2HeartRate._();
 
   factory C2HeartRate({
