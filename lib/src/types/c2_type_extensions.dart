@@ -1,5 +1,3 @@
-
-
 part of 'index.dart';
 
 /// Extends [C2PrivacyLevel] to add convenience methods
