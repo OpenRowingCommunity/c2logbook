@@ -100,8 +100,12 @@ mixin _$C2FullResults {
   @JsonKey(name: 'rest_distance')
   double? get restDistance => throw _privateConstructorUsedError;
 
+  /// Serializes this C2FullResults to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of C2FullResults
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $C2FullResultsCopyWith<C2FullResults> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -154,6 +158,8 @@ class _$C2FullResultsCopyWithImpl<$Res, $Val extends C2FullResults>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of C2FullResults
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -282,6 +288,8 @@ class _$C2FullResultsCopyWithImpl<$Res, $Val extends C2FullResults>
     ) as $Val);
   }
 
+  /// Create a copy of C2FullResults
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $C2HeartRateCopyWith<$Res>? get heartRate {
@@ -294,6 +302,8 @@ class _$C2FullResultsCopyWithImpl<$Res, $Val extends C2FullResults>
     });
   }
 
+  /// Create a copy of C2FullResults
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $C2WorkoutCopyWith<$Res>? get workout {
@@ -357,6 +367,8 @@ class __$$C2FullResultsImplCopyWithImpl<$Res>
       _$C2FullResultsImpl _value, $Res Function(_$C2FullResultsImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of C2FullResults
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -675,7 +687,7 @@ class _$C2FullResultsImpl extends _C2FullResults {
                 other.restDistance == restDistance));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hashAll([
         runtimeType,
@@ -705,7 +717,9 @@ class _$C2FullResultsImpl extends _C2FullResults {
         restDistance
       ]);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of C2FullResults
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$C2FullResultsImplCopyWith<_$C2FullResultsImpl> get copyWith =>
@@ -765,16 +779,16 @@ abstract class _C2FullResults extends C2FullResults {
   @override
   @JsonKey(name: 'user_id')
   int get userId;
-  @override
 
   /// the date as stored in the monitor, which is the end of the workout
+  @override
   @JsonKey(name: 'date')
   @TimestampConverter()
   DateTime get endDate;
   @override
   @JsonKey(name: 'timezone')
-  String? get timezone;
-  @override //TODO: verify validity
+  String? get timezone; //TODO: verify validity
+  @override
   @JsonKey(name: 'date_utc')
   @TimestampOrNullConverter()
   DateTime? get dateUtc;
@@ -784,15 +798,15 @@ abstract class _C2FullResults extends C2FullResults {
   @override
   @JsonKey(name: 'type')
   C2ResultType get type;
-  @override
 
   /// only splits and intervals
+  @override
   @JsonKey(name: 'time')
   @DecimalIntConverter.tenths()
   double get time;
-  @override
 
   /// This is the value in tenths of a second of total time spent in rest intervals.
+  @override
   @JsonKey(name: 'rest_time')
   @DecimalIntConverter.tenths()
   double? get restTime;
@@ -802,51 +816,51 @@ abstract class _C2FullResults extends C2FullResults {
   @override
   @JsonKey(name: 'source')
   String get source;
-  @override
 
   /// Required if type is rower, dynamic or slides.
+  @override
   @JsonKey(name: 'weight_class')
   C2WeightClass get weightClass;
-  @override
 
   /// Whether the result should be considered verified. Only trusted clients are able to verify workouts. Please contact Concept2 for more information.
+  @override
   @JsonKey(name: 'verified')
   bool? get verified;
-  @override
 
   /// The verification code for the piece. For the verification code to be accepted, the date, time, distance, workout_type and machine type must match that of the code.
+  @override
   @JsonKey(name: 'verification_code')
   String? get verificationCode;
   @override
   @JsonKey(name: 'ranked')
   bool get ranked;
-  @override
 
   /// No markup or formatting is currently supported apart from
   /// line breaks and paragraphs using \r and \n.
+  @override
   @JsonKey(name: 'comments')
-  String? get comments;
-  @override // TODO: default to user's logbook_privacy status.
+  String? get comments; // TODO: default to user's logbook_privacy status.
+  @override
   @JsonKey(name: 'privacy')
   C2PrivacyLevel get privacy;
-  @override
 
   /// Average stroke rate for a workout
+  @override
   @JsonKey(name: 'stroke_rate')
   int? get strokeRate;
-  @override
 
   /// Total number of strokes in a workout
+  @override
   @JsonKey(name: 'stroke_count')
   int? get strokeCount;
-  @override
 
   /// Total calories in a workout
+  @override
   @JsonKey(name: 'calories_total')
   int? get caloriesTotal;
-  @override
 
   /// Average drag factor (to nearest whole number)
+  @override
   @JsonKey(name: 'drag_factor')
   int? get dragFactor;
   @override
@@ -855,13 +869,16 @@ abstract class _C2FullResults extends C2FullResults {
   @override
   @JsonKey(name: 'workout')
   C2Workout? get workout;
-  @override
 
   /// For interval workouts only. This is the total distance in meters of distance covered in rest intervals.
+  @override
   @JsonKey(name: 'rest_distance')
   double? get restDistance;
+
+  /// Create a copy of C2FullResults
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$C2FullResultsImplCopyWith<_$C2FullResultsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -880,9 +897,17 @@ mixin _$C2HeartRate {
   int get max => throw _privateConstructorUsedError;
   @JsonKey(name: 'ending')
   int get ending => throw _privateConstructorUsedError;
+  @JsonKey(name: 'rest')
+  int get rest => throw _privateConstructorUsedError;
+  @JsonKey(name: 'recovery')
+  int get recovery => throw _privateConstructorUsedError;
 
+  /// Serializes this C2HeartRate to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of C2HeartRate
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $C2HeartRateCopyWith<C2HeartRate> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -897,7 +922,9 @@ abstract class $C2HeartRateCopyWith<$Res> {
       {@JsonKey(name: 'min') int min,
       @JsonKey(name: 'average') int average,
       @JsonKey(name: 'max') int max,
-      @JsonKey(name: 'ending') int ending});
+      @JsonKey(name: 'ending') int ending,
+      @JsonKey(name: 'rest') int rest,
+      @JsonKey(name: 'recovery') int recovery});
 }
 
 /// @nodoc
@@ -910,6 +937,8 @@ class _$C2HeartRateCopyWithImpl<$Res, $Val extends C2HeartRate>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of C2HeartRate
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -917,6 +946,8 @@ class _$C2HeartRateCopyWithImpl<$Res, $Val extends C2HeartRate>
     Object? average = null,
     Object? max = null,
     Object? ending = null,
+    Object? rest = null,
+    Object? recovery = null,
   }) {
     return _then(_value.copyWith(
       min: null == min
@@ -935,6 +966,14 @@ class _$C2HeartRateCopyWithImpl<$Res, $Val extends C2HeartRate>
           ? _value.ending
           : ending // ignore: cast_nullable_to_non_nullable
               as int,
+      rest: null == rest
+          ? _value.rest
+          : rest // ignore: cast_nullable_to_non_nullable
+              as int,
+      recovery: null == recovery
+          ? _value.recovery
+          : recovery // ignore: cast_nullable_to_non_nullable
+              as int,
     ) as $Val);
   }
 }
@@ -951,7 +990,9 @@ abstract class _$$C2HeartRateImplCopyWith<$Res>
       {@JsonKey(name: 'min') int min,
       @JsonKey(name: 'average') int average,
       @JsonKey(name: 'max') int max,
-      @JsonKey(name: 'ending') int ending});
+      @JsonKey(name: 'ending') int ending,
+      @JsonKey(name: 'rest') int rest,
+      @JsonKey(name: 'recovery') int recovery});
 }
 
 /// @nodoc
@@ -962,6 +1003,8 @@ class __$$C2HeartRateImplCopyWithImpl<$Res>
       _$C2HeartRateImpl _value, $Res Function(_$C2HeartRateImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of C2HeartRate
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -969,6 +1012,8 @@ class __$$C2HeartRateImplCopyWithImpl<$Res>
     Object? average = null,
     Object? max = null,
     Object? ending = null,
+    Object? rest = null,
+    Object? recovery = null,
   }) {
     return _then(_$C2HeartRateImpl(
       min: null == min
@@ -987,6 +1032,14 @@ class __$$C2HeartRateImplCopyWithImpl<$Res>
           ? _value.ending
           : ending // ignore: cast_nullable_to_non_nullable
               as int,
+      rest: null == rest
+          ? _value.rest
+          : rest // ignore: cast_nullable_to_non_nullable
+              as int,
+      recovery: null == recovery
+          ? _value.recovery
+          : recovery // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -998,7 +1051,9 @@ class _$C2HeartRateImpl extends _C2HeartRate {
       {@JsonKey(name: 'min') this.min = 0,
       @JsonKey(name: 'average') this.average = 0,
       @JsonKey(name: 'max') this.max = 0,
-      @JsonKey(name: 'ending') this.ending = 0})
+      @JsonKey(name: 'ending') this.ending = 0,
+      @JsonKey(name: 'rest') this.rest = 0,
+      @JsonKey(name: 'recovery') this.recovery = 0})
       : super._();
 
   factory _$C2HeartRateImpl.fromJson(Map<String, dynamic> json) =>
@@ -1016,10 +1071,16 @@ class _$C2HeartRateImpl extends _C2HeartRate {
   @override
   @JsonKey(name: 'ending')
   final int ending;
+  @override
+  @JsonKey(name: 'rest')
+  final int rest;
+  @override
+  @JsonKey(name: 'recovery')
+  final int recovery;
 
   @override
   String toString() {
-    return 'C2HeartRate(min: $min, average: $average, max: $max, ending: $ending)';
+    return 'C2HeartRate(min: $min, average: $average, max: $max, ending: $ending, rest: $rest, recovery: $recovery)';
   }
 
   @override
@@ -1030,14 +1091,20 @@ class _$C2HeartRateImpl extends _C2HeartRate {
             (identical(other.min, min) || other.min == min) &&
             (identical(other.average, average) || other.average == average) &&
             (identical(other.max, max) || other.max == max) &&
-            (identical(other.ending, ending) || other.ending == ending));
+            (identical(other.ending, ending) || other.ending == ending) &&
+            (identical(other.rest, rest) || other.rest == rest) &&
+            (identical(other.recovery, recovery) ||
+                other.recovery == recovery));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, min, average, max, ending);
+  int get hashCode =>
+      Object.hash(runtimeType, min, average, max, ending, rest, recovery);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of C2HeartRate
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$C2HeartRateImplCopyWith<_$C2HeartRateImpl> get copyWith =>
@@ -1056,7 +1123,9 @@ abstract class _C2HeartRate extends C2HeartRate {
       {@JsonKey(name: 'min') final int min,
       @JsonKey(name: 'average') final int average,
       @JsonKey(name: 'max') final int max,
-      @JsonKey(name: 'ending') final int ending}) = _$C2HeartRateImpl;
+      @JsonKey(name: 'ending') final int ending,
+      @JsonKey(name: 'rest') final int rest,
+      @JsonKey(name: 'recovery') final int recovery}) = _$C2HeartRateImpl;
   _C2HeartRate._() : super._();
 
   factory _C2HeartRate.fromJson(Map<String, dynamic> json) =
@@ -1075,7 +1144,16 @@ abstract class _C2HeartRate extends C2HeartRate {
   @JsonKey(name: 'ending')
   int get ending;
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(name: 'rest')
+  int get rest;
+  @override
+  @JsonKey(name: 'recovery')
+  int get recovery;
+
+  /// Create a copy of C2HeartRate
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$C2HeartRateImplCopyWith<_$C2HeartRateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1119,8 +1197,12 @@ mixin _$C2Intervals {
   @JsonKey(name: 'heart_rate')
   C2HeartRate? get heartRate => throw _privateConstructorUsedError;
 
+  /// Serializes this C2Intervals to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of C2Intervals
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $C2IntervalsCopyWith<C2Intervals> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1155,6 +1237,8 @@ class _$C2IntervalsCopyWithImpl<$Res, $Val extends C2Intervals>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of C2Intervals
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1208,6 +1292,8 @@ class _$C2IntervalsCopyWithImpl<$Res, $Val extends C2Intervals>
     ) as $Val);
   }
 
+  /// Create a copy of C2Intervals
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $C2HeartRateCopyWith<$Res>? get heartRate {
@@ -1252,6 +1338,8 @@ class __$$C2IntervalsImplCopyWithImpl<$Res>
       _$C2IntervalsImpl _value, $Res Function(_$C2IntervalsImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of C2Intervals
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1395,12 +1483,14 @@ class _$C2IntervalsImpl extends _C2Intervals {
                 other.heartRate == heartRate));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, type, time, restTime, distance,
       caloriesTotal, strokeRate, machine, restDistance, heartRate);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of C2Intervals
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$C2IntervalsImplCopyWith<_$C2IntervalsImpl> get copyWith =>
@@ -1435,47 +1525,51 @@ abstract class _C2Intervals extends C2Intervals {
   factory _C2Intervals.fromJson(Map<String, dynamic> json) =
       _$C2IntervalsImpl.fromJson;
 
-  @override //TODO: convert this from string to a proper C2APIIntervalType (time/distance/calorie)
+//TODO: convert this from string to a proper C2APIIntervalType (time/distance/calorie)
+  @override
   @JsonKey(name: 'type')
   String get type;
-  @override
 
   /// Work Time
+  @override
   @JsonKey(name: 'time')
   @DecimalIntConverter.tenths()
   double get time;
-  @override
 
   /// This is the value in seconds of the time spent in rest intervals.
+  @override
   @JsonKey(name: 'rest_time')
   @DecimalIntConverter.tenths()
   double get restTime;
   @override
   @JsonKey(name: 'distance')
   int get distance;
-  @override
 
   /// Total calories
+  @override
   @JsonKey(name: 'calories_total')
   int get caloriesTotal;
-  @override
 
   /// Average stroke rate
+  @override
   @JsonKey(name: 'stroke_rate')
-  int get strokeRate;
-  @override // TODO: convert to C2APIIntervalMachine. MultiErg workouts only.
+  int get strokeRate; // TODO: convert to C2APIIntervalMachine. MultiErg workouts only.
+  @override
   @JsonKey(name: 'machine')
   String? get machine;
-  @override
 
   /// This is the distance in meters spent in rest intervals. This should be included for Variable interval workouts only.
+  @override
   @JsonKey(name: 'rest_distance')
   int? get restDistance;
   @override
   @JsonKey(name: 'heart_rate')
   C2HeartRate? get heartRate;
+
+  /// Create a copy of C2Intervals
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$C2IntervalsImplCopyWith<_$C2IntervalsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1512,8 +1606,12 @@ mixin _$C2Results {
   String? get comments => throw _privateConstructorUsedError;
   C2PrivacyLevel get privacy => throw _privateConstructorUsedError;
 
+  /// Serializes this C2Results to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of C2Results
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $C2ResultsCopyWith<C2Results> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1552,6 +1650,8 @@ class _$C2ResultsCopyWithImpl<$Res, $Val extends C2Results>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of C2Results
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1676,6 +1776,8 @@ class __$$C2ResultsImplCopyWithImpl<$Res>
       _$C2ResultsImpl _value, $Res Function(_$C2ResultsImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of C2Results
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1876,7 +1978,7 @@ class _$C2ResultsImpl extends _C2Results {
             (identical(other.privacy, privacy) || other.privacy == privacy));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -1897,7 +1999,9 @@ class _$C2ResultsImpl extends _C2Results {
       comments,
       privacy);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of C2Results
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$C2ResultsImplCopyWith<_$C2ResultsImpl> get copyWith =>
@@ -1979,8 +2083,11 @@ abstract class _C2Results extends C2Results {
   String? get comments;
   @override
   C2PrivacyLevel get privacy;
+
+  /// Create a copy of C2Results
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$C2ResultsImplCopyWith<_$C2ResultsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2010,8 +2117,12 @@ mixin _$C2Splits {
   @JsonKey(name: 'heart_rate')
   C2HeartRate? get heartRate => throw _privateConstructorUsedError;
 
+  /// Serializes this C2Splits to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of C2Splits
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $C2SplitsCopyWith<C2Splits> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2041,6 +2152,8 @@ class _$C2SplitsCopyWithImpl<$Res, $Val extends C2Splits>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of C2Splits
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2074,6 +2187,8 @@ class _$C2SplitsCopyWithImpl<$Res, $Val extends C2Splits>
     ) as $Val);
   }
 
+  /// Create a copy of C2Splits
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $C2HeartRateCopyWith<$Res>? get heartRate {
@@ -2114,6 +2229,8 @@ class __$$C2SplitsImplCopyWithImpl<$Res>
       _$C2SplitsImpl _value, $Res Function(_$C2SplitsImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of C2Splits
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2207,12 +2324,14 @@ class _$C2SplitsImpl extends _C2Splits {
                 other.heartRate == heartRate));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType, time, distance, caloriesTotal, strokeRate, heartRate);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of C2Splits
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$C2SplitsImplCopyWith<_$C2SplitsImpl> get copyWith =>
@@ -2241,32 +2360,34 @@ abstract class _C2Splits extends C2Splits {
   factory _C2Splits.fromJson(Map<String, dynamic> json) =
       _$C2SplitsImpl.fromJson;
 
-  @override
-
   /// Time in seconds
+  @override
   @JsonKey(name: 'time')
   @DecimalIntConverter.tenths()
   double get time;
-  @override
 
   ///Work Distance
+  @override
   @JsonKey(name: 'distance')
   int get distance;
-  @override
 
   /// Total calories
+  @override
   @JsonKey(name: 'calories_total')
   int get caloriesTotal;
-  @override
 
   /// Average stroke rate
+  @override
   @JsonKey(name: 'stroke_rate')
   int get strokeRate;
   @override
   @JsonKey(name: 'heart_rate')
   C2HeartRate? get heartRate;
+
+  /// Create a copy of C2Splits
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$C2SplitsImplCopyWith<_$C2SplitsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2301,8 +2422,12 @@ mixin _$C2User {
   @JsonKey(name: 'logbook_privacy')
   C2PrivacyLevel get logbookPrivacy => throw _privateConstructorUsedError;
 
+  /// Serializes this C2User to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of C2User
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $C2UserCopyWith<C2User> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -2339,6 +2464,8 @@ class _$C2UserCopyWithImpl<$Res, $Val extends C2User>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of C2User
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2456,6 +2583,8 @@ class __$$C2UserImplCopyWithImpl<$Res>
       _$C2UserImpl _value, $Res Function(_$C2UserImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of C2User
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2652,7 +2781,7 @@ class _$C2UserImpl implements _C2User {
                 other.logbookPrivacy == logbookPrivacy));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -2672,7 +2801,9 @@ class _$C2UserImpl implements _C2User {
       const DeepCollectionEquality().hash(_roles),
       logbookPrivacy);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of C2User
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$C2UserImplCopyWith<_$C2UserImpl> get copyWith =>
@@ -2745,8 +2876,11 @@ abstract class _C2User implements C2User {
   @override
   @JsonKey(name: 'logbook_privacy')
   C2PrivacyLevel get logbookPrivacy;
+
+  /// Create a copy of C2User
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$C2UserImplCopyWith<_$C2UserImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2762,8 +2896,12 @@ mixin _$C2Workout {
   @JsonKey(name: 'splits')
   List<C2Splits>? get splits => throw _privateConstructorUsedError;
 
+  /// Serializes this C2Workout to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of C2Workout
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $C2WorkoutCopyWith<C2Workout> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2788,6 +2926,8 @@ class _$C2WorkoutCopyWithImpl<$Res, $Val extends C2Workout>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of C2Workout
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2828,6 +2968,8 @@ class __$$C2WorkoutImplCopyWithImpl<$Res>
       _$C2WorkoutImpl _value, $Res Function(_$C2WorkoutImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of C2Workout
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2899,14 +3041,16 @@ class _$C2WorkoutImpl extends _C2Workout {
             const DeepCollectionEquality().equals(other._splits, _splits));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(_intervals),
       const DeepCollectionEquality().hash(_splits));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of C2Workout
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$C2WorkoutImplCopyWith<_$C2WorkoutImpl> get copyWith =>
@@ -2935,8 +3079,11 @@ abstract class _C2Workout extends C2Workout {
   @override
   @JsonKey(name: 'splits')
   List<C2Splits>? get splits;
+
+  /// Create a copy of C2Workout
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$C2WorkoutImplCopyWith<_$C2WorkoutImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
