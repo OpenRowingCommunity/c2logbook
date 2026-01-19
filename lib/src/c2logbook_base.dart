@@ -77,7 +77,7 @@ class C2Logbook {
     return _get(_serverUri.resolve("/api/users/${userId ?? "me"}").toString())
         .then((http.Response response) => json.decode(response.body))
         .then(
-          (json) => C2User.fromJson(json['data']),
+          (json) => C2User.fromJson(json['data'] as Map<String, dynamic>),
         );
   }
 
@@ -108,7 +108,7 @@ class C2Logbook {
         .then((http.Response response) => json.decode(response.body))
         .then((json) {
       // TODO: Handle pagination
-      return C2Results.fromJson(json['data']);
+      return C2Results.fromJson(json['data'] as Map<String, dynamic>);
     });
   }
 }
