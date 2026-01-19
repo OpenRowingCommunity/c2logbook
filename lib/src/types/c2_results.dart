@@ -2,6 +2,11 @@
 
 part of 'index.dart';
 
+/**
+ * A more limited set of result data returned by:
+ *  - Concept2's API for getting a list of results
+ *  - Webhook data for type "result-added"
+ */
 @freezed
 class C2Results with _$C2Results {
   //TODO: figure out how to get this into JSON as time_formatted
@@ -23,7 +28,7 @@ class C2Results with _$C2Results {
     @Default(C2ResultType.rower) C2ResultType type,
     @DecimalIntConverter.tenths() required double time,
     @JsonKey(name: "workout_type")
-    @Default(C2APIWorkoutType.JustRow)
+    @Default(C2APIWorkoutType.unknown)
     C2APIWorkoutType workoutType,
     @Default("c2logbook dart") String source,
     @JsonKey(name: "weight_class")
