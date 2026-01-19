@@ -67,7 +67,8 @@ void main() {
       "ranked": false,
       "comments": null
 }""");
-      expect(C2Results.fromJson(jsonData), testResultsMin);
+      expect(
+          C2Results.fromJson(jsonData as Map<String, dynamic>), testResultsMin);
     });
 
     test('Test Parsing maximal Result JSON', () {
@@ -91,7 +92,8 @@ void main() {
       "comments": null,
       "privacy": "partners"
 }""");
-      expect(C2Results.fromJson(jsonData), testResultsMax);
+      expect(
+          C2Results.fromJson(jsonData as Map<String, dynamic>), testResultsMax);
     });
 
     test('Test Parsing Result JSON from Concept2 example', () {
@@ -115,7 +117,7 @@ void main() {
     "privacy": "partners"
   }""");
       expect(
-          C2Results.fromJson(jsonData),
+          C2Results.fromJson(jsonData as Map<String, dynamic>),
           C2Results(
               id: 3,
               userId: 1,
@@ -153,7 +155,7 @@ void main() {
     "logbook_privacy": "partners"
 }""");
 
-      expect(C2User.fromJson(jsonData), testUser);
+      expect(C2User.fromJson(jsonData as Map<String, dynamic>), testUser);
     });
 
     test("Test parsing webhook JSON (minimal)", () {
@@ -179,7 +181,8 @@ void main() {
             }
         }
     }""");
-      expect(C2Webhook.parse(webhookJson), testResultsMin);
+      expect(C2Response.parseWebhook(webhookJson as Map<String, dynamic>),
+          testResultsMin);
     });
 
     test("Test parsing Result JSON (with intervals workout and Heart rate)",
@@ -252,8 +255,8 @@ void main() {
     "real_time": null
     }""");
       expect(
-          C2Results.fromJson(webhookJson),
-          C2Results(
+          C2FullResults.fromJson(webhookJson as Map<String, dynamic>),
+          C2FullResults(
               id: 87654321,
               userId: 1234567,
               endDate: DateTime.parse("2024-04-22 17:41:00"),
