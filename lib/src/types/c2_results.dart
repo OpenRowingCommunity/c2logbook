@@ -28,7 +28,7 @@ class C2Results with _$C2Results {
     @Default(C2ResultType.rower) C2ResultType type,
     @DecimalIntConverter.tenths() required double time,
     @JsonKey(name: "workout_type")
-    @Default(C2APIWorkoutType.JustRow)
+    @Default(C2APIWorkoutType.unknown)
     C2APIWorkoutType workoutType,
     @Default("c2logbook dart") String source,
     @JsonKey(name: "weight_class")
