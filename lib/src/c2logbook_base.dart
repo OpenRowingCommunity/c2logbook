@@ -6,6 +6,8 @@ import 'package:http/http.dart' as http;
 
 import '../c2logbook.dart';
 
+/// The main class of this library
+/// Responsible for handling auth and acting as an entrypoint through which to fetch other data
 class C2Logbook {
   final bool development;
   final String _userAgent;

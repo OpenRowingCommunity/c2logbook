@@ -1,5 +1,6 @@
 part of 'index.dart';
 
+/// A helper class containing convenience methods for interacting with webhooks
 class C2Webhook {
   /// Parse the data from incoming webhooks from the Concept2 API.
   ///

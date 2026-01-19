@@ -1,21 +1,31 @@
-// TODO: add conversion to string to allow logged_in to be represented in dart as loggedIn
+
 
 part of 'index.dart';
 
-//https://stackoverflow.com/a/44060511/
+/// Extends [C2PrivacyLevel] to add convenience methods
+/// this enables easier parsing, instantiation, and serialization, especially with strings
+/// Built based on https://stackoverflow.com/a/44060511/
 extension C2PrivacyExtension on C2PrivacyLevel {
+  // TODO: add conversion to string to allow logged_in to be represented in dart as loggedIn without affecting its string value.
+
+  ///Return value represented by the given string
   static C2PrivacyLevel? fromString(String value) {
     return C2PrivacyLevel.values
         .firstWhere((C2PrivacyLevel e) => e.name == value);
   }
 }
 
+/// Extends [C2PrivacyLevel] to add convenience methods
+/// this enables easier parsing, instantiation, and serialization, especially with strings
 extension C2ResultTypeExtension on C2PrivacyLevel {
+  ///Return value represented by the given string
   static C2ResultType fromString(String value) {
     return C2ResultType.values.firstWhere((C2ResultType e) => e.name == value);
   }
 }
 
+/// Extends [C2APIWorkoutType] to add convenience methods
+/// this enables easier parsing, instantiation, and serialization, especially with strings
 extension C2APIWorkoutTypeExtension on C2APIWorkoutType {
   static Map<C2APIWorkoutType, String> _workoutTypes =
       <C2APIWorkoutType, String>{
@@ -32,10 +42,12 @@ extension C2APIWorkoutTypeExtension on C2APIWorkoutType {
         'VariableIntervalUndefinedRest',
   };
 
+  ///gets the string value of this [C2APIWorkoutType] based on what the Concept2 REST API docs say it should be
   String? toC2ApiString() {
     return _workoutTypes[this];
   }
 
+  ///Return value represented by the given string
   static C2APIWorkoutType fromString(String value) {
     C2APIWorkoutType? type = _workoutTypes.map(
         (C2APIWorkoutType key, String value) =>
@@ -48,6 +60,8 @@ extension C2APIWorkoutTypeExtension on C2APIWorkoutType {
   }
 }
 
+/// Extends [C2WeightClass] to add convenience methods
+/// this enables easier parsing, instantiation, and serialization, especially with strings
 extension C2WeightClassExtension on C2WeightClass {
   static C2WeightClass fromString(String value) {
     switch (value.toUpperCase()) {
