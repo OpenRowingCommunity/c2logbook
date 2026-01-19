@@ -27,7 +27,6 @@ linter:
     prefer_foreach: true
     public_member_api_docs: false
     unnecessary_constructor_name: true
-    unsafe_html: true
     use_test_throws_matchers: true
     unnecessary_lambdas: false
     no_default_cases: false
