@@ -7,12 +7,15 @@ class C2Splits with _$C2Splits {
   C2Splits._();
 
   factory C2Splits({
+    /// Time in seconds
     @JsonKey(name: 'time') @DecimalIntConverter.tenths() required double time,
+
+    ///Work Distance
     @JsonKey(name: 'distance') @Default(0) int distance,
+    /// Total calories
     @JsonKey(name: 'calories_total') @Default(0) int caloriesTotal,
+    /// Average stroke rate
     @JsonKey(name: 'stroke_rate') @Default(0) int strokeRate,
-    @JsonKey(name: 'machine') @Default(null) String? machine,
-    @JsonKey(name: 'rest_distance') @Default(0) int restDistance,
     @JsonKey(name: 'heart_rate') @Default(null) C2HeartRate? heartRate,
   }) = _C2Splits;
 
