@@ -12,7 +12,8 @@ class C2HeartRate with _$C2HeartRate {
       @JsonKey(name: 'average') @Default(0) int average,
       @JsonKey(name: 'max') @Default(0) int max,
       @JsonKey(name: 'ending') @Default(0) int ending,
-      @JsonKey(name: 'rest') @Default(0) int rest}) = _C2HeartRate;
+      @JsonKey(name: 'rest') @Default(0) int rest,
+      @JsonKey(name: 'recovery') @Default(0) int recovery}) = _C2HeartRate;
 
   factory C2HeartRate.fromJson(Map<dynamic, dynamic> json) =>
       _$C2HeartRateFromJson(Map<String, dynamic>.from(json));
