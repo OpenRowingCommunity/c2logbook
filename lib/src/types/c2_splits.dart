@@ -13,8 +13,10 @@ class C2Splits with _$C2Splits {
 
     ///Work Distance
     @JsonKey(name: 'distance') @Default(0) int distance,
+
     /// Total calories
     @JsonKey(name: 'calories_total') @Default(0) int caloriesTotal,
+
     /// Average stroke rate
     @JsonKey(name: 'stroke_rate') @Default(0) int strokeRate,
     @JsonKey(name: 'heart_rate') @Default(null) C2HeartRate? heartRate,

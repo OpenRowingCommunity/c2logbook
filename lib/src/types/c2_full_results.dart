@@ -71,6 +71,7 @@ class C2FullResults with _$C2FullResults {
     @JsonKey(name: 'drag_factor') int? dragFactor,
     @JsonKey(name: 'heart_rate') @Default(null) C2HeartRate? heartRate,
     @JsonKey(name: 'workout') @Default(null) C2Workout? workout,
+
     /// For interval workouts only. This is the total distance in meters of distance covered in rest intervals.
     @JsonKey(name: 'rest_distance') double? restDistance,
   }) = _C2FullResults;
