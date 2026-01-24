@@ -31,6 +31,9 @@ jobs:
       - name: Verify formatting
         run: dart format --output=none --set-exit-if-changed .
 
+      - name: build freezed types
+        run: dart run build_runner build
+
       # Your project will need to have tests in test/ and a dependency on
       # package:test for this step to succeed. Note that Flutter projects will
       # want to change this to 'flutter test'.
